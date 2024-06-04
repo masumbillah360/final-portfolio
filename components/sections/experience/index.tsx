@@ -13,7 +13,7 @@ function Experience() {
     return (
         <div
             id="experience"
-            className="relative z-40 border-t my-12 lg:my-24 border-[#25213b]">
+            className="relative z-40 border-t my-12 lg:my-24 border-[#25213b] min-h-screen">
             Experience
         </div>
     );

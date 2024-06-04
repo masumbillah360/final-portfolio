@@ -11,7 +11,7 @@ import {
 import { cn } from '@/lib/utils';
 
 export function BorderButton({
-    borderRadius = '1.75rem',
+    borderRadius = '.4rem',
     children,
     as: Component = 'button',
     containerClassName,
@@ -32,7 +32,7 @@ export function BorderButton({
     return (
         <Component
             className={cn(
-                'bg-transparent relative text-xl  h-16 w-full p-[1px] overflow-hidden ',
+                'bg-white dark:bg-slate-900 relative text-xl  h-16 w-full p-[1px] overflow-hidden ',
                 containerClassName
             )}
             style={{
@@ -45,7 +45,7 @@ export function BorderButton({
                 <MovingBorder duration={duration} rx="30%" ry="30%">
                     <div
                         className={cn(
-                            'h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--teal-500)_40%,transparent_60%)]',
+                            'h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--violet-500)_40%,transparent_60%)]',
                             borderClassName
                         )}
                     />
@@ -54,7 +54,7 @@ export function BorderButton({
 
             <div
                 className={cn(
-                    'relative bg-white dark:bg-slate-900/[0.8] border border-slate-200 dark:border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased',
+                    'relative bg-white dark:bg-slate-900/[0.8] border border-primary dark:border-slate-800 backdrop-blur-xl text-primary flex items-center justify-center w-full h-full text-sm antialiased',
                     className
                 )}
                 style={{

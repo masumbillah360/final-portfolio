@@ -19,7 +19,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="scroll-pt-24">
+        <html
+            lang="en"
+            className="scroll-pt-10 md:scroll-pt-24 lg:scroll-pt-40">
             <body className={inter.className}>
                 <ThemeProvider
                     attribute="class"
@@ -27,7 +29,7 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange>
                     <main>
-                        <div className="sticky top-0 z-50 glow-container backdrop-blur bg-[#101123] bg-opacity-85 h-20 rounded-b-lg">
+                        <div className="sticky top-0 z-50 glow-container backdrop-blur bg-opacity-95 h-20 rounded-b-lg">
                             <div className="absolute bottom-0 w-full">
                                 <Navbar />
                             </div>
