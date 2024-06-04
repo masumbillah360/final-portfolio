@@ -1,17 +1,78 @@
+'use client'
 import Image from 'next/image';
-// import { BsPersonWorkspace } from 'react-icons/bs';
-
-// import experience from '@/public/lottie/code.json';
-
-// import AnimationLottieNoSSR from '@/components/helper/animation-lottie-client';
 import { experienceData } from '@/constants/experience-data';
 import { Fragment } from 'react';
 import Titlebar from '@/components/title-bar';
+import { Workflow } from 'lucide-react';
+import AnimationLottieClient from '@/components/lottie/client';
+import experience from '@/public/lottie/code.json';
 
 function Experience() {
     return (
-        <div id="experience" className="relative z-40 min-h-screen">
+        <div id="experience" className="relative z-40 my-10 md:my-14 lg:my-20">
             <Titlebar title="Experience" />
+            <div>
+                <Image
+                    src="/section.svg"
+                    alt="Hero"
+                    width={1572}
+                    height={795}
+                    className="absolute top-0 -z-10"
+                />
+
+                <div className="py-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+                        <div className="flex justify-center items-start">
+                            <div className="w-full h-full">
+                                <AnimationLottieClient
+                                    animationPath={experience}
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="flex flex-col gap-6">
+                                {experienceData.map((experience) => (
+                                    <Fragment key={experience.id}>
+                                        <div className="p-3 relative">
+                                            <Image
+                                                src="/blur-23.svg"
+                                                alt="Hero"
+                                                width={1080}
+                                                height={200}
+                                                className="absolute bottom-0 opacity-80"
+                                            />
+                                            <div className="flex justify-center">
+                                                <p
+                                                    className={`text-xs sm:text-sm  ${
+                                                        experience.isEx
+                                                            ? 'text-rose-500 font-semibold'
+                                                            : 'text-[#16f2b3]'
+                                                    }`}>
+                                                    {experience.duration}
+                                                </p>
+                                            </div>
+                                            <div className="flex items-center gap-x-8 px-3 py-5">
+                                                <div className="text-violet-500  transition-all duration-300 hover:scale-125">
+                                                    <Workflow size={36} />
+                                                </div>
+                                                <div>
+                                                    <p className="text-base sm:text-xl mb-2 font-medium uppercase">
+                                                        {experience.title}
+                                                    </p>
+                                                    <p className="text-sm sm:text-base">
+                                                        {experience.company}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Fragment>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
