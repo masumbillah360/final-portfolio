@@ -1,10 +1,9 @@
+import Titlebar from '@/components/title-bar';
 
 const Projects = () => {
     return (
-        <div
-            id="projects"
-            className="relative z-40  my-12 lg:my-24 min-h-screen">
-            Projects
+        <div id="projects" className="relative z-40 min-h-screen">
+            <Titlebar title="Projects" />
         </div>
     );
 };

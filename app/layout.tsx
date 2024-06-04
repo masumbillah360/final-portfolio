@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/provider/theme-provider';
 import Navbar from '@/components/shared/nav-bar';
-import { Fragment } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,15 +20,15 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className="scroll-pt-10 md:scroll-pt-24 lg:scroll-pt-40">
+            className="scroll-pt-10 md:scroll-pt-24 lg:scroll-pt-30">
             <body className={inter.className}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"
                     enableSystem
                     disableTransitionOnChange>
-                    <main>
-                        <div className="sticky top-0 z-50 glow-container backdrop-blur bg-opacity-95 h-20 rounded-b-lg">
+                    <main className="container mx-auto">
+                        <div className="sticky top-0 z-50 backdrop-blur bg-opacity-95 h-20 rounded-b-lg">
                             <div className="absolute bottom-0 w-full">
                                 <Navbar />
                             </div>
