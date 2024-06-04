@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { experienceData } from '@/constants/experience-data';
 import Titlebar from '@/components/title-bar';
 import AnimationLottieClient from '@/components/lottie/client';
-import experience from '@/public/lottie/code.json';
+import experience from '@/public/lottie/development.json';
 import { BorderButton } from '@/components/framer-motion/moving-border';
 
 function Experience() {

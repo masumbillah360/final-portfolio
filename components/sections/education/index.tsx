@@ -4,7 +4,7 @@ import AnimationLottieClient from '@/components/lottie/client';
 import Titlebar from '@/components/title-bar';
 import { educations } from '@/constants/education-data';
 import Image from 'next/image';
-import lottieFile from '@/public/lottie/study.json';
+import lottieFile from '@/public/lottie/education.json';
 import { BorderButton } from '@/components/framer-motion/moving-border';
 
 const Education = () => {
