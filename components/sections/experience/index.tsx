@@ -1,17 +1,18 @@
-'use client'
+'use client';
+
 import Image from 'next/image';
 import { experienceData } from '@/constants/experience-data';
-import { Fragment } from 'react';
 import Titlebar from '@/components/title-bar';
 import { Workflow } from 'lucide-react';
 import AnimationLottieClient from '@/components/lottie/client';
 import experience from '@/public/lottie/code.json';
+import { BorderButton } from '@/components/framer-motion/moving-border';
 
 function Experience() {
     return (
         <div id="experience" className="relative z-40 my-10 md:my-14 lg:my-20">
             <Titlebar title="Experience" />
-            <div>
+            <div className="my-10 md:my-14 lg:my-20">
                 <Image
                     src="/section.svg"
                     alt="Hero"
@@ -33,7 +34,10 @@ function Experience() {
                         <div>
                             <div className="flex flex-col gap-6">
                                 {experienceData.map((experience) => (
-                                    <Fragment key={experience.id}>
+                                    <BorderButton
+                                        key={experience.id}
+                                        containerClassName="h-auto"
+                                        duration={10000}>
                                         <div className="p-3 relative">
                                             <Image
                                                 src="/blur-23.svg"
@@ -52,11 +56,11 @@ function Experience() {
                                                     {experience.duration}
                                                 </p>
                                             </div>
-                                            <div className="flex items-center gap-x-8 px-3 py-5">
-                                                <div className="text-violet-500  transition-all duration-300 hover:scale-125">
+                                            <div className="flex items-center justify-center w-full gap-x-8 px-3 py-5">
+                                                {/* <div className="text-violet-500  transition-all duration-300 hover:scale-125">
                                                     <Workflow size={36} />
-                                                </div>
-                                                <div>
+                                                </div> */}
+                                                <div className="text-black dark:text-white">
                                                     <p className="text-base sm:text-xl mb-2 font-medium uppercase">
                                                         {experience.title}
                                                     </p>
@@ -66,7 +70,7 @@ function Experience() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </Fragment>
+                                    </BorderButton>
                                 ))}
                             </div>
                         </div>
