@@ -7,7 +7,7 @@ import {
 import Titlebar from '@/components/title-bar';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-const content = [
+export const content = [
     {
         title: 'Collaborative Editing',
         description:
