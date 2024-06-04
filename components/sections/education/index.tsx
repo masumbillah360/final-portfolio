@@ -3,16 +3,15 @@
 import AnimationLottieClient from '@/components/lottie/client';
 import Titlebar from '@/components/title-bar';
 import { educations } from '@/constants/education-data';
-import { School } from 'lucide-react';
 import Image from 'next/image';
 import lottieFile from '@/public/lottie/study.json';
 import { BorderButton } from '@/components/framer-motion/moving-border';
 
 const Education = () => {
     return (
-        <div id="education" className="relative z-40 min-h-screen">
+        <div id="education" className="relative z-40 my-10 md:my-14 lg:my-20">
             <Titlebar title="Education" />
-            <div>
+            <div className="my-10 md:my-14 lg:my-20">
                 <Image
                     src="/section.svg"
                     alt="Hero"
