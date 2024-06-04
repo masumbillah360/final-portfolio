@@ -19,13 +19,13 @@ const HeroSection = () => {
                             <h1 className="mb-7">Hi there,</h1>
                             <h1 className="">This is </h1>
                             <div className="">
-                                <span className="text-teal-500 dark:text-white font-extrabold uppercase">
+                                <span className="text-teal-500 dark:text-white font-extrabold uppercase tracking-wider">
                                     Masum Billah
                                 </span>
                             </div>
                             <h1 className="text-center md:text-start">
                                 I&apos;m a{' '}
-                                <span className="uppercase">
+                                <span className="uppercase tracking-wider">
                                     Web Developer.
                                 </span>
                             </h1>

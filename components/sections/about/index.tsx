@@ -5,15 +5,15 @@ import Image from 'next/image';
 
 const AboutSection = () => {
     return (
-        <div id="about" className="z-20 relative min-h-screen">
+        <div id="about" className="z-20 relative">
             <Titlebar title="About Me" />
-            <div className="">
+            <div className="my-9">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
                     <div className="order-2 lg:order-1">
-                        <p className="font-semibold mb-5 text-primary dark:text-destructive text-xl uppercase">
+                        <p className="font-semibold mb-5 text-xl uppercase text-center lg:text-start">
                             Who I am?
                         </p>
-                        <p className="text-gray-200 text-sm lg:text-lg">
+                        <p className="text-sm md:text-xl font-light tracking-wide">
                             {personalData.description}
                         </p>
                     </div>
