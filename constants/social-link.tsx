@@ -1,59 +1,39 @@
-import { Button } from '@/components/ui/button';
-import { Code, Facebook, GithubIcon, Heater, Linkedin } from 'lucide-react';
-export const socialLinks = [
+'use client';
+
+import { MdOutlineMailOutline } from 'react-icons/md';
+import { AiOutlineGithub } from 'react-icons/ai';
+import { FaFacebook, FaHackerrank, FaLinkedinIn } from 'react-icons/fa';
+import { SiCodeforces } from 'react-icons/si';
+
+export const linkData = [
     {
-        Label: 'Github',
-        icon: (
-            <Button size={'icon'} className="bg-black border dark:bg-slate-600">
-                <GithubIcon />
-            </Button>
-        ),
-        url: 'https://github.com/masumbillah360',
-        color: 'bg-black',
-        classes: 'bg-black dark:bg-slate-500',
+        label: 'Gmail',
+        url: '/',
+        icon: <MdOutlineMailOutline className="size-full text-rose-600" />,
     },
     {
-        Label: 'Linkedin',
-        icon: (
-            <Button
-                size={'icon'}
-                className="bg-[#5ab0f7] border dark:bg-slate-600">
-                <Linkedin />
-            </Button>
-        ),
-        url: 'https://www.linkedin.com/in/masumbillah6584/',
-        color: '#5ab0f7',
-        classes: 'bg-black dark:bg-slate-500',
+        label: 'Github',
+        url: '/',
+        icon: <AiOutlineGithub className="size-full" />,
     },
     {
-        Label: 'Facebook',
-        icon: (
-            <Button size={'icon'} className="bg-blue-700 border dark:bg-blue-600">
-                <Facebook />
-            </Button>
-        ),
-        url: 'https://www.facebook.com/masumbillah6584/',
-        color: '#5ab0f7',
+        label: 'Linkedin',
+        url: '/',
+        icon: <FaLinkedinIn fill="#5ab0f7" className="size-full" />,
     },
     {
-        Label: 'Codeforces',
-        icon: (
-            <Button size={'icon'} className="bg-[#f29ca1] border">
-                <Code />
-            </Button>
-        ),
-        url: 'https://codeforces.com/profile/masum-billah',
-        color: '#f29ca1',
+        label: 'Facebook',
+        url: '/',
+        icon: <FaFacebook fill="#0866ff" className="size-full" />,
     },
     {
-        Label: 'Hacker Rank',
-        icon: (
-            <Button size={'icon'} className="bg-[#2ec866] border">
-                <Heater />
-            </Button>
-        ),
-        url: 'https://www.hackerrank.com/profile/masumbillah6584',
-        color: '#2ec866',
-        classes: 'bg-black dark:bg-slate-500',
+        label: 'Hacker Rank',
+        url: '/',
+        icon: <FaHackerrank fill="#2ec866" className="size-full" />,
+    },
+    {
+        label: 'Hacker Rank',
+        url: '/',
+        icon: <SiCodeforces fill="#f29ca1" className="size-full" />,
     },
 ];

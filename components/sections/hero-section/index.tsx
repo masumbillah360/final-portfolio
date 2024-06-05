@@ -3,13 +3,12 @@
 import { BorderButton } from '@/components/framer-motion/moving-border';
 import CustomToolTip from '@/components/tool-tip';
 import { Button } from '@/components/ui/button';
-import { socialLinks } from '@/constants';
+import { linkData } from '@/constants';
 import { Contact } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import lottieFile from '@/public/lottie/code.json';
 import AnimationLottieClient from '@/components/lottie/client';
-import { cn } from '@/lib/utils';
 
 const HeroSection = () => {
     return (
@@ -48,11 +47,11 @@ const HeroSection = () => {
                         </div>
                         <div className="">
                             <div className="flex justify-start items-center gap-4">
-                                {socialLinks.map((link) => (
+                                {linkData.slice(1, linkData.length).map((link) => (
                                     <CustomToolTip
-                                        key={link.Label + 1}
-                                        label={link.Label}>
-                                        <div>
+                                        key={link.label + 1}
+                                        label={link.label}>
+                                        <div className='h-10 w-10 p-1 border rounded-full'>
                                             <Link href={link.url}>
                                                 {link.icon}
                                             </Link>
