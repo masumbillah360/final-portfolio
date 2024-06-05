@@ -18,6 +18,7 @@ export default function Home() {
     if (!mounted) {
         return <Loader />
     }
+    console.log("object");
     return (
         <>
             <HeroSection />

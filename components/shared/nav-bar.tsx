@@ -3,7 +3,7 @@
 import { routes, sectionIds } from '@/constants';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { BorderButton } from '../framer-motion/moving-border';
 import { ModeToggle } from '../theme/mode-toggle';
@@ -21,8 +21,24 @@ import {
 
 const Navbar = () => {
     const pathname = usePathname();
-    const [activeSection, setActiveSection] = useState('');
+    // const [activeSection, setActiveSection] = useState('');
     const [mounted, setMounted] = useState(false);
+
+    //******************************* */
+    function getInitialActiveSection() {
+        if (pathname === '/projects') {
+            return 'projects';
+        } else if (pathname === '/blogs') {
+            return 'blogs';
+        } else {
+            return 'home';
+        }
+    }
+
+    const [expanded, setExpanded] = useState(false);
+    const [activeSection, setActiveSection] = useState(
+        getInitialActiveSection()
+    );
 
     const handleScroll = () => {
         const targetHeight = window.innerHeight / 2;
@@ -40,9 +56,56 @@ const Navbar = () => {
             }
         }
     };
+
+    console.log({ pathname, activeSection });
     useEffect(() => {
         const handleLocationChange = () => {
-            setActiveSection(pathname === '/blog' ? 'blogs' : 'home');
+            if (pathname === '/projects') {
+                setActiveSection('projects');
+            } else if (pathname === '/blogs') {
+                setActiveSection('blogs');
+            } else {
+                setActiveSection('about');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('popstate', handleLocationChange);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('popstate', handleLocationChange);
+        };
+    }, [pathname]);
+
+    useEffect(() => {
+        document.body.style.overflow = expanded ? 'hidden' : 'unset';
+    }, [expanded]);
+
+    const getNavLinkClass = (sectionName: string) =>
+        activeSection === sectionName
+            ? 'text-primary font-medium'
+            : 'text-sub_text';
+    //******************************* */
+    // const handleScroll = () => {
+    //     const targetHeight = window.innerHeight / 2;
+    //     for (const [section, id] of Object.entries(sectionIds)) {
+    //         const sectionElement = document?.getElementById(id);
+    //         const rect = sectionElement?.getBoundingClientRect();
+    //         if (
+    //             rect?.top &&
+    //             rect?.top <= targetHeight &&
+    //             rect?.bottom &&
+    //             rect?.bottom >= targetHeight
+    //         ) {
+    //             setActiveSection(section);
+    //             break;
+    //         }
+    //     }
+    // };
+    useEffect(() => {
+        const handleLocationChange = () => {
+            setActiveSection(pathname === '/projects' ? 'projects' : 'about');
         };
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('popstate', handleLocationChange);
@@ -51,7 +114,7 @@ const Navbar = () => {
             window.removeEventListener('popstate', handleLocationChange);
         };
     }, [pathname]);
- 
+
     return (
         <nav className="rounded-lg border-b transition-all duration-300 hover:border-b-primary">
             <div className="flex items-center justify-between py-2">

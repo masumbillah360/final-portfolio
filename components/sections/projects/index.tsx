@@ -9,6 +9,7 @@ import Titlebar from '@/components/title-bar';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 export const content = [
     {
         title: 'Collaborative Editing',
@@ -113,7 +114,9 @@ const Projects = () => {
                                     target="_blank"
                                     className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white flex items-center gap-1">
                                     <BorderButton containerClassName="h-10">
-                                        <Button className='h-8' variant={'outline'}>
+                                        <Button
+                                            className="h-8"
+                                            variant={'outline'}>
                                             Live
                                         </Button>
                                     </BorderButton>
@@ -128,7 +131,9 @@ const Projects = () => {
             </div>
 
             <div className="w-full flex justify-center items-center">
-                <Button className="bg-slate-600">SEE ALL</Button>
+                <Link href={'/projects'}>
+                    <Button className="bg-slate-600">SEE ALL</Button>
+                </Link>
             </div>
         </div>
     );
