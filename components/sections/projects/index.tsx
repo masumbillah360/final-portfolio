@@ -4,8 +4,10 @@ import {
     CardContainer,
     CardItem,
 } from '@/components/framer-motion/3d-card';
+import { BorderButton } from '@/components/framer-motion/moving-border';
 import Titlebar from '@/components/title-bar';
 import { Button } from '@/components/ui/button';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 export const content = [
     {
@@ -109,14 +111,15 @@ const Projects = () => {
                                     translateZ={20}
                                     href="https://twitter.com/mannupaaji"
                                     target="_blank"
-                                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white">
-                                    Try now →
+                                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white flex items-center gap-1">
+                                    <BorderButton containerClassName="h-10">
+                                        <Button className='h-8' variant={'outline'}>
+                                            Live
+                                        </Button>
+                                    </BorderButton>
                                 </CardItem>
-                                <CardItem
-                                    translateZ={20}
-                                    as="button"
-                                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold">
-                                    Sign up
+                                <CardItem translateZ={20}>
+                                    <Button variant={'default'}>Details</Button>
                                 </CardItem>
                             </div>
                         </CardBody>
@@ -124,8 +127,8 @@ const Projects = () => {
                 ))}
             </div>
 
-            <div className='w-full flex justify-center items-center'>
-                <Button className='bg-slate-600'>SEE ALL</Button>
+            <div className="w-full flex justify-center items-center">
+                <Button className="bg-slate-600">SEE ALL</Button>
             </div>
         </div>
     );

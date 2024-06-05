@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
+
 import { ThemeProvider } from '@/components/provider/theme-provider';
-import Navbar from '@/components/shared/nav-bar';
 import { Toaster } from '@/components/ui/toaster';
+
+import Navbar from '@/components/shared/nav-bar';
+import Footer from '@/components/shared/footer';
+
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,7 +32,7 @@ export default function RootLayout({
                     defaultTheme="system"
                     enableSystem
                     disableTransitionOnChange>
-                    <main className="container mx-auto">
+                    <main className="px-1 md:px-0 md:container mx-auto">
                         <div className="sticky top-0 z-50 backdrop-blur bg-opacity-95 h-20 rounded-b-lg">
                             <div className="absolute bottom-0 w-full">
                                 <Navbar />
@@ -38,6 +42,7 @@ export default function RootLayout({
                     </main>
                     <Toaster />
                 </ThemeProvider>
+                <Footer />
             </body>
         </html>
     );

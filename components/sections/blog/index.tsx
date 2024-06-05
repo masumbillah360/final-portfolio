@@ -43,11 +43,10 @@ const Blog = () => {
                                     />
                                 </CardItem>
                                 <div className="flex justify-end items-center gap-3 mt-7">
-                                    <CardItem
-                                        translateZ={20}
-                                        as="button"
-                                        className="px-4 py-1 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold">
-                                        Read More
+                                    <CardItem translateZ={20}>
+                                        <Button variant={'link'} className='h-10'>
+                                            Read More
+                                        </Button>
                                     </CardItem>
                                 </div>
                             </CardBody>

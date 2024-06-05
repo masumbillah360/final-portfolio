@@ -58,9 +58,9 @@ const ContactSection = () => {
     }
 
     return (
-        <div id="contact" className="relative min-h-screen">
+        <div id="contact" className="relative my-10 md:my-14 lg:my-20">
             <Titlebar title="Contact Me" />
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center my-10 md:my-14 lg:my-20">
                 <div className="hidden md:block w-full h-3/4">
                     <AnimationLottieClient animationPath={lottieFile} />
                 </div>
