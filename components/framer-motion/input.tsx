@@ -1,4 +1,3 @@
-// Input component extends from shadcnui - https://ui.shadcn.com/docs/components/input
 'use client';
 import * as React from 'react';
 import { useMotionTemplate, useMotionValue, motion } from 'framer-motion';
@@ -67,9 +66,8 @@ const FramerTextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
         let mouseX = useMotionValue(0);
         let mouseY = useMotionValue(0);
 
-        function handleMouseMove({ currentTarget, clientX, clientY }: any) {
+        function handleMouseMoveForTextArea({ currentTarget, clientX, clientY }: any) {
             let { left, top } = currentTarget.getBoundingClientRect();
-
             mouseX.set(clientX - left);
             mouseY.set(clientY - top);
         }
@@ -84,12 +82,12 @@ const FramerTextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
         )
       `,
                 }}
-                onMouseMove={handleMouseMove}
+                onMouseMove={handleMouseMoveForTextArea}
                 onMouseEnter={() => setVisible(true)}
                 onMouseLeave={() => setVisible(false)}
                 className="p-[2px] rounded-lg transition duration-300 group/input">
                 <textarea
-                    rows={rows?? 6}
+                    rows={rows ?? 6}
                     className={cn(
                         `flex h-10 w-full border-none bg-gray-50 dark:bg-zinc-800 text-black dark:text-white shadow-input rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
           file:text-sm file:font-medium placeholder:text-neutral-400 dark:placeholder-text-neutral-600 
