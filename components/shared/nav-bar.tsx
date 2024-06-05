@@ -21,7 +21,9 @@ import {
 
 const Navbar = () => {
     const pathname = usePathname();
-    // const [activeSection, setActiveSection] = useState('');
+    const [activeSection, setActiveSection] = useState(
+        getInitialActiveSection()
+    );
     const [mounted, setMounted] = useState(false);
 
     //******************************* */
@@ -31,14 +33,11 @@ const Navbar = () => {
         } else if (pathname === '/blogs') {
             return 'blogs';
         } else {
-            return 'home';
+            return 'about';
         }
     }
 
     const [expanded, setExpanded] = useState(false);
-    const [activeSection, setActiveSection] = useState(
-        getInitialActiveSection()
-    );
 
     const handleScroll = () => {
         const targetHeight = window.innerHeight / 2;
@@ -59,6 +58,13 @@ const Navbar = () => {
 
     console.log({ pathname, activeSection });
     useEffect(() => {
+        if (pathname === '/projects') {
+            setActiveSection('projects');
+        } else if (pathname === '/blogs') {
+            setActiveSection('blogs');
+        } else {
+            setActiveSection('about');
+        }
         const handleLocationChange = () => {
             if (pathname === '/projects') {
                 setActiveSection('projects');
@@ -84,25 +90,8 @@ const Navbar = () => {
 
     const getNavLinkClass = (sectionName: string) =>
         activeSection === sectionName
-            ? 'text-primary font-medium'
-            : 'text-sub_text';
-    //******************************* */
-    // const handleScroll = () => {
-    //     const targetHeight = window.innerHeight / 2;
-    //     for (const [section, id] of Object.entries(sectionIds)) {
-    //         const sectionElement = document?.getElementById(id);
-    //         const rect = sectionElement?.getBoundingClientRect();
-    //         if (
-    //             rect?.top &&
-    //             rect?.top <= targetHeight &&
-    //             rect?.bottom &&
-    //             rect?.bottom >= targetHeight
-    //         ) {
-    //             setActiveSection(section);
-    //             break;
-    //         }
-    //     }
-    // };
+            ? 'text-primary dark:text-white font-medium border-b-2 border-b-primary'
+            : '';
     useEffect(() => {
         const handleLocationChange = () => {
             setActiveSection(pathname === '/projects' ? 'projects' : 'about');
@@ -114,6 +103,10 @@ const Navbar = () => {
             window.removeEventListener('popstate', handleLocationChange);
         };
     }, [pathname]);
+
+    if (!activeSection) {
+        return null;
+    }
 
     return (
         <nav className="rounded-lg border-b transition-all duration-300 hover:border-b-primary">
@@ -151,10 +144,10 @@ const Navbar = () => {
                                         : `/#${sectionIds[route.path]}`
                                 }>
                                 <div
-                                    className={`dark:text-white transition-colors duration-300 hover:text-violet-500 font-semibold ${
+                                    className={` transition-colors duration-300 hover:text-violet-500 font-semibold ${
                                         activeSection === route.path
-                                            ? 'text-primary border-b-2 border-b-primary'
-                                            : ''
+                                            ? getNavLinkClass(activeSection)
+                                            : 'dark:text-violet-300'
                                     }`}>
                                     {route.label}
                                 </div>
