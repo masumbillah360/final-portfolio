@@ -15,7 +15,11 @@ const Footer = () => {
                     <div className="flex flex-wrap justify-center items-center gap-4">
                         {linkData.map((l, i) => (
                             <Link
-                                href={'/'}
+                                href={
+                                    l.url.startsWith('masumbillah6584')
+                                        ? `mailto:${l.url}`
+                                        : l.url
+                                }
                                 target="_blank"
                                 className="h-10 md:h-16 w-10 md:w-16 rounded-full border p-2"
                                 key={i + 'Link Key'}>

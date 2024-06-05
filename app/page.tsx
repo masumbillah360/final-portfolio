@@ -8,6 +8,7 @@ import HeroSection from '@/components/sections/hero-section';
 import Projects from '@/components/sections/projects';
 import Skills from '@/components/sections/skills';
 import { useEffect, useState } from 'react';
+import Loader from '../components/loader';
 
 export default function Home() {
     const [mounted, setMounted] = useState(false);
@@ -15,7 +16,7 @@ export default function Home() {
         setMounted(true);
     }, []);
     if (!mounted) {
-        return;
+        return <Loader />
     }
     return (
         <>
