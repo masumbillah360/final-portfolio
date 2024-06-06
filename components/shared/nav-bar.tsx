@@ -17,9 +17,11 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet';
+import { usePathname, useRouter } from 'next/navigation';
+import { Button } from '../ui/button';
 
-const usePathname = () => {
-    const [pathname, setPathname] = useState(() => {
+const useHashRoute = () => {
+    const [routeName, setRouteName] = useState(() => {
         if (typeof window !== 'undefined') {
             return window.location.hash.slice(1) || '/';
         }
@@ -30,7 +32,7 @@ const usePathname = () => {
         if (typeof window === 'undefined') return;
 
         const handleHashChange = () => {
-            setPathname(window.location.hash.slice(1) || '/');
+            setRouteName(window.location.hash.slice(1) || '/');
         };
 
         window.addEventListener('hashchange', handleHashChange);
@@ -40,22 +42,23 @@ const usePathname = () => {
         };
     }, []);
 
-    return pathname;
+    return routeName;
 };
 
 const Navbar = () => {
     const pathname = usePathname();
-    const [activeSection, setActiveSection] = useState(() =>
-        getInitialActiveSection(pathname)
-    );
+    const router = useRouter();
+    const hashRouteName = useHashRoute();
+    const [activeSection, setActiveSection] = useState('home');
+    const [mount, setMount] = useState(false);
 
-    function getInitialActiveSection(path:any) {
+    function getInitialActiveSection(path: any) {
         if (path === '/projects') {
             return 'projects';
         } else if (path === '/blogs') {
             return 'blogs';
         } else {
-            return 'about';
+            return 'home';
         }
     }
 
@@ -79,7 +82,7 @@ const Navbar = () => {
     useEffect(() => {
         if (typeof window === 'undefined') return;
 
-        setActiveSection(getInitialActiveSection(pathname));
+        setActiveSection(getInitialActiveSection(hashRouteName));
 
         window.addEventListener('scroll', handleScroll);
         const handlePopState = () => {
@@ -93,14 +96,32 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('popstate', handlePopState);
         };
-    }, [pathname, handleScroll]);
+    }, [hashRouteName, handleScroll]);
 
-    const getNavLinkClass = (sectionName:any) =>
+    useEffect(() => {
+        setMount(true);
+    }, []);
+    useEffect(() => {
+        if (pathname === '/projects') {
+            setActiveSection('projects');
+        } else if (pathname === '/blogs') {
+            setActiveSection('blogs');
+        } else {
+            return setActiveSection(
+                window?.location?.hash?.split('#')[1] || 'home'
+            );
+        }
+    }, [pathname]);
+    if (!mount) {
+        return null;
+    }
+    const getNavLinkClass = (sectionName: any) =>
         activeSection === sectionName
             ? 'text-primary dark:text-white font-medium border-b-2 border-b-primary'
             : '';
 
-    console.log({ pathname, activeSection });
+    console.log({ hashRouteName, activeSection });
+    console.log(['HASH ', window.location.hash, '||', 'PATH', pathname]);
 
     return (
         <nav className="rounded-lg border-b transition-all duration-300 hover:border-b-primary">
@@ -130,9 +151,14 @@ const Navbar = () => {
                     </li>
                     {routes.map((route) => (
                         <li key={route.label}>
-                            <Link
+                            <Button
                                 className="block px-4 py-2 no-underline outline-none hover:no-underline"
-                                href={`/#${sectionIds[route.path]}`}>
+                                onClick={() => {
+                                    router.replace(`/#${sectionIds[route.path]}`, {
+                                        scroll: true,
+                                    });
+                                }}
+                            >
                                 <div
                                     className={`transition-colors duration-300 hover:text-violet-500 font-semibold ${
                                         activeSection === route.path
@@ -141,7 +167,7 @@ const Navbar = () => {
                                     }`}>
                                     {route.label}
                                 </div>
-                            </Link>
+                            </Button>
                         </li>
                     ))}
                 </ul>
