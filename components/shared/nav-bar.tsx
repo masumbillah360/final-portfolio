@@ -1,12 +1,11 @@
 'use client';
 
-import { routes, sectionIds } from '@/constants';
-import { Menu } from 'lucide-react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { BorderButton } from '../framer-motion/moving-border';
 import { ModeToggle } from '../theme/mode-toggle';
+import { Menu } from 'lucide-react';
+import { routes, sectionIds } from '@/constants';
+import { useEffect, useState, useCallback } from 'react';
+import { BorderButton } from '../framer-motion/moving-border';
 
 // for mobile nav
 import {
@@ -19,27 +18,48 @@ import {
     SheetTrigger,
 } from '@/components/ui/sheet';
 
+const usePathname = () => {
+    const [pathname, setPathname] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return window.location.hash.slice(1) || '/';
+        }
+        return '/';
+    });
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        const handleHashChange = () => {
+            setPathname(window.location.hash.slice(1) || '/');
+        };
+
+        window.addEventListener('hashchange', handleHashChange);
+
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange);
+        };
+    }, []);
+
+    return pathname;
+};
+
 const Navbar = () => {
     const pathname = usePathname();
-    const [activeSection, setActiveSection] = useState(
-        getInitialActiveSection()
+    const [activeSection, setActiveSection] = useState(() =>
+        getInitialActiveSection(pathname)
     );
-    const [mounted, setMounted] = useState(false);
 
-    //******************************* */
-    function getInitialActiveSection() {
-        if (pathname === '/projects') {
+    function getInitialActiveSection(path:any) {
+        if (path === '/projects') {
             return 'projects';
-        } else if (pathname === '/blogs') {
+        } else if (path === '/blogs') {
             return 'blogs';
         } else {
             return 'about';
         }
     }
 
-    const [expanded, setExpanded] = useState(false);
-
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         const targetHeight = window.innerHeight / 2;
         for (const [section, id] of Object.entries(sectionIds)) {
             const sectionElement = document?.getElementById(id);
@@ -54,59 +74,33 @@ const Navbar = () => {
                 break;
             }
         }
-    };
+    }, []);
 
-    console.log({ pathname, activeSection });
     useEffect(() => {
-        if (pathname === '/projects') {
-            setActiveSection('projects');
-        } else if (pathname === '/blogs') {
-            setActiveSection('blogs');
-        } else {
-            setActiveSection('about');
-        }
-        const handleLocationChange = () => {
-            if (pathname === '/projects') {
-                setActiveSection('projects');
-            } else if (pathname === '/blogs') {
-                setActiveSection('blogs');
-            } else {
-                setActiveSection('about');
-            }
-        };
+        if (typeof window === 'undefined') return;
+
+        setActiveSection(getInitialActiveSection(pathname));
 
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('popstate', handleLocationChange);
+        const handlePopState = () => {
+            setActiveSection(
+                getInitialActiveSection(window.location.hash.slice(1) || '/')
+            );
+        };
+        window.addEventListener('popstate', handlePopState);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('popstate', handleLocationChange);
+            window.removeEventListener('popstate', handlePopState);
         };
-    }, [pathname]);
+    }, [pathname, handleScroll]);
 
-    useEffect(() => {
-        document.body.style.overflow = expanded ? 'hidden' : 'unset';
-    }, [expanded]);
-
-    const getNavLinkClass = (sectionName: string) =>
+    const getNavLinkClass = (sectionName:any) =>
         activeSection === sectionName
             ? 'text-primary dark:text-white font-medium border-b-2 border-b-primary'
             : '';
-    useEffect(() => {
-        const handleLocationChange = () => {
-            setActiveSection(pathname === '/projects' ? 'projects' : 'about');
-        };
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('popstate', handleLocationChange);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('popstate', handleLocationChange);
-        };
-    }, [pathname]);
 
-    if (!activeSection) {
-        return null;
-    }
+    console.log({ pathname, activeSection });
 
     return (
         <nav className="rounded-lg border-b transition-all duration-300 hover:border-b-primary">
@@ -129,7 +123,7 @@ const Navbar = () => {
                 </div>
 
                 <ul
-                    className="mt-4  h-screen max-h-0 w-full flex-col items-start text-sm hidden md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 lg:flex"
+                    className="mt-4 h-screen max-h-0 w-full flex-col items-start text-sm hidden md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 lg:flex"
                     id="navbar-default">
                     <li className="mr-3">
                         <ModeToggle />
@@ -138,13 +132,9 @@ const Navbar = () => {
                         <li key={route.label}>
                             <Link
                                 className="block px-4 py-2 no-underline outline-none hover:no-underline"
-                                href={
-                                    pathname === '/'
-                                        ? `#${sectionIds[route.path]}`
-                                        : `/#${sectionIds[route.path]}`
-                                }>
+                                href={`/#${sectionIds[route.path]}`}>
                                 <div
-                                    className={` transition-colors duration-300 hover:text-violet-500 font-semibold ${
+                                    className={`transition-colors duration-300 hover:text-violet-500 font-semibold ${
                                         activeSection === route.path
                                             ? getNavLinkClass(activeSection)
                                             : 'dark:text-violet-300'
@@ -173,26 +163,16 @@ const Navbar = () => {
                                     <div className="grid grid-cols-4 items-center gap-4"></div>
                                 </div>
                                 <ul
-                                    className="mt-4  h-screen max-h-0 w-full flex-col items-start text-sm  md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 lg:flex"
+                                    className="mt-4 h-screen max-h-0 w-full flex-col items-start text-sm md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 lg:flex"
                                     id="navbar-mobile">
                                     {routes.map((route) => (
                                         <li key={route.label}>
                                             <SheetClose>
                                                 <Link
                                                     className="block px-4 py-2 no-underline outline-none hover:no-underline"
-                                                    href={
-                                                        pathname === '/'
-                                                            ? `#${
-                                                                  sectionIds[
-                                                                      route.path
-                                                                  ]
-                                                              }`
-                                                            : `/#${
-                                                                  sectionIds[
-                                                                      route.path
-                                                                  ]
-                                                              }`
-                                                    }>
+                                                    href={`/#${
+                                                        sectionIds[route.path]
+                                                    }`}>
                                                     <div
                                                         className={`dark:text-white transition-colors duration-300 hover:text-violet-500 font-semibold ${
                                                             activeSection ===
