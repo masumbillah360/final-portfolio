@@ -1,9 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { ModeToggle } from '../theme/mode-toggle';
+import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+
 import { Menu } from 'lucide-react';
-import { routes, sectionIds } from '@/constants';
+
+import { Button } from '../ui/button';
+import { ModeToggle } from '../theme/mode-toggle';
 import { BorderButton } from '../framer-motion/moving-border';
 
 // for mobile nav
@@ -16,38 +20,57 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet';
-import { useRouter } from 'next/navigation';
-import { Button } from '../ui/button';
-import { useEffect, useState } from 'react';
+
+import { routes, sectionIds } from '@/constants';
 
 const Navbar = () => {
     const router = useRouter();
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-    if (!mounted) return null;
 
+    const [mount, setMount] = useState<boolean>(false);
+    useEffect(() => {
+        setMount(true);
+    }, []);
     return (
         <nav className="rounded-lg border-b transition-all duration-300 hover:border-b-primary">
             <div className="flex items-center justify-between py-2">
                 <div className="flex flex-shrink-0 items-center ml-2">
-                    <BorderButton duration={5000}>
+                    {mount ? (
+                        <BorderButton duration={5000}>
+                            <>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        router.replace('/');
+                                    }}
+                                    className="hidden sm:block text-primary dark:text-primary-foreground text-3xl font-bold uppercase px-3 py-2">
+                                    Masum Billah
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => router.replace('/')}
+                                    className="block sm:hidden text-primary dark:text-primary-foreground text-2xl font-bold uppercase px-3 py-1">
+                                    MB
+                                </button>
+                            </>
+                        </BorderButton>
+                    ) : (
                         <>
-                            <Button
+                            <button
+                                type="button"
                                 onClick={() => {
                                     router.replace('/');
                                 }}
                                 className="hidden sm:block text-primary dark:text-primary-foreground text-3xl font-bold uppercase px-3 py-2">
                                 Masum Billah
-                            </Button>
-                            <Button
+                            </button>
+                            <button
+                                type="button"
                                 onClick={() => router.replace('/')}
                                 className="block sm:hidden text-primary dark:text-primary-foreground text-2xl font-bold uppercase px-3 py-1">
                                 MB
-                            </Button>
+                            </button>
                         </>
-                    </BorderButton>
+                    )}
                 </div>
 
                 <ul
@@ -59,14 +82,12 @@ const Navbar = () => {
                     {routes.map((route) => (
                         <li key={route.label}>
                             <Button
-                                className="block px-4 py-2 no-underline outline-none hover:no-underline"
+                                variant={'outline'}
+                                className="px-4 py-2 dark:bg-slate-800"
                                 onClick={() => {
-                                    router.push(
-                                        `/#${sectionIds[route.path]}`,
-                                        {
-                                            scroll: true,
-                                        }
-                                    );
+                                    router.push(`/#${sectionIds[route.path]}`, {
+                                        scroll: true,
+                                    });
                                 }}>
                                 <div
                                     className={`transition-colors duration-300 hover:text-violet-500 font-semibold 

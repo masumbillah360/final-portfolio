@@ -1,15 +1,22 @@
 'use client';
 
 import Image from 'next/image';
-import Titlebar from '@/components/title-bar';
+import { useEffect, useState } from 'react';
 
+import Titlebar from '@/components/title-bar';
 import AnimationLottieClient from '@/components/lottie/client';
 import { BorderButton } from '@/components/framer-motion/moving-border';
 
 import { educations } from '@/constants/education-data';
 import sectionBackground from '@/public/section.svg';
+import { ExperienceSkeleton } from '@/components/customSkeleton/experience';
 
 const Education = () => {
+    const [mounted, setMounted] = useState<boolean>(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
     return (
         <div className="relative z-40 my-10 md:my-14 lg:my-20">
             <Titlebar title="Education" />
@@ -30,30 +37,39 @@ const Education = () => {
 
                         <div>
                             <div className="flex flex-col gap-6">
-                                {educations.map((education) => (
-                                    <BorderButton
-                                        containerClassName="h-auto border border-slate-400 dark:border-slate-700 hover:border-primary dark:hover:border-white"
-                                        duration={10000}
-                                        key={education.id}>
-                                        <div className="p-3 relative">
-                                            <div className="flex justify-center">
-                                                <p className="text-xs sm:text-sm text-[#16f2b3]">
-                                                    {education.duration}
-                                                </p>
-                                            </div>
-                                            <div className="flex items-center gap-x-8 px-3 py-5">
-                                                <div className="dark:text-white text-black">
-                                                    <p className="sm:text-xl mb-2 font-medium uppercase">
-                                                        {education.title}
-                                                    </p>
-                                                    <p className="text-sm sm:text-base">
-                                                        {education.institution}
+                                {educations.map((education) =>
+                                    mounted ? (
+                                        <BorderButton
+                                            containerClassName="h-auto border border-slate-400 dark:border-slate-700 hover:border-primary dark:hover:border-white"
+                                            duration={10000}
+                                            key={education.id}>
+                                            <div className="p-3 relative">
+                                                <div className="flex justify-center">
+                                                    <p className="text-xs sm:text-sm text-[#16f2b3]">
+                                                        {education.duration}
                                                     </p>
                                                 </div>
+                                                <div className="flex items-center gap-x-8 px-3 py-5">
+                                                    <div className="dark:text-white text-black">
+                                                        <p className="sm:text-xl mb-2 font-medium uppercase">
+                                                            {education.title}
+                                                        </p>
+                                                        <p className="text-sm sm:text-base">
+                                                            {
+                                                                education.institution
+                                                            }
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </BorderButton>
-                                ))}
+                                        </BorderButton>
+                                    ) : (
+                                        <ExperienceSkeleton
+                                            key={
+                                                education.institution
+                                            }></ExperienceSkeleton>
+                                    )
+                                )}
                             </div>
                         </div>
                     </div>

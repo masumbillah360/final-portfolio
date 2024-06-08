@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+
 import { Contact } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import CustomToolTip from '@/components/tool-tip';
@@ -13,13 +15,17 @@ import { linkData } from '@/constants';
 import backgroundImage from '@/public/hero.svg';
 
 const HeroSection = () => {
+    const [mounted, setMounted] = useState<boolean>(false);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     return (
         <section>
             <Image
                 src={backgroundImage}
                 alt="Hero"
-                className="absolute top-0 -z-10 w-full"
+                className="absolute top-0 -z-10 max-w-full"
             />
             <div className="relative flex items-center justify-between my-10 md:my-14 lg:my-20 w-full">
                 <div className="flex justify-between items-center size-full">
@@ -70,16 +76,19 @@ const HeroSection = () => {
                                     </div>
                                 </Button>
                             </Link>
-
-                            <BorderButton
-                                containerClassName="size-auto p-1"
-                                duration={4000}>
-                                <Button>
-                                    <div>
-                                        <h4>Resume</h4>
-                                    </div>
-                                </Button>
-                            </BorderButton>
+                            {mounted ? (
+                                <BorderButton
+                                    containerClassName="size-auto p-1"
+                                    duration={4000}>
+                                    <Button>
+                                        <div>
+                                            <h4>Resume</h4>
+                                        </div>
+                                    </Button>
+                                </BorderButton>
+                            ) : (
+                                <Button variant={'outline'}>Resume</Button>
+                            )}
                         </div>
                     </div>
                     <div className="hidden md:block md:w-full lg:w-1/2">

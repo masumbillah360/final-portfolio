@@ -1,22 +1,22 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+
 import Titlebar from '@/components/title-bar';
 
 import { personalData } from '@/constants/personal-data';
 
+import sectionBackground from '@/public/section.svg';
+
 const AboutSection = () => {
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-    if (!mounted) {
-        return null;
-    }
     return (
         <div className="z-20 relative my-10 md:my-14 lg:my-20">
             <Titlebar title="About Me" />
+            <Image
+                src={sectionBackground}
+                alt="Section Image"
+                className="absolute top-0 -z-10 w-full"
+            />
             <div className="my-9">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
                     <div className="order-2 lg:order-1">

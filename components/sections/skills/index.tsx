@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
 
 import Titlebar from '@/components/title-bar';
+
 import { skillsData, skillsImage } from '@/constants';
 import sectionBackground from '@/public/section.svg';
 
