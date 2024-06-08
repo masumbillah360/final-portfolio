@@ -3,14 +3,20 @@
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
 
-import { skillsData, skillsImage } from '@/constants';
 import Titlebar from '@/components/title-bar';
+import { skillsData, skillsImage } from '@/constants';
+import sectionBackground from '@/public/section.svg';
 
 function Skills() {
     return (
-        <div id="skills" className="relative my-10 md:my-14 lg:my-20">
+        <div className="relative my-10 md:my-14 lg:my-20">
             <Titlebar title="Skills" />
             <div className="my-10">
+                <Image
+                    src={sectionBackground}
+                    alt="Section Image"
+                    className="absolute top-0 -z-10 w-full"
+                />
                 <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
                     <div className="flex flex-row">
                         <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
@@ -81,11 +87,15 @@ function Skills() {
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">mySQL</span>
                                 <span className="text-gray-400">{"', '"}</span>
-                                <span className="text-amber-300">postgreSQL</span>
+                                <span className="text-amber-300">
+                                    postgreSQL
+                                </span>
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">REST API</span>
                                 <span className="text-gray-400">{"', '"}</span>
-                                <span className="text-amber-300">Web Socket</span>
+                                <span className="text-amber-300">
+                                    Web Socket
+                                </span>
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">Swagger</span>
                                 <span className="text-gray-400">{"'],"}</span>

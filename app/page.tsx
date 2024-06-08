@@ -7,7 +7,7 @@ import Experience from '@/components/sections/experience';
 import HeroSection from '@/components/sections/hero-section';
 import Projects from '@/components/sections/projects';
 import Skills from '@/components/sections/skills';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Loader from '../components/loader';
 
 export default function Home() {
@@ -16,19 +16,47 @@ export default function Home() {
         setMounted(true);
     }, []);
     if (!mounted) {
-        return <Loader />
+        return <Loader />;
     }
-    console.log("object");
+    console.log('object');
     return (
         <>
-            <HeroSection />
-            <AboutSection />
-            <Experience />
-            <Skills />
-            <Projects />
-            <Education />
-            <Blog />
-            <ContactSection />
+            <div id="home">
+                <Suspense fallback={null}>
+                    <HeroSection />
+                    <AboutSection />
+                </Suspense>
+            </div>
+            <div id="experience">
+                <Suspense fallback={null}>
+                    <Experience />
+                </Suspense>
+            </div>
+            <div id="skills">
+                <Suspense fallback={null}>
+                    <Skills />
+                </Suspense>
+            </div>
+            <div id="projects">
+                <Suspense fallback={null}>
+                    <Projects />
+                </Suspense>
+            </div>
+            <div id="education">
+                <Suspense fallback={null}>
+                    <Education />
+                </Suspense>
+            </div>
+            <div id="blogs">
+                <Suspense fallback={null}>
+                    <Blog />
+                </Suspense>
+            </div>
+            <div id="contact">
+                <Suspense fallback={null}>
+                    <ContactSection />
+                </Suspense>
+            </div>
         </>
     );
 }

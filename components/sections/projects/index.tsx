@@ -1,15 +1,20 @@
 'use client';
+
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
+import Titlebar from '@/components/title-bar';
+import { Button } from '@/components/ui/button';
 import {
     CardBody,
     CardContainer,
     CardItem,
 } from '@/components/framer-motion/3d-card';
 import { BorderButton } from '@/components/framer-motion/moving-border';
-import Titlebar from '@/components/title-bar';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+
+import sectionBackground from '@/public/section.svg';
+
+
 export const content = [
     {
         title: 'Collaborative Editing',
@@ -79,9 +84,17 @@ export const content = [
     },
 ];
 const Projects = () => {
+    const router = useRouter();
     return (
-        <div id="projects" className="relative z-40 my-10 md:my-14 lg:my-20">
+        <div className="relative z-40 my-10 md:my-14 lg:my-20">
             <Titlebar title="Projects" />
+            <div>
+                <Image
+                    src={sectionBackground}
+                    alt="Section Image"
+                    className="absolute top-0 -z-10 w-full"
+                />
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10 lg:gap-7 my-4 md:my-6 lg:my-10">
                 {content.map((c) => (
                     <CardContainer className="inter-var" key={c.title}>
@@ -131,9 +144,11 @@ const Projects = () => {
             </div>
 
             <div className="w-full flex justify-center items-center">
-                <Link href={'/projects'}>
-                    <Button className="bg-slate-600">SEE ALL</Button>
-                </Link>
+                <Button
+                    onClick={() => router.replace('/projects')}
+                    className="bg-slate-600">
+                    SEE ALL
+                </Button>
             </div>
         </div>
     );

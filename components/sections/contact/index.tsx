@@ -1,13 +1,15 @@
 'use client';
 
-import { FramerInput, FramerTextArea } from '@/components/framer-motion/input';
-import Titlebar from '@/components/title-bar';
-import lottieFile from '@/public/lottie/contact.json';
-import AnimationLottieClient from '@/components/lottie/client';
-import { useToast } from '@/components/ui/use-toast';
 import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
+import Image from 'next/image';
 import { useForm } from 'react-hook-form';
+import { useToast } from '@/components/ui/use-toast';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import Titlebar from '@/components/title-bar';
+import { Button } from '@/components/ui/button';
+import { FramerInput, FramerTextArea } from '@/components/framer-motion/input';
+import AnimationLottieClient from '@/components/lottie/client';
 import {
     Form,
     FormControl,
@@ -16,7 +18,8 @@ import {
     FormLabel,
     FormMessage,
 } from '@/components/ui/form';
-import { Button } from '@/components/ui/button';
+
+import sectionBackground from '@/public/section.svg';
 
 const formSchema = z.object({
     name: z
@@ -37,7 +40,7 @@ const formSchema = z.object({
         .min(20, { message: 'Minimum value should be 20' })
         .max(500, { message: 'Maximum value should be 500' }),
 });
-const ContactSection = () => {
+const ContactSection = () => { 
     const { toast } = useToast();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -48,6 +51,7 @@ const ContactSection = () => {
             message: '',
         },
     });
+   
     function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values);
         form.reset();
@@ -58,11 +62,20 @@ const ContactSection = () => {
     }
 
     return (
-        <div id="contact" className="relative my-10 md:my-14 lg:my-20">
+        <div className="relative my-10 md:my-14 lg:my-20">
             <Titlebar title="Contact Me" />
+            <div>
+                <Image
+                    src={sectionBackground}
+                    alt="Section Image"
+                    className="absolute top-0 -z-10 w-full"
+                />
+            </div>
             <div className="flex justify-between items-center my-10 md:my-14 lg:my-20">
                 <div className="hidden md:block w-full h-3/4">
-                    <AnimationLottieClient animationPath={lottieFile} />
+                    <AnimationLottieClient
+                        animationPath={'/lottie/contact.json'}
+                    />
                 </div>
                 <Form {...form}>
                     <form

@@ -1,20 +1,28 @@
 'use client';
 
+import Image from 'next/image';
+
 import Titlebar from '@/components/title-bar';
-import { content } from '../projects';
+import { Button } from '@/components/ui/button';
 import {
     CardBody,
     CardContainer,
     CardItem,
 } from '@/components/framer-motion/3d-card';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+
+import { content } from '../projects';
+import sectionBackground from '@/public/section.svg';
 
 const Blog = () => {
     return (
-        <div id="blogs" className="relative z-40 my-10 md:my-14 lg:my-20">
+        <div className="relative z-40 my-10 md:my-14 lg:my-20">
             <Titlebar title="Blogs" />
             <div className="my-10">
+                <Image
+                    src={sectionBackground}
+                    alt="Section Image"
+                    className="absolute top-0 -z-10 w-full"
+                />
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10 lg:gap-7 my-4 md:my-6 lg:my-10">
                     {content.map((c) => (
                         <CardContainer className="inter-var" key={c.title}>
@@ -44,7 +52,9 @@ const Blog = () => {
                                 </CardItem>
                                 <div className="flex justify-end items-center gap-3 mt-7">
                                     <CardItem translateZ={20}>
-                                        <Button variant={'link'} className='h-10'>
+                                        <Button
+                                            variant={'link'}
+                                            className="h-10">
                                             Read More
                                         </Button>
                                     </CardItem>

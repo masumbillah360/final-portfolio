@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { ModeToggle } from '../theme/mode-toggle';
 import { Menu } from 'lucide-react';
 import { routes, sectionIds } from '@/constants';
-import { useEffect, useState, useCallback } from 'react';
 import { BorderButton } from '../framer-motion/moving-border';
 
 // for mobile nav
@@ -17,111 +16,17 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Button } from '../ui/button';
-
-const useHashRoute = () => {
-    const [routeName, setRouteName] = useState(() => {
-        if (typeof window !== 'undefined') {
-            return window.location.hash.slice(1) || '/';
-        }
-        return '/';
-    });
-
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-
-        const handleHashChange = () => {
-            setRouteName(window.location.hash.slice(1) || '/');
-        };
-
-        window.addEventListener('hashchange', handleHashChange);
-
-        return () => {
-            window.removeEventListener('hashchange', handleHashChange);
-        };
-    }, []);
-
-    return routeName;
-};
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
-    const pathname = usePathname();
     const router = useRouter();
-    const hashRouteName = useHashRoute();
-    const [activeSection, setActiveSection] = useState('home');
-    const [mount, setMount] = useState(false);
-
-    function getInitialActiveSection(path: any) {
-        if (path === '/projects') {
-            return 'projects';
-        } else if (path === '/blogs') {
-            return 'blogs';
-        } else {
-            return 'home';
-        }
-    }
-
-    const handleScroll = useCallback(() => {
-        const targetHeight = window.innerHeight / 2;
-        for (const [section, id] of Object.entries(sectionIds)) {
-            const sectionElement = document?.getElementById(id);
-            const rect = sectionElement?.getBoundingClientRect();
-            if (
-                rect?.top &&
-                rect?.top <= targetHeight &&
-                rect?.bottom &&
-                rect?.bottom >= targetHeight
-            ) {
-                setActiveSection(section);
-                break;
-            }
-        }
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+        setMounted(true);
     }, []);
-
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-
-        setActiveSection(getInitialActiveSection(hashRouteName));
-
-        window.addEventListener('scroll', handleScroll);
-        const handlePopState = () => {
-            setActiveSection(
-                getInitialActiveSection(window.location.hash.slice(1) || '/')
-            );
-        };
-        window.addEventListener('popstate', handlePopState);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('popstate', handlePopState);
-        };
-    }, [hashRouteName, handleScroll]);
-
-    useEffect(() => {
-        setMount(true);
-    }, []);
-    useEffect(() => {
-        if (pathname === '/projects') {
-            setActiveSection('projects');
-        } else if (pathname === '/blogs') {
-            setActiveSection('blogs');
-        } else {
-            return setActiveSection(
-                window?.location?.hash?.split('#')[1] || 'home'
-            );
-        }
-    }, [pathname]);
-    if (!mount) {
-        return null;
-    }
-    const getNavLinkClass = (sectionName: any) =>
-        activeSection === sectionName
-            ? 'text-primary dark:text-white font-medium border-b-2 border-b-primary'
-            : '';
-
-    console.log({ hashRouteName, activeSection });
-    console.log(['HASH ', window.location.hash, '||', 'PATH', pathname]);
+    if (!mounted) return null;
 
     return (
         <nav className="rounded-lg border-b transition-all duration-300 hover:border-b-primary">
@@ -129,16 +34,18 @@ const Navbar = () => {
                 <div className="flex flex-shrink-0 items-center ml-2">
                     <BorderButton duration={5000}>
                         <>
-                            <Link
-                                href="/"
+                            <Button
+                                onClick={() => {
+                                    router.replace('/');
+                                }}
                                 className="hidden sm:block text-primary dark:text-primary-foreground text-3xl font-bold uppercase px-3 py-2">
                                 Masum Billah
-                            </Link>
-                            <Link
-                                href="/"
+                            </Button>
+                            <Button
+                                onClick={() => router.replace('/')}
                                 className="block sm:hidden text-primary dark:text-primary-foreground text-2xl font-bold uppercase px-3 py-1">
                                 MB
-                            </Link>
+                            </Button>
                         </>
                     </BorderButton>
                 </div>
@@ -154,16 +61,20 @@ const Navbar = () => {
                             <Button
                                 className="block px-4 py-2 no-underline outline-none hover:no-underline"
                                 onClick={() => {
-                                    router.replace(`/#${sectionIds[route.path]}`, {
-                                        scroll: true,
-                                    });
-                                }}
-                            >
+                                    router.push(
+                                        `/#${sectionIds[route.path]}`,
+                                        {
+                                            scroll: true,
+                                        }
+                                    );
+                                }}>
                                 <div
-                                    className={`transition-colors duration-300 hover:text-violet-500 font-semibold ${
-                                        activeSection === route.path
-                                            ? getNavLinkClass(activeSection)
-                                            : 'dark:text-violet-300'
+                                    className={`transition-colors duration-300 hover:text-violet-500 font-semibold 
+                                    ${
+                                        ''
+                                        // activeSection === route.path
+                                        //     ? getNavLinkClass(activeSection)
+                                        //     : 'dark:text-violet-300'
                                     }`}>
                                     {route.label}
                                 </div>
@@ -201,10 +112,11 @@ const Navbar = () => {
                                                     }`}>
                                                     <div
                                                         className={`dark:text-white transition-colors duration-300 hover:text-violet-500 font-semibold ${
-                                                            activeSection ===
-                                                            route.path
-                                                                ? 'text-primary border-b-2 border-b-primary'
-                                                                : ''
+                                                            ''
+                                                            // activeSection ===
+                                                            // route.path
+                                                            //     ? 'text-primary border-b-2 border-b-primary'
+                                                            // : ''
                                                         }`}>
                                                         {route.label}
                                                     </div>

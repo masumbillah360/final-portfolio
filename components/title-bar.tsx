@@ -15,8 +15,10 @@ const Titlebar = ({ title }: { title: string }) => {
             <div className="flex justify-center py-2">
                 <div className="flex items-center">
                     <span className="w-10 md:w-24 h-[2px] bg-[#1a1443]"></span>
-                    <BorderButton containerClassName="cursor-default size-auto" duration={5000}>
-                        <span className="bg-slate-200 text-slate-950 dark:bg-[#1a1443] w-fit dark:text-white p-2 px-5 text-xl rounded-md uppercase font-semibold tracking-widest">
+                    <BorderButton
+                        containerClassName="cursor-default size-auto"
+                        duration={5000}>
+                        <span className="bg-white text-violet-950 dark:bg-[#201844] w-fit dark:text-white p-2 px-5 text-xl rounded-md uppercase font-bold tracking-widest border border-primary dark:border-[#1a1443]">
                             {title}
                         </span>
                     </BorderButton>

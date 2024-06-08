@@ -1,32 +1,30 @@
 'use client';
 
-import AnimationLottieClient from '@/components/lottie/client';
-import Titlebar from '@/components/title-bar';
-import { educations } from '@/constants/education-data';
 import Image from 'next/image';
-import lottieFile from '@/public/lottie/education.json';
+import Titlebar from '@/components/title-bar';
+
+import AnimationLottieClient from '@/components/lottie/client';
 import { BorderButton } from '@/components/framer-motion/moving-border';
+
+import { educations } from '@/constants/education-data';
+import sectionBackground from '@/public/section.svg';
 
 const Education = () => {
     return (
-        <div id="education" className="relative z-40 my-10 md:my-14 lg:my-20">
+        <div className="relative z-40 my-10 md:my-14 lg:my-20">
             <Titlebar title="Education" />
             <div className="my-10 md:my-14 lg:my-20">
                 <Image
-                    src="/section.svg"
-                    alt="Hero"
-                    width={1572}
-                    height={795}
-                    className="absolute top-0 -z-10"
+                    src={sectionBackground}
+                    alt="Section Background"
+                    className="absolute top-0 -z-10 right-0"
                 />
 
                 <div className="py-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
                         <div className="flex justify-center items-start">
                             <div className="w-3/4 h-3/4">
-                                <AnimationLottieClient
-                                    animationPath={lottieFile}
-                                />
+                                <AnimationLottieClient animationPath="/lottie/education.json" />
                             </div>
                         </div>
 
@@ -34,26 +32,16 @@ const Education = () => {
                             <div className="flex flex-col gap-6">
                                 {educations.map((education) => (
                                     <BorderButton
-                                        containerClassName="h-auto"
+                                        containerClassName="h-auto border border-slate-400 dark:border-slate-700 hover:border-primary dark:hover:border-white"
                                         duration={10000}
                                         key={education.id}>
                                         <div className="p-3 relative">
-                                            <Image
-                                                src="/blur-23.svg"
-                                                alt="Hero"
-                                                width={1080}
-                                                height={200}
-                                                className="absolute bottom-0 opacity-80"
-                                            />
                                             <div className="flex justify-center">
                                                 <p className="text-xs sm:text-sm text-[#16f2b3]">
                                                     {education.duration}
                                                 </p>
                                             </div>
                                             <div className="flex items-center gap-x-8 px-3 py-5">
-                                                {/* <div className="text-violet-500  transition-all duration-300 hover:scale-125">
-                                                    <School size={36} />
-                                                </div> */}
                                                 <div className="dark:text-white text-black">
                                                     <p className="sm:text-xl mb-2 font-medium uppercase">
                                                         {education.title}

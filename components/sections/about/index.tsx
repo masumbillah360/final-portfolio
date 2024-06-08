@@ -1,11 +1,21 @@
 'use client';
-import Titlebar from '@/components/title-bar';
-import { personalData } from '@/constants/personal-data';
+
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import Titlebar from '@/components/title-bar';
+
+import { personalData } from '@/constants/personal-data';
 
 const AboutSection = () => {
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+    if (!mounted) {
+        return null;
+    }
     return (
-        <div id="about" className="z-20 relative my-10 md:my-14 lg:my-20">
+        <div className="z-20 relative my-10 md:my-14 lg:my-20">
             <Titlebar title="About Me" />
             <div className="my-9">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">

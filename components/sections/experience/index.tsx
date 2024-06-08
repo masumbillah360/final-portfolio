@@ -1,15 +1,24 @@
 'use client';
 
 import Image from 'next/image';
-import { experienceData } from '@/constants/experience-data';
+import { useEffect, useState } from 'react';
+
 import Titlebar from '@/components/title-bar';
+import { experienceData } from '@/constants/experience-data';
 import AnimationLottieClient from '@/components/lottie/client';
-import experience from '@/public/lottie/development.json';
+
 import { BorderButton } from '@/components/framer-motion/moving-border';
 
 function Experience() {
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+    if (!mounted) {
+        return null;
+    }
     return (
-        <div id="experience" className="relative z-40 my-10 md:my-14 lg:my-20">
+        <div className="relative z-40 my-10 md:my-14 lg:my-20">
             <Titlebar title="Experience" />
             <div className="my-10 md:my-14 lg:my-20">
                 <Image
@@ -24,9 +33,7 @@ function Experience() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
                         <div className="flex justify-center items-start">
                             <div className="w-full h-full">
-                                <AnimationLottieClient
-                                    animationPath={experience}
-                                />
+                                <AnimationLottieClient animationPath="/lottie/development.json" />
                             </div>
                         </div>
 
@@ -35,16 +42,9 @@ function Experience() {
                                 {experienceData.map((experience) => (
                                     <BorderButton
                                         key={experience.id}
-                                        containerClassName="h-auto"
+                                        containerClassName="h-auto border border-slate-400 dark:border-slate-700 hover:border-primary dark:hover:border-white"
                                         duration={10000}>
                                         <div className="p-3 relative">
-                                            <Image
-                                                src="/blur-23.svg"
-                                                alt="Hero"
-                                                width={1080}
-                                                height={200}
-                                                className="absolute bottom-0 opacity-80"
-                                            />
                                             <div className="flex justify-center">
                                                 <p
                                                     className={`text-xs sm:text-sm  ${
@@ -56,9 +56,6 @@ function Experience() {
                                                 </p>
                                             </div>
                                             <div className="flex items-center justify-center w-full gap-x-8 px-3 py-5">
-                                                {/* <div className="text-violet-500  transition-all duration-300 hover:scale-125">
-                                                    <Workflow size={36} />
-                                                </div> */}
                                                 <div className="text-black dark:text-white">
                                                     <p className="text-base sm:text-xl mb-2 font-medium uppercase">
                                                         {experience.title}
