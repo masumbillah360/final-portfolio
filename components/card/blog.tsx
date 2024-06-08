@@ -5,6 +5,7 @@ import { CardBody, CardContainer, CardItem } from '../framer-motion/3d-card';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import { CardSkeleton } from '../customSkeleton/card';
+import { useRouter } from 'next/navigation';
 
 interface Props {
     id: string;
@@ -14,10 +15,13 @@ interface Props {
 }
 
 const BlogCard = ({ id, title, subTitle, thumbnail }: Props) => {
+    const router = useRouter();
     const [mounted, setMounted] = useState<boolean>(false);
+
     useEffect(() => {
         setMounted(true);
     }, []);
+
     return (
         <div className="size-full">
             {mounted ? (
@@ -48,7 +52,10 @@ const BlogCard = ({ id, title, subTitle, thumbnail }: Props) => {
                         </CardItem>
                         <div className="flex justify-end items-center gap-3 mt-7">
                             <CardItem translateZ={20}>
-                                <Button variant={'link'} className="h-10">
+                                <Button
+                                    onClick={() => router.push(`/blogs/${id}`)}
+                                    variant={'link'}
+                                    className="h-10">
                                     Read More
                                 </Button>
                             </CardItem>

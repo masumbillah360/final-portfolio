@@ -36,25 +36,16 @@ function Skills() {
                                 <span className="mr-2 text-pink-500">
                                     const
                                 </span>
-                                <span className="mr-2 text-white">coder</span>
+                                <span className="mr-2 text-white">skills</span>
                                 <span className="mr-2 text-pink-500">=</span>
                                 <span className="text-gray-400">{'{'}</span>
                             </div>
-                            <div className="mb-1 text-lg font-light">
-                                <span className="ml-4 lg:ml-8 mr-2 text-white">
-                                    name:
-                                </span>
-                                <span className="text-gray-400">{`'`}</span>
-                                <span className="text-amber-300">
-                                    Masum Billah
-                                </span>
-                                <span className="text-gray-400">{`',`}</span>
-                            </div>
+
                             <div className="ml-4 lg:ml-8 mr-2 mb-1">
                                 <span className=" text-white underline underline-offset-4">
-                                    skills
-                                </span>
-                                <span>:</span>{' '}
+                                    frameworkOrLibrary
+                                </span>{' '}
+                                <span className="text-white">:</span>{' '}
                                 <span className="text-gray-400">{`['`}</span>
                                 <span className="text-amber-300">HTML</span>
                                 <span className="text-gray-400">{"', '"}</span>
@@ -105,7 +96,7 @@ function Skills() {
                                 <span className=" text-white underline underline-offset-4">
                                     tools
                                 </span>{' '}
-                                <span>:</span>{' '}
+                                <span className="text-white">:</span>{' '}
                                 <span className="text-gray-400">{`['`}</span>
                                 <span className="text-amber-300">VS Code</span>
                                 <span className="text-gray-400">{"', '"}</span>

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Button } from '../ui/button';
 import { CardSkeleton } from '../customSkeleton/card';
 import { BorderButton } from '../framer-motion/moving-border';
+import { useRouter } from 'next/navigation';
 
 interface Props {
     id: string;
@@ -15,10 +16,13 @@ interface Props {
 }
 
 const ProjectCard = ({ id, title, subTitle, thumbnail }: Props) => {
+    const router = useRouter();
+
     const [mounted, setMounted] = useState<boolean>(false);
     useEffect(() => {
         setMounted(true);
     }, []);
+
     return (
         <div className="size-full">
             {mounted ? (
@@ -27,13 +31,13 @@ const ProjectCard = ({ id, title, subTitle, thumbnail }: Props) => {
                         <CardItem
                             translateZ="50"
                             className="text-xl font-bold text-neutral-600 dark:text-white">
-                           {title}
+                            {title}
                         </CardItem>
                         <CardItem
                             as="p"
                             translateZ="60"
                             className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
-                           {subTitle}
+                            {subTitle}
                         </CardItem>
                         <CardItem translateZ="100" className="w-full mt-4">
                             <Image
@@ -64,7 +68,13 @@ const ProjectCard = ({ id, title, subTitle, thumbnail }: Props) => {
                                 </BorderButton>
                             </CardItem>
                             <CardItem translateZ={20}>
-                                <Button variant={'default'}>Details</Button>
+                                <Button
+                                    onClick={() => {
+                                        router.push(`/projects/${id}`);
+                                    }}
+                                    variant={'default'}>
+                                    Details
+                                </Button>
                             </CardItem>
                         </div>
                     </CardBody>

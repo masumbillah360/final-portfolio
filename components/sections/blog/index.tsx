@@ -1,16 +1,17 @@
 'use client';
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 import Titlebar from '@/components/title-bar';
 import { Button } from '@/components/ui/button';
-
-import { content } from '../projects';
-import sectionBackground from '@/public/section.svg';
-
 import BlogCard from '@/components/card/blog';
 
+import sectionBackground from '@/public/section.svg';
+import { content } from '@/constants/projects';
+
 const Blog = () => {
+    const router = useRouter();
     return (
         <div className="relative z-40 my-10 md:my-14 lg:my-20">
             <Titlebar title="Blogs" />
@@ -36,7 +37,11 @@ const Blog = () => {
                 </div>
             </div>
             <div className="w-full flex justify-center items-center">
-                <Button className="bg-slate-600">SEE ALL</Button>
+                <Button
+                    onClick={() => router.push('/blogs')}
+                    className="bg-slate-600">
+                    SEE ALL
+                </Button>
             </div>
         </div>
     );
