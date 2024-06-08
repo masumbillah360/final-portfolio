@@ -30,6 +30,7 @@ const Navbar = () => {
     useEffect(() => {
         setMount(true);
     }, []);
+
     return (
         <nav className="rounded-lg border-b transition-all duration-300 hover:border-b-primary">
             <div className="flex items-center justify-between py-2">
@@ -76,14 +77,14 @@ const Navbar = () => {
                 <ul
                     className="mt-4 h-screen max-h-0 w-full flex-col items-start text-sm hidden md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 lg:flex"
                     id="navbar-default">
-                    <li className="mr-3">
+                    <li className="mr-2">
                         <ModeToggle />
                     </li>
                     {routes.map((route) => (
                         <li key={route.label}>
                             <Button
                                 variant={'outline'}
-                                className="px-4 py-2 dark:bg-slate-800"
+                                className="px-4 py-2 dark:bg-slate-800 mr-1"
                                 onClick={() => {
                                     router.push(`/#${sectionIds[route.path]}`, {
                                         scroll: true,
