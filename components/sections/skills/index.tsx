@@ -36,7 +36,9 @@ function Skills() {
                                 <span className="mr-2 text-pink-500">
                                     const
                                 </span>
-                                <span className="mr-2 text-white">skills</span>
+                                <span className="mr-2 text-white tracking-widest">
+                                    skills
+                                </span>
                                 <span className="mr-2 text-pink-500">=</span>
                                 <span className="text-gray-400">{'{'}</span>
                             </div>
@@ -47,7 +49,7 @@ function Skills() {
                             </div>
                             <div className="ml-4 lg:ml-8 mr-2 mb-1">
                                 <span className=" text-white underline underline-offset-4">
-                                    frameworkOrLibrary
+                                    framework_and_library
                                 </span>{' '}
                                 <span className="text-white">:</span>{' '}
                                 <span className="text-gray-400">{`['`}</span>
@@ -102,7 +104,7 @@ function Skills() {
                                 </span>
                             </div>
                             <div className="ml-4 lg:ml-8 mr-2 mb-1">
-                                <span className=" text-white underline underline-offset-4">
+                                <span className=" text-white underline underline-offset-4 tracking-widest">
                                     tools
                                 </span>{' '}
                                 <span className="text-white">:</span>{' '}
@@ -132,28 +134,28 @@ function Skills() {
                                 </span>
                             </div>
                             <div>
-                                <span className="ml-4 lg:ml-8 mr-2 text-white">
+                                <span className="ml-4 lg:ml-8 mr-2 text-white tracking-wider">
                                     hardWorker:
                                 </span>
                                 <span className="text-orange-400">true</span>
                                 <span className="text-gray-400">,</span>
                             </div>
                             <div>
-                                <span className="ml-4 lg:ml-8 mr-2 text-white">
+                                <span className="ml-4 lg:ml-8 mr-2 text-white tracking-wider">
                                     quickLearner:
                                 </span>
                                 <span className="text-orange-400">true</span>
                                 <span className="text-gray-400">,</span>
                             </div>
                             <div>
-                                <span className="ml-4 lg:ml-8 mr-2 text-white">
+                                <span className="ml-4 lg:ml-8 mr-2 text-white tracking-wider">
                                     problemSolver:
                                 </span>
                                 <span className="text-orange-400">true</span>
                                 <span className="text-gray-400">,</span>
                             </div>
                             <div className="mt-1">
-                                <span className="ml-4 lg:ml-8 mr-2 text-green-400">
+                                <span className="ml-4 lg:ml-8 mr-2 text-green-400 tracking-wider">
                                     hireable:
                                 </span>
                                 <span className="text-orange-400">
