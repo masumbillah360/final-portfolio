@@ -57,7 +57,7 @@ const ContactSection = () => {
     });
 
     // Form Spree state and submit function
-    const [state, handleSubmit] = spreeForm(process.env.FORM_SPREE_KEY!);
+    const [state, handleSubmit] = spreeForm('xpznvovg');
     console.log(['FORM SUBMITTING STATUS ', state.succeeded]);
 
     let isSubmitting = false;
