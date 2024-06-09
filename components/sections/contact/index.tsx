@@ -6,6 +6,9 @@ import { useForm } from 'react-hook-form';
 import { useToast } from '@/components/ui/use-toast';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+// form spree
+import { useForm as spreeForm } from '@formspree/react';
+
 import Titlebar from '@/components/title-bar';
 import { Button } from '@/components/ui/button';
 import { FramerInput, FramerTextArea } from '@/components/framer-motion/input';
@@ -40,7 +43,8 @@ const formSchema = z.object({
         .min(20, { message: 'Minimum value should be 20' })
         .max(500, { message: 'Maximum value should be 500' }),
 });
-const ContactSection = () => { 
+
+const ContactSection = () => {
     const { toast } = useToast();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -51,14 +55,24 @@ const ContactSection = () => {
             message: '',
         },
     });
-   
+
+    // Form Spree state and submit function
+    const [state, handleSubmit] = spreeForm('xpznvovg');
+    
+    let isSubmitting = false;
     function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values);
+        isSubmitting = true;
+        try {
+            handleSubmit(values);
+        } catch (error: any) {
+            console.log(['Submission Error', error.message]);
+        }
         form.reset();
         toast({
             title: 'Email sended Successfully',
-            description: `${new Date().toLocaleDateString()} - ${new Date().toLocaleTimeString()}`
+            description: `${new Date().toLocaleDateString()} - ${new Date().toLocaleTimeString()}`,
         });
+        isSubmitting =  false;
     }
 
     return (
@@ -162,6 +176,7 @@ const ContactSection = () => {
                         />
 
                         <Button
+                            disabled={isSubmitting}
                             className="mt-7 w-full text-xl font-semibold"
                             type="submit">
                             Submit

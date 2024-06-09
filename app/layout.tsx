@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -11,7 +11,7 @@ import Footer from '@/components/shared/footer';
 
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const font = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700', '900'] });
 
 export const metadata: Metadata = {
     title: 'Masum Billah',
@@ -28,7 +28,7 @@ export default function RootLayout({
         <html
             lang="en"
             className="scroll-pt-10 md:scroll-pt-24 lg:scroll-pt-30">
-            <body className={inter.className}>
+            <body className={font.className}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"
