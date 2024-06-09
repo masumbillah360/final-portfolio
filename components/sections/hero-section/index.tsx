@@ -69,22 +69,17 @@ const HeroSection = () => {
                         </div>
                         <div className="flex justify-center items-center gap-4">
                             <Link href={'#contact'}>
-                                <Button>
-                                    <div className="flex justify-center items-center gap-1">
-                                        <Contact />
-                                        <h4>Contact Me</h4>
-                                    </div>
-                                </Button>
+                                <Button className="text-lg">Contact Me</Button>
                             </Link>
                             {mounted ? (
                                 <BorderButton
                                     containerClassName="size-auto p-1"
                                     duration={4000}>
-                                    <Button>
-                                        <div>
-                                            <h4>Resume</h4>
-                                        </div>
-                                    </Button>
+                                    <div className="h-9 w-24 flex justify-center items-center">
+                                        <h4 className="text-lg font-semibold dark:text-white">
+                                            Resume
+                                        </h4>
+                                    </div>
                                 </BorderButton>
                             ) : (
                                 <Button variant={'outline'}>Resume</Button>

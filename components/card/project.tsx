@@ -61,11 +61,11 @@ const ProjectCard = ({ slug, name, subDescription, thumbnail }: Props) => {
                                 <BorderButton
                                     containerClassName="h-10 dark:bg-slate-300"
                                     duration={2000}>
-                                    <Button
-                                        className="h-full dark:bg-slate-300 dark:text-black font-bold uppercase"
-                                        variant={'outline'}>
+                                    <div
+                                        className="h-full w-20 dark:bg-slate-300 dark:text-black font-bold uppercase flex justify-center items-center"
+                                        >
                                         Live
-                                    </Button>
+                                    </div>
                                 </BorderButton>
                             </CardItem>
                             <CardItem translateZ={20}>
