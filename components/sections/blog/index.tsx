@@ -8,10 +8,14 @@ import { Button } from '@/components/ui/button';
 import BlogCard from '@/components/card/blog';
 
 import sectionBackground from '@/public/section.svg';
-import { content } from '@/constants/projects';
+import { blogs } from '#content';
+function getLatestBlogs() {
+    return blogs.slice(0, 6);
+}
 
 const Blog = () => {
     const router = useRouter();
+    const sectionBlogs = getLatestBlogs();
     return (
         <div className="relative z-40 my-10 md:my-14 lg:my-20">
             <Titlebar title="Blogs" />
@@ -22,18 +26,32 @@ const Blog = () => {
                     className="absolute top-0 -z-10 w-full"
                 />
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10 lg:gap-7 my-4 md:my-6 lg:my-10">
-                    {content.map((c) => (
-                        <BlogCard
-                            key={c.title}
-                            id={c.title + 'Blogs'}
-                            title={c.title}
-                            subTitle={
-                                c.description.length > 150
-                                    ? c.description.slice(0, 150)
-                                    : c.description
-                            }
-                        />
-                    ))}
+                    {sectionBlogs.map(
+                        ({
+                            slug,
+                            title,
+                            subTitle,
+                            description,
+                            thumbnail,
+                            date,
+                            body,
+                            slugAsParams,
+                            tags,
+                        }) => (
+                            <BlogCard
+                                key={slug + 'ProjectsPage'}
+                                slug={slug}
+                                title={title}
+                                subTitle={
+                                    subTitle.length > 150
+                                        ? subTitle.slice(0, 150)
+                                        : subTitle
+                                }
+                                thumbnail={thumbnail}
+                                date={date}
+                            />
+                        )
+                    )}
                 </div>
             </div>
             <div className="w-full flex justify-center items-center">

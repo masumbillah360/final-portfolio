@@ -8,13 +8,14 @@ import { CardSkeleton } from '../customSkeleton/card';
 import { useRouter } from 'next/navigation';
 
 interface Props {
-    id: string;
+    slug: string;
     title: string;
     subTitle: string;
     thumbnail?: string;
+    date: string;
 }
 
-const BlogCard = ({ id, title, subTitle, thumbnail }: Props) => {
+const BlogCard = ({ slug, title, subTitle, thumbnail, date }: Props) => {
     const router = useRouter();
     const [mounted, setMounted] = useState<boolean>(false);
 
@@ -25,8 +26,8 @@ const BlogCard = ({ id, title, subTitle, thumbnail }: Props) => {
     return (
         <div className="size-full">
             {mounted ? (
-                <CardContainer className="inter-var" key={id}>
-                    <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border  ">
+                <CardContainer className="inter-var">
+                    <CardBody className="bg-gray-50 dark:text-slate-200 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border  ">
                         <CardItem
                             translateZ="50"
                             className="text-xl font-bold text-neutral-600 dark:text-white">
@@ -51,13 +52,16 @@ const BlogCard = ({ id, title, subTitle, thumbnail }: Props) => {
                             />
                         </CardItem>
                         <div className="flex justify-end items-center gap-3 mt-7">
-                            <CardItem translateZ={20}>
-                                <Button
-                                    onClick={() => router.push(`/blogs/${id}`)}
-                                    variant={'link'}
-                                    className="h-10">
-                                    Read More
-                                </Button>
+                            <CardItem translateZ={20} className="w-full">
+                                <div className="flex items-center justify-between">
+                                    <div className="">{date.split('T')[0]}</div>
+                                    <Button
+                                        onClick={() => router.push(`/${slug}`)}
+                                        variant={'link'}
+                                        className="dark:text-violet-200">
+                                        Read More
+                                    </Button>
+                                </div>
                             </CardItem>
                         </div>
                     </CardBody>

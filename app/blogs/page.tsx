@@ -4,9 +4,24 @@ import React from 'react';
 
 import BlogCard from '@/components/card/blog';
 
-import { content } from '@/constants/projects';
+import { blogs } from '#content';
+import QueryPagination from '@/components/pagination';
 
-const BlogPage = () => {
+interface BlogPageProps {
+    searchParams: {
+        page?: string;
+    };
+}
+
+const BlogPage = ({ searchParams }: BlogPageProps) => {
+    const currentPage = Number(searchParams.page) || 1;
+    const BLOG_PER_PAGE = 9;
+    const filteredBlogs = blogs.filter((b) => b.published != false);
+    const totalCount = Math.ceil(filteredBlogs.length / BLOG_PER_PAGE);
+    const disPlayPosts = filteredBlogs.slice(
+        BLOG_PER_PAGE * (currentPage - 1),
+        BLOG_PER_PAGE * currentPage
+    );
     return (
         <div className="min-h-screen">
             <div className="mt-10">
@@ -16,18 +31,35 @@ const BlogPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10 lg:gap-7 my-4 md:my-6 lg:my-10">
-                {content.map((c) => (
-                    <BlogCard
-                        key={c.title}
-                        id={c.title + 'ProjectsPage'}
-                        title={c.title}
-                        subTitle={
-                            c.description.length > 150
-                                ? c.description.slice(0, 150)
-                                : c.description
-                        }
-                    />
-                ))}
+                {disPlayPosts.map(
+                    ({
+                        slug,
+                        title,
+                        subTitle,
+                        description,
+                        thumbnail,
+                        date,
+                        body,
+                        slugAsParams,
+                        tags,
+                    }) => (
+                        <BlogCard
+                            key={slug + 'ProjectsPage'}
+                            slug={slug}
+                            title={title}
+                            subTitle={
+                                subTitle.length > 150
+                                    ? subTitle.slice(0, 150)
+                                    : subTitle
+                            }
+                            thumbnail={thumbnail}
+                            date={date}
+                        />
+                    )
+                )}
+            </div>
+            <div className="m-6 px-4 py-2 rounded border">
+                <QueryPagination totalPage={totalCount} />
             </div>
         </div>
     );

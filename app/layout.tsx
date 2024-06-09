@@ -10,7 +10,6 @@ import Navbar from '@/components/shared/nav-bar';
 import Footer from '@/components/shared/footer';
 
 import './globals.css';
-import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -38,9 +37,7 @@ export default function RootLayout({
                     <main className="px-1 md:px-0 md:container mx-auto">
                         <div className="sticky top-0 z-50 backdrop-blur bg-opacity-95 hover:bg-opacity-100 hover:backdrop-blur-3xl h-20 rounded-b-lg">
                             <div className="absolute bottom-0 w-full">
-                                <Suspense fallback={null}>
-                                    <Navbar />
-                                </Suspense>
+                                <Navbar />
                             </div>
                         </div>
                         {children}
