@@ -9,6 +9,7 @@ import BlogCard from '@/components/card/blog';
 
 import sectionBackground from '@/public/section.svg';
 import { blogs } from '#content';
+
 function getLatestBlogs() {
     return blogs.slice(0, 6);
 }
@@ -31,12 +32,8 @@ const Blog = () => {
                             slug,
                             title,
                             subTitle,
-                            description,
                             thumbnail,
                             date,
-                            body,
-                            slugAsParams,
-                            tags,
                         }) => (
                             <BlogCard
                                 key={slug + 'ProjectsPage'}

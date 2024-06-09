@@ -1,14 +1,27 @@
 'use client';
 
 import React from 'react';
-import { useRouter } from 'next/navigation';
 
 import ProjectCard from '@/components/card/project';
 
-import { content } from '@/constants/projects';
+import { projects } from '#content';
+import QueryPagination from '@/components/pagination';
 
-const ProjectPage = () => {
-    const router = useRouter();
+interface ProjectPageProps {
+    searchParams: {
+        page?: string;
+    };
+}
+
+const ProjectPage = ({ searchParams }: ProjectPageProps) => {
+    const currentPage = Number(searchParams.page) || 1;
+    const BLOG_PER_PAGE = 9;
+    const filteredProjects = projects.filter((p) => p.published != false);
+    const totalCount = Math.ceil(filteredProjects.length / BLOG_PER_PAGE);
+    const disPlayProjects = filteredProjects.slice(
+        BLOG_PER_PAGE * (currentPage - 1),
+        BLOG_PER_PAGE * currentPage
+    );
     return (
         <div className="min-h-screen">
             <div className="mt-10">
@@ -18,18 +31,22 @@ const ProjectPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10 lg:gap-7 my-4 md:my-6 lg:my-10">
-                {content.map((c) => (
+                {disPlayProjects.map((p) => (
                     <ProjectCard
-                        key={c.title}
-                        id={c.title + 'ProjectsPage'}
-                        title={c.title}
-                        subTitle={
-                            c.description.length > 150
-                                ? c.description.slice(0, 150)
-                                : c.description
+                        key={p.slug + 'ProjectPage'}
+                        slug={p.slug}
+                        name={p.name}
+                        subDescription={
+                            p.subDescription.length > 150
+                                ? p.subDescription.slice(0, 150)
+                                : p.subDescription
                         }
+                        thumbnail={p.thumbnail}
                     />
                 ))}
+            </div>
+            <div className="m-6 px-4 py-2 rounded border">
+                <QueryPagination totalPage={totalCount} />
             </div>
         </div>
     );

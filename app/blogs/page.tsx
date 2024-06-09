@@ -32,19 +32,9 @@ const BlogPage = ({ searchParams }: BlogPageProps) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10 lg:gap-7 my-4 md:my-6 lg:my-10">
                 {disPlayPosts.map(
-                    ({
-                        slug,
-                        title,
-                        subTitle,
-                        description,
-                        thumbnail,
-                        date,
-                        body,
-                        slugAsParams,
-                        tags,
-                    }) => (
+                    ({ slug, title, subTitle, thumbnail, date }) => (
                         <BlogCard
-                            key={slug + 'ProjectsPage'}
+                            key={slug + 'BlogPage'}
                             slug={slug}
                             title={title}
                             subTitle={

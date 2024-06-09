@@ -1,21 +1,22 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { CardBody, CardContainer, CardItem } from '../framer-motion/3d-card';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+
 import { Button } from '../ui/button';
 import { CardSkeleton } from '../customSkeleton/card';
 import { BorderButton } from '../framer-motion/moving-border';
-import { useRouter } from 'next/navigation';
+import { CardBody, CardContainer, CardItem } from '../framer-motion/3d-card';
 
 interface Props {
-    id: string;
-    title: string;
-    subTitle: string;
+    slug: string;
+    name: string;
+    subDescription: string;
     thumbnail?: string;
 }
 
-const ProjectCard = ({ id, title, subTitle, thumbnail }: Props) => {
+const ProjectCard = ({ slug, name, subDescription, thumbnail }: Props) => {
     const router = useRouter();
 
     const [mounted, setMounted] = useState<boolean>(false);
@@ -26,18 +27,18 @@ const ProjectCard = ({ id, title, subTitle, thumbnail }: Props) => {
     return (
         <div className="size-full">
             {mounted ? (
-                <CardContainer className="inter-var" key={id}>
-                    <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border  ">
+                <CardContainer className="inter-var size-full">
+                    <CardBody className="bg-gray-50 dark:text-slate-200 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-slate-900 dark:border-white/[0.2] border-black/[0.1] size-full rounded-xl p-6 border  ">
                         <CardItem
                             translateZ="50"
                             className="text-xl font-bold text-neutral-600 dark:text-white">
-                            {title}
+                            {name}
                         </CardItem>
                         <CardItem
                             as="p"
                             translateZ="60"
                             className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
-                            {subTitle}
+                            {subDescription}
                         </CardItem>
                         <CardItem translateZ="100" className="w-full mt-4">
                             <Image
@@ -70,7 +71,7 @@ const ProjectCard = ({ id, title, subTitle, thumbnail }: Props) => {
                             <CardItem translateZ={20}>
                                 <Button
                                     onClick={() => {
-                                        router.push(`/projects/${id}`);
+                                        router.push(`/${slug}`);
                                     }}
                                     variant={'default'}>
                                     Details

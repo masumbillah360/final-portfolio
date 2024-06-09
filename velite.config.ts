@@ -34,11 +34,17 @@ const projects = defineCollection({
     schema: s
         .object({
             slug: s.path(),
-            title: s.string().max(99),
-            subTitle: s.string().max(200),
-            date: s.isodate(),
-            description: s.string().max(500),
+            name: s.string().max(99),
+            subDescription: s.string().max(200),
             thumbnail: s.string(),
+            liveURL: s.string(),
+            tags: s.array(s.string()),
+            category: s.string(),
+            similarCategory: s.array(s.string()),
+            startDate: s.isodate(),
+            endDate: s.isodate(),
+            description: s.string().max(500),
+            published: s.boolean().default(true),
             body: s.mdx(),
         })
         .transform(computedFields),
