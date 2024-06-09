@@ -49,8 +49,9 @@ const Projects = () => {
 
             <div className="w-full flex justify-center items-center">
                 <Button
-                    onClick={() => router.replace('/projects')}
-                    className="bg-slate-600">
+                    onClick={() => router.push('/projects')}
+                    size={'lg'}
+                    className="w-full md:w-auto">
                     SEE ALL
                 </Button>
             </div>
