@@ -57,8 +57,9 @@ const ContactSection = () => {
     });
 
     // Form Spree state and submit function
-    const [state, handleSubmit] = spreeForm('xpznvovg');
-    
+    const [state, handleSubmit] = spreeForm(process.env.FORM_SPREE_KEY!);
+    console.log(['FORM SUBMITTING STATUS ', state.succeeded]);
+
     let isSubmitting = false;
     function onSubmit(values: z.infer<typeof formSchema>) {
         isSubmitting = true;
@@ -72,7 +73,7 @@ const ContactSection = () => {
             title: 'Email sended Successfully',
             description: `${new Date().toLocaleDateString()} - ${new Date().toLocaleTimeString()}`,
         });
-        isSubmitting =  false;
+        isSubmitting = false;
     }
 
     return (
