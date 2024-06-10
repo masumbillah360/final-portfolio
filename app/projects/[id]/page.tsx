@@ -12,6 +12,7 @@ import { MDXContent } from '@/components/velite/mdx-components';
 import '@/styles/mdx.css';
 import ProjectContent from '@/components/project';
 import Loader from '@/components/loader';
+import NotFound from '@/components/not-found';
 
 export function getProjectFromParams(params: any) {
     const slug = params;
@@ -26,6 +27,17 @@ const SingleProjectPage = ({ params }: { params: { id: string } }) => {
 
     if (!mounted) return <Loader />;
     const project = getProjectFromParams(params.id);
+
+    if (!project) {
+        return (
+            <NotFound
+                message="PROJECT NOT FOUND"
+                keyWord={params.id || 'Some'}
+                path="/projects"
+                pathLabel="Back To Projects"
+            />
+        );
+    }
     return (
         <div>
             <ProjectContent project={project} />

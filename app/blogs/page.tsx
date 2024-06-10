@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import QueryPagination from '@/components/pagination';
 
 import { blogs } from '#content';
+import NotFound from '@/components/not-found';
 
 interface BlogPageProps {
     searchParams: {
@@ -69,24 +70,14 @@ const BlogPage = ({ searchParams }: BlogPageProps) => {
                     </div>
                 </>
             ) : (
-                <div className="min-h-screen flex justify-center items-center">
-                    <div className="text-center">
-                        <h1 className="font-extrabold text-3xl text-slate-500">
-                            POSTS NOT FOUND
-                        </h1>
-                        <h4>
-                            With This{' '}
-                            <span className="font-bold">
-                                {searchParams.tags || ''}{' '}
-                                {searchParams.category || ''}
-                            </span>{' '}
-                            Keyword
-                        </h4>
-                        <Link className="block mt-3" href={'/blogs'}>
-                            <Button>Back To Blogs</Button>
-                        </Link>
-                    </div>
-                </div>
+                <NotFound
+                    message="BLOGS NOT FOUND"
+                    keyWord={
+                        searchParams.tags || searchParams.category || 'Some'
+                    }
+                    path="/blogs"
+                    pathLabel="Back To Blogs"
+                />
             )}
         </div>
     );
