@@ -24,6 +24,14 @@ const BlogContent = ({ blog }: { blog: blogType }) => {
                         <h1 className="text-slate-600 text-3xl md:text-5xl font-bold tracking-wider">
                             {blog?.title}
                         </h1>
+                        <Link
+                            href={`/blogs?category=${blog.category}`}
+                            className="block my-2 font-semibold text-xl">
+                            Category:{' '}
+                            <span className="uppercase underline underline-offset-4">
+                                {blog.category}
+                            </span>
+                        </Link>
                         <h1 className="text-xl mt-3">{blog?.subTitle}</h1>
                         <p className="my-1 text-lg">{blog?.description}</p>
                         <div className="flex justify-start items-center gap-x-2 font-bold">
