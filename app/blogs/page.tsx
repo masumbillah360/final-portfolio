@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 import BlogCard from '@/components/card/blog';
+import { Button } from '@/components/ui/button';
+import QueryPagination from '@/components/pagination';
 
 import { blogs } from '#content';
-import QueryPagination from '@/components/pagination';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 
 interface BlogPageProps {
     searchParams: {
