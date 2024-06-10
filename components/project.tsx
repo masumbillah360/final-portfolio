@@ -1,44 +1,34 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 
-import Loader from './loader';
+import { Sidebar, projectType } from './projects-sidebar';
 import { ScrollArea } from './ui/scroll-area';
 import { MDXContent } from './velite/mdx-components';
-import { Sidebar, blogType } from './projects-sidebar';
 
-const BlogContent = ({ blog }: { blog: blogType }) => {
+const ProjectContent = ({ project }: { project: projectType }) => {
     const [mounted, setMounted] = useState<boolean>(false);
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    if (!mounted) return <Loader />;
+    if (!mounted) return null;
     return (
         <div className="flex">
             <ScrollArea className="h-screen flex-1 w-full">
-                <div className="flex-1 w-full p-2">
+                <div className="p-2">
                     <div className="mt-10">
                         <h1 className="text-slate-600 text-3xl md:text-5xl font-bold tracking-wider">
-                            {blog?.title}
+                            {project?.name}
                         </h1>
-                        <h1 className="text-xl mt-3">{blog?.subTitle}</h1>
-                        <p className="my-1 text-lg">{blog?.description}</p>
-                        <div className="flex justify-start items-center gap-x-2 font-bold">
-                            {blog.tags.map((t) => (
-                                <Link
-                                    href={`/blogs?tags=${t}`}
-                                    key={t + blog.slugAsParams}>
-                                    {'#' + t}
-                                </Link>
-                            ))}
-                        </div>
+                        <h1 className="text-lg mt-3">
+                            {project?.subDescription}
+                        </h1>
                     </div>
                     <div className="mt-3">
                         <Image
-                            src={blog?.thumbnail!}
+                            src={project?.thumbnail!}
                             alt="Project thumbnail"
                             width={1024}
                             height={768}
@@ -46,17 +36,23 @@ const BlogContent = ({ blog }: { blog: blogType }) => {
                         />
                     </div>
                     <div className="my-3">
-                        <MDXContent code={blog?.body!} />
+                        <MDXContent code={project?.body!} />
                     </div>
-                    <div className="my-3 flex justify-between items-center">
-                        <div>
-                            <h3>Published Date</h3>
-                            <p>{blog?.date.split('T')[0]}</p>
+                    <div className="my-3 flex justify-between items-start">
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="p-2 border rounded">
+                                <h3>Start Date:</h3>
+                                <p>{project?.startDate.split('T')[0]}</p>
+                            </div>
+                            <div className="p-2 border rounded">
+                                <h3>End Date:</h3>
+                                <p>{project?.endDate.split('T')[0]}</p>
+                            </div>
                         </div>
                         <div className="flex justify-end items-center gap-4">
                             <div>
                                 <Image
-                                    src={blog?.thumbnail!}
+                                    src={project?.thumbnail!}
                                     alt="Author Profile Image"
                                     width={60}
                                     height={60}
@@ -74,12 +70,12 @@ const BlogContent = ({ blog }: { blog: blogType }) => {
                 </div>
             </ScrollArea>
             <Sidebar
-                title="Related Blogs"
-                type="blog"
-                slug={blog?.slugAsParams!}
+                title="Related Projects"
+                type="project"
+                slug={project?.slugAsParams!}
             />
         </div>
     );
 };
 
-export default BlogContent;
+export default ProjectContent;

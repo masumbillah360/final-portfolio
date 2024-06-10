@@ -10,13 +10,19 @@ import QueryPagination from '@/components/pagination';
 interface BlogPageProps {
     searchParams: {
         page?: string;
+        tags?: string;
     };
 }
 
 const BlogPage = ({ searchParams }: BlogPageProps) => {
     const currentPage = Number(searchParams.page) || 1;
-    const BLOG_PER_PAGE = 9;
-    const filteredBlogs = blogs.filter((b) => b.published != false);
+    const BLOG_PER_PAGE = 6;
+    let filteredBlogs = blogs.filter((b) => b.published != false);
+    if (searchParams?.tags) {
+        filteredBlogs = filteredBlogs.filter((b) =>
+            b.similarCategory.some((cat) => cat === searchParams.tags)
+        );
+    }
     const totalCount = Math.ceil(filteredBlogs.length / BLOG_PER_PAGE);
     const disPlayPosts = filteredBlogs.slice(
         BLOG_PER_PAGE * (currentPage - 1),

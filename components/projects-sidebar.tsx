@@ -15,8 +15,8 @@ interface Props {
     type: 'project' | 'blog';
     slug: string;
 }
-type blogType = (typeof blogs)[0];
-type projectType = (typeof projects)[0];
+export type blogType = (typeof blogs)[0];
+export type projectType = (typeof projects)[0];
 
 function getSimilarCategory(
     slug: string,
