@@ -3,10 +3,10 @@ title: Building Full-Stack Web Applications with Next.js and React
 subTitle: Learn how to combine Next.js and React to create powerful web applications
 description: This blog post explores the integration of Next.js, a powerful React framework, with React, a popular frontend library, to build full-stack web applications efficiently.
 date: 2024-06-10
-tags: ['next.js', 'react', 'full-stack', 'web development']
+tags: ['nextjs', 'react', 'full_stack', 'web_development']
 published: true
-category: tutorial
-similarCategory: ['next.js', 'react', 'full-stack', 'web development']
+category: next-js
+similarCategory: ['next', 'react', 'full_stack', 'web_development']
 thumbnail: 'https://images.unsplash.com/photo-1643116774075-acc00caa9a7b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 ---
 
@@ -27,7 +27,7 @@ thumbnail: 'https://images.unsplash.com/photo-1643116774075-acc00caa9a7b?q=80&w=
 <Paragraph>
     Before we dive into the integration of Next.js and React, let's set up a new
     project and install the necessary dependencies. We'll use{' '}
-    <Code>create-next-app</Code> to generate the Next.js application.
+    <code>create-next-app</code> to generate the Next.js application.
 </Paragraph>
 
 ```bash
@@ -51,7 +51,7 @@ npm install
 <Paragraph>
     Next.js allows us to create API routes directly within our application,
     enabling us to handle server-side logic alongside `frontend` rendering. API
-    routes in Next.js are defined in the <Code>pages/api</Code> directory and
+    routes in Next.js are defined in the <code>pages/api</code> directory and
     can be accessed like any other route.
 </Paragraph>
 <Paragraph>
@@ -69,15 +69,15 @@ export default function handler(req, res) {
 ```
 
 <Paragraph>
-    With this setup, the API route will be accessible at <Code>/api/data</Code>{' '}
+    With this setup, the API route will be accessible at <code>/api/data</code>{' '}
     relative to the application's root URL.
 </Paragraph>
 <Heading>Fetching Data in the `Frontend`</Heading>
 
 <Paragraph>
     Next.js provides built-in functionality for fetching data in the `frontend`
-    using methods like <Code>`getStaticProps`</Code> and{' '}
-    <Code>`getServerSideProps`</Code>. These methods allow us to pre-render pages
+    using methods like <code>`getStaticProps`</code> and{' '}
+    <code>`getServerSideProps`</code>. These methods allow us to pre-render pages
     with data fetched at build time or request time, respectively.
 </Paragraph>
 <Paragraph>
@@ -110,8 +110,8 @@ export async function getStaticProps() {
 
 <Paragraph>
     In this example, we fetch data from the API route at build time using{' '}
-    <Code>`getStaticProps`</Code>. The fetched data is then passed to the{' '}
-    <Code>Home</Code> component as props.
+    <code>`getStaticProps`</code>. The fetched data is then passed to the{' '}
+    <code>Home</code> component as props.
 </Paragraph>
 <Heading>Conclusion</Heading>
 

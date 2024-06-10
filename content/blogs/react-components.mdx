@@ -3,62 +3,79 @@ title: Understanding React Components
 subTitle: Learn the fundamentals of React components
 description: This blog post provides a comprehensive overview of React components, covering the basics, types, and best practices.
 date: 2024-06-10
-tags: ['react', 'components', 'frontend', 'web development']
+tags: ['react', 'components', 'frontend', 'web_development']
 published: true
-category: tutorial
-similarCategory: ['react', 'frontend', 'web development']
+category: react
+similarCategory: ['react', 'frontend', 'web_development']
 thumbnail: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 ---
 
 <Heading type="danger">Introduction</Heading>
 
 <Paragraph>
-    React, a JavaScript library for building user interfaces, revolves around the concept of components. Understanding React components is pivotal for mastering React development. In this tutorial, we'll delve into the fundamentals of React components, exploring their types and best practices.
+    React, a JavaScript library for building user interfaces, revolves around
+    the concept of components. Understanding React components is pivotal for
+    mastering React development. In this tutorial, we'll delve into the
+    fundamentals of React components, exploring their types and best practices.
 </Paragraph>
+
 <Heading>What are React Components?</Heading>
 
 <Paragraph>
-    React components are modular, reusable entities that encapsulate UI elements and their behavior. They facilitate breaking down complex user interfaces into manageable parts, promoting code maintainability and `reusability`.
+    React components are modular, reusable entities that encapsulate UI elements
+    and their behavior. They facilitate breaking down complex user interfaces
+    into manageable parts, promoting code maintainability and reusability.
 </Paragraph>
+
 <Heading>Class Components vs. Functional Components</Heading>
 
 <Paragraph>
-    React offers two primary types of components: class components and functional components.
+    React offers two primary types of components: class components and
+    functional components.
 </Paragraph>
-<Heading typo='h3'>Class Components</Heading>
+
+<Heading type="h3">Class Components</Heading>
 
 <Paragraph>
-    Class components are ES6 classes extending the ``` React.Component ``` class. They define a <code> render() </code> method returning JSX to describe the component's UI. Class components can also manage state and utilize `lifecycle` methods.
+    Class components are ES6 classes extending the <code>React.Component</code>
+    class. They define a <code>render()</code> method returning JSX to describe the
+    component's UI. Class components can also manage state and utilize lifecycle
+    methods.
 </Paragraph>
 
 ```jsx
 class MyComponent extends React.Component {
-  render() {
-    return <div>Hello, World!</div>;
-  }
+    render() {
+        return <div>Hello, World!</div>;
+    }
 }
 ```
-<Heading typo='h3'>Functional Components</Heading>
+
+<Heading type="h3">Functional Components</Heading>
 
 <Paragraph>
-    Functional components are JavaScript functions returning JSX. They are simpler and lighter than class components and can utilize React Hooks for state management and `lifecycle` behavior.
+    Functional components are JavaScript functions returning JSX. They are
+    simpler and lighter than class components and can utilize React Hooks for
+    state management and lifecycle behavior.
 </Paragraph>
-
 
 ```jsx
 const MyComponent = () => {
-  return <div>Hello, World!</div>;
+    return <div>Hello, World!</div>;
 };
 ```
+
 <Heading>Props</Heading>
 
 <Paragraph>
-    Props (short for properties) enable data passing from parent to child components in React. They are immutable and passed down the component tree, allowing for component `reusability` and customization based on received data.
+    Props (short for properties) enable data passing from parent to child
+    components in React. They are immutable and passed down the component tree,
+    allowing for component reusability and customization based on received data.
 </Paragraph>
 
 ```jsx
 const Greeting = (props) => {
-  return <div>Hello, {props.name}!</div>;
+    return <div>Hello, {props.name}!</div>;
 };
 
 <Greeting name="Alice" />;
@@ -67,36 +84,49 @@ const Greeting = (props) => {
 <Heading>State</Heading>
 
 <Paragraph>
-    State is a crucial feature in React, representing the internal data of a component. It enables components to manage and update their data dynamically. Class components utilize the <code>`setState`()</code>  method for state updates, while functional components leverage the ``` `useState`() ``` Hook.
+    State is a crucial feature in React, representing the internal data of a
+    component. It enables components to manage and update their data
+    dynamically. Class components utilize the <code>setState()</code> method for
+    state updates, while functional components leverage the{' '}
+    <code>useState()</code> Hook.
 </Paragraph>
-
 
 ```jsx
 class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: 0 };
-  }
+    constructor(props) {
+        super(props);
+        this.state = { count: 0 };
+    }
 
-  render() {
-    return (
-      <div>
-        Count: {this.state.count}
-        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-          Increment
-        </button>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                Count: {this.state.count}
+                <button
+                    onClick={() =>
+                        this.setState({ count: this.state.count + 1 })
+                    }>
+                    Increment
+                </button>
+            </div>
+        );
+    }
 }
 ```
 
 <Heading>Conclusion</Heading>
 
 <Paragraph>
-    React components serve as the cornerstone of React development, enabling the creation of modular and scalable user interfaces. Understanding the diverse types of components, along with props and state management, is imperative for building robust React applications.
+    React components serve as the cornerstone of React development, enabling the
+    creation of modular and scalable user interfaces. Understanding the diverse
+    types of components, along with props and state management, is imperative
+    for building robust React applications.
 </Paragraph>
 <Paragraph>
-    In this tutorial, we've covered the basics of React components, including class and functional components, props, and state management. Armed with this knowledge, you're equipped to embark on your React journey and build powerful applications!
+    In this tutorial, we've covered the basics of React components, including
+    class and functional components, props, and state management. Armed with
+    this knowledge, you're equipped to embark on your React journey and build
+    powerful applications!
 </Paragraph>
-Stay tuned for more React tutorials and happy coding!
+
+<Paragraph>Stay tuned for more React tutorials and happy coding!</Paragraph>

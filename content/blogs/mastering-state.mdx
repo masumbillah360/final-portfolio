@@ -3,10 +3,10 @@ title: Mastering React State Management
 subTitle: Explore advanced techniques for managing state in React applications
 description: This comprehensive guide covers advanced state management techniques in React, including the context API, Redux, and custom hooks, with detailed explanations and examples.
 date: 2024-06-10
-tags: ['react', 'state management', 'context API', 'Redux', 'custom hooks']
+tags: ['react', 'state_management', 'context_API', 'Redux', 'custom_hooks']
 published: true
-category: tutorial
-similarCategory: ['react', 'state management']
+category: react
+similarCategory: ['react', 'state_management']
 thumbnail: 'https://images.unsplash.com/photo-1591267990532-e5bdb1b0ceb8?q=80&w=2027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 ---
 
@@ -86,8 +86,8 @@ export default App;
 <Paragraph>
     In this example, we create a theme context using `React`'s `createContext`()
     function. We then use a `ThemeProvider` component to manage the theme state
-    and provide a `toggleTheme` function to update the theme. Finally, we use the
-    `useTheme` hook to access the theme context and toggle the theme in our
+    and provide a `toggleTheme` function to update the theme. Finally, we use
+    the `useTheme` hook to access the theme context and toggle the theme in our
     components.
 </Paragraph>
 
@@ -106,7 +106,6 @@ export default App;
 
 <CallOut>npm install `redux react-redux`</CallOut>
 
-
 ```jsx
 // store.js
 import { createStore } from 'redux';
@@ -115,7 +114,6 @@ import rootReducer from './reducers';
 const store = createStore(rootReducer);
 
 export default store;
-
 ```
 
 ```jsx
@@ -126,70 +124,82 @@ import store from './store';
 import Counter from './Counter';
 
 const App = () => {
-  return (
-    <Provider store={store}>
-      <Counter />
-    </Provider>
-  );
+    return (
+        <Provider store={store}>
+            <Counter />
+        </Provider>
+    );
 };
 
 export default App;
 ```
 
 <Paragraph>
-    In this example, we create a `Redux` store using the `createStore`() function from `Redux`. We then wrap our entire application in a Provider component provided by `react-redux`, passing the store as a prop. This gives all components access to the `Redux` store and its state.
+    In this example, we create a `Redux` store using the `createStore`()
+    function from `Redux`. We then wrap our entire application in a Provider
+    component provided by `react-redux`, passing the store as a prop. This gives
+    all components access to the `Redux` store and its state.
 </Paragraph>
 
 <Heading>Custom Hooks</Heading>
 
 <Paragraph>
-    Custom hooks are a powerful feature in React for extracting and reusing `stateful` logic across components. They allow you to abstract complex logic into reusable functions, improving code maintainability and readability.
+    Custom hooks are a powerful feature in React for extracting and reusing
+    `stateful` logic across components. They allow you to abstract complex logic
+    into reusable functions, improving code maintainability and readability.
 </Paragraph>
 
-<Paragraph>
-    Let's create a custom hook for fetching data from an API:
-</Paragraph>
+<Paragraph>Let's create a custom hook for fetching data from an API:</Paragraph>
 
 ```jsx
 // useFetch.js
 import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url);
+                const result = await response.json();
+                setData(result);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    fetchData();
-  }, [url]);
+        fetchData();
+    }, [url]);
 
-  return { data, loading };
+    return { data, loading };
 };
 
 export default useFetch;
 ```
+
 <Paragraph>
-    In this example, we create a custom hook called `useFetch` that takes a URL as input and returns the fetched data and a loading state. We use the `useEffect` hook to fetch data from the provided URL when the component mounts or when the URL changes.
+    In this example, we create a custom hook called `useFetch` that takes a URL
+    as input and returns the fetched data and a loading state. We use the
+    `useEffect` hook to fetch data from the provided URL when the component
+    mounts or when the URL changes.
 </Paragraph>
 <Heading>Conclusion</Heading>
 
 <Paragraph>
-    Advanced state management techniques are essential for building complex React applications. The context API, `Redux`, and custom hooks offer powerful tools for managing state in different scenarios. By mastering these techniques, you can create scalable and maintainable React applications.
+    Advanced state management techniques are essential for building complex
+    React applications. The context API, `Redux`, and custom hooks offer
+    powerful tools for managing state in different scenarios. By mastering these
+    techniques, you can create scalable and maintainable React applications.
 </Paragraph>
 
 <Paragraph>
-    In this comprehensive guide, we've explored the context API, `Redux`, and custom hooks for managing state in React. Experiment with these techniques in your own projects to elevate your React development skills!
+    In this comprehensive guide, we've explored the context API, `Redux`, and
+    custom hooks for managing state in React. Experiment with these techniques
+    in your own projects to elevate your React development skills!
 </Paragraph>
 
 Stay tuned for more React tutorials and happy coding!

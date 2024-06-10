@@ -3,10 +3,10 @@ title: Building Modern Web Applications with GraphQL and Node.js
 subTitle: Learn how to integrate GraphQL with Node.js to build powerful web applications
 description: This comprehensive guide explores the integration of GraphQL, a query language for APIs, with Node.js, a popular backend runtime. Discover how to build flexible and efficient web APIs with GraphQL and Node.js.
 date: 2024-06-10
-tags: ['graphql', 'node.js', 'backend', 'web development', 'api']
+tags: ['graphql', 'node', 'backend', 'web_development', 'api', 'server']
 published: true
-category: tutorial
-similarCategory: ['graphql', 'node.js', 'backend', 'web development', 'api']
+category: graphql
+similarCategory: ['graphql', 'node', 'backend', 'web_development', 'api', 'server']
 thumbnail: 'https://images.unsplash.com/photo-1619410283995-43d9134e7656?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 ---
 
@@ -40,7 +40,7 @@ thumbnail: 'https://images.unsplash.com/photo-1619410283995-43d9134e7656?q=80&w=
 <Paragraph>
     Before we dive into the integration of `GraphQL` with Node.js, let's set up
     a new project and install the necessary dependencies. We'll use{' '}
-    <Code>npm</Code> to initialize a new Node.js project and install the
+    <code>npm</code> to initialize a new Node.js project and install the
     required packages.
 </Paragraph>
 
@@ -65,7 +65,7 @@ npm install express express-graphql graphql
 
 <Paragraph>
     To set up a `GraphQL` server with Node.js, we'll create an Express.js server
-    and use the <Code>express-`graphql`</Code> `middleware` to handle `GraphQL`
+    and use the <code>express-`graphql`</code> `middleware` to handle `GraphQL`
     requests.
 </Paragraph>
 
@@ -110,8 +110,8 @@ app.listen(PORT, () => {
 
 <Paragraph>
     In this example, we define a simple `GraphQL` schema with a single query
-    field <Code>hello</Code> that returns a static message. We then create an
-    Express app and use the <Code>express-`graphql`</Code> `middleware` to
+    field <code>hello</code> that returns a static message. We then create an
+    Express app and use the <code>express-`graphql`</code> `middleware` to
     handle `GraphQL` requests, specifying the schema and enabling `GraphiQL` for
     testing.
 </Paragraph>
@@ -129,7 +129,7 @@ node index.js
 
 <Paragraph>
     Open your web browser and navigate to{' '}
-    <Code>http://localhost:3000/graphql</Code> to access `GraphiQL`. You can now
+    <code>http://localhost:3000/graphql</code> to access `GraphiQL`. You can now
     write and execute `GraphQL` queries against the server.
 </Paragraph>
 <Heading>Working with `GraphQL` Types and Resolvers</Heading>
@@ -178,10 +178,10 @@ const schema = new GraphQLSchema({
 ```
 
 <Paragraph>
-    In this example, we define a custom `GraphQL` type <Code>`UserType`</Code>{' '}
-    with fields for <Code>id</Code>, <Code>name</Code>, and <Code>email</Code>.
+    In this example, we define a custom `GraphQL` type <code>`UserType`</code>{' '}
+    with fields for <code>id</code>, <code>name</code>, and <code>email</code>.
     We then update the `GraphQL` schema to include a new query field{' '}
-    <Code>user</Code> that resolves to a static user object.
+    <code>user</code> that resolves to a static user object.
 </Paragraph>
 <Heading>Conclusion</Heading>
 
