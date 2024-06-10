@@ -5,11 +5,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import Loader from './loader';
+import { Sidebar } from './projects-sidebar';
 import { ScrollArea } from './ui/scroll-area';
 import { MDXContent } from './velite/mdx-components';
-import { Sidebar, blogType } from './projects-sidebar';
 
-const BlogContent = ({ blog }: { blog: blogType }) => {
+// blog type
+import { Blogs } from '@/.velite';
+
+const BlogContent = ({ blog }: { blog: Blogs }) => {
     const [mounted, setMounted] = useState<boolean>(false);
     useEffect(() => {
         setMounted(true);
@@ -35,7 +38,7 @@ const BlogContent = ({ blog }: { blog: blogType }) => {
                         <h1 className="text-xl mt-3">{blog?.subTitle}</h1>
                         <p className="my-1 text-lg">{blog?.description}</p>
                         <div className="flex justify-start items-center gap-x-2 font-bold">
-                            {blog.tags.map((t) => (
+                            {blog.tags.map((t: string) => (
                                 <Link
                                     href={`/blogs?tags=${t}`}
                                     key={t + blog.slugAsParams}>
@@ -46,7 +49,7 @@ const BlogContent = ({ blog }: { blog: blogType }) => {
                     </div>
                     <div className="mt-3">
                         <Image
-                            src={blog?.thumbnail!}
+                            src={blog?.thumbnail}
                             alt="Project thumbnail"
                             width={1024}
                             height={768}
@@ -54,7 +57,7 @@ const BlogContent = ({ blog }: { blog: blogType }) => {
                         />
                     </div>
                     <div className="my-3">
-                        <MDXContent code={blog?.body!} />
+                        <MDXContent code={blog?.body} />
                     </div>
                     <div className="my-3 flex justify-between items-center">
                         <div>
@@ -64,7 +67,7 @@ const BlogContent = ({ blog }: { blog: blogType }) => {
                         <div className="flex justify-end items-center gap-4">
                             <div>
                                 <Image
-                                    src={blog?.thumbnail!}
+                                    src={blog?.thumbnail}
                                     alt="Author Profile Image"
                                     width={60}
                                     height={60}
@@ -83,8 +86,8 @@ const BlogContent = ({ blog }: { blog: blogType }) => {
             </ScrollArea>
             <Sidebar
                 title="Related Blogs"
-                type="blog"
-                slug={blog?.slugAsParams!}
+                contentType="blog"
+                slug={blog?.slugAsParams}
             />
         </div>
     );

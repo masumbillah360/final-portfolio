@@ -1,15 +1,12 @@
 import React from 'react';
 
 import BlogContent from '@/components/blog';
-
-import { blogs } from '#content';
-import '@/styles/mdx.css';
 import NotFound from '@/components/not-found';
 
-export function getBlogFromParams(params: string) {
-    const slug = params;
-    return blogs.find((result) => result.slugAsParams === slug);
-}
+import '@/styles/mdx.css';
+import { getBlogFromParams } from '@/lib/utils';
+
+
 const SingleBlogPage = ({ params }: { params: { id: string } }) => {
     const blog = getBlogFromParams(params.id);
     if (!blog) {

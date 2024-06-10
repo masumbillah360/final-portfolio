@@ -19,7 +19,8 @@ interface ProjectPageProps {
 const ProjectPage = ({ searchParams }: ProjectPageProps) => {
     const currentPage = Number(searchParams.page) || 1;
     const BLOG_PER_PAGE = 9;
-    let filteredProjects = projects.filter((p) => p.published != false);
+    
+    let filteredProjects = projects.filter((p) => p.published);
 
     if (searchParams?.tags) {
         filteredProjects = filteredProjects.filter((b) =>
@@ -69,7 +70,7 @@ const ProjectPage = ({ searchParams }: ProjectPageProps) => {
                 <NotFound
                     message="PROJECTS NOT FOUND"
                     keyWord={
-                        searchParams.tags || searchParams.category || 'Some'
+                        searchParams.tags ?? searchParams.category ?? 'Some'
                     }
                     path="/projects"
                     pathLabel="Back To Projects"

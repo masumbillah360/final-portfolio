@@ -1,14 +1,12 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 
+import NotFound from '@/components/not-found';
 import BlogCard from '@/components/card/blog';
-import { Button } from '@/components/ui/button';
 import QueryPagination from '@/components/pagination';
 
 import { blogs } from '#content';
-import NotFound from '@/components/not-found';
 
 interface BlogPageProps {
     searchParams: {
@@ -21,7 +19,7 @@ interface BlogPageProps {
 const BlogPage = ({ searchParams }: BlogPageProps) => {
     const currentPage = Number(searchParams.page) || 1;
     const BLOG_PER_PAGE = 6;
-    let filteredBlogs = blogs.filter((b) => b.published != false);
+    let filteredBlogs = blogs.filter((b) => b.published);
     if (searchParams?.tags) {
         filteredBlogs = filteredBlogs.filter((b) =>
             b.tags.some((tag) => tag === searchParams.tags)
@@ -73,7 +71,7 @@ const BlogPage = ({ searchParams }: BlogPageProps) => {
                 <NotFound
                     message="BLOGS NOT FOUND"
                     keyWord={
-                        searchParams.tags || searchParams.category || 'Some'
+                        searchParams.tags ?? searchParams.category ?? 'Some'
                     }
                     path="/blogs"
                     pathLabel="Back To Blogs"
