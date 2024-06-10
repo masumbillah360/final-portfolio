@@ -1,7 +1,11 @@
-import * as runtime from 'react/jsx-runtime';
+'use client';
 
+import * as runtime from 'react/jsx-runtime';
 import Image from 'next/image';
+
 import { CallOut } from './callout';
+import { Heading } from './heading';
+import { Paragraph } from './paragraph';
 
 const useMDXComponent = (code: string) => {
     const fn = new Function(code);
@@ -11,6 +15,8 @@ const useMDXComponent = (code: string) => {
 const components = {
     Image,
     CallOut,
+    Heading,
+    Paragraph,
 };
 
 interface MdxProps {

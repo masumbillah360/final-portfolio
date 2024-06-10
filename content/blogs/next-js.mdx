@@ -1,0 +1,132 @@
+---
+title: Building Full-Stack Web Applications with Next.js and React
+subTitle: Learn how to combine Next.js and React to create powerful web applications
+description: This blog post explores the integration of Next.js, a powerful React framework, with React, a popular frontend library, to build full-stack web applications efficiently.
+date: 2024-06-10
+tags: ['next.js', 'react', 'full-stack', 'web development']
+published: true
+category: tutorial
+similarCategory: ['next.js', 'react', 'full-stack', 'web development']
+thumbnail: 'https://images.unsplash.com/photo-1643116774075-acc00caa9a7b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+---
+
+<Heading type="danger">Introduction</Heading>
+
+<Paragraph>
+    Building modern web applications often requires a combination of `frontend`
+    and `backend` technologies. Next.js, a powerful React framework, serves as
+    an excellent choice for creating full-stack web applications with
+    server-side rendering, routing, and other advanced features built-in. When
+    combined with React, a popular `frontend` library known for its
+    component-based architecture and declarative approach, developers can build
+    seamless and scalable web applications that offer an exceptional user
+    experience.
+</Paragraph>
+<Heading>Setting Up the Project</Heading>
+
+<Paragraph>
+    Before we dive into the integration of Next.js and React, let's set up a new
+    project and install the necessary dependencies. We'll use{' '}
+    <Code>create-next-app</Code> to generate the Next.js application.
+</Paragraph>
+
+```bash
+# Create a new directory for your project
+mkdir full-stack-app
+cd full-stack-app
+
+# Generate the Next.js application
+npx create-next-app .
+
+# Install additional dependencies
+npm install
+```
+
+<Paragraph>
+    Now that we have our project structure in place, with the Next.js
+    application generated, let's proceed with integrating Next.js and React.
+</Paragraph>
+<Heading>Creating API Routes with Next.js</Heading>
+
+<Paragraph>
+    Next.js allows us to create API routes directly within our application,
+    enabling us to handle server-side logic alongside `frontend` rendering. API
+    routes in Next.js are defined in the <Code>pages/api</Code> directory and
+    can be accessed like any other route.
+</Paragraph>
+<Paragraph>
+    Let's create a simple API route to handle `backend` logic:
+</Paragraph>
+
+```javascript
+// pages/api/data.js
+
+export default function handler(req, res) {
+    res.status(200).json({
+        message: 'This is sample data from the Next.js backend.',
+    });
+}
+```
+
+<Paragraph>
+    With this setup, the API route will be accessible at <Code>/api/data</Code>{' '}
+    relative to the application's root URL.
+</Paragraph>
+<Heading>Fetching Data in the `Frontend`</Heading>
+
+<Paragraph>
+    Next.js provides built-in functionality for fetching data in the `frontend`
+    using methods like <Code>`getStaticProps`</Code> and{' '}
+    <Code>`getServerSideProps`</Code>. These methods allow us to pre-render pages
+    with data fetched at build time or request time, respectively.
+</Paragraph>
+<Paragraph>
+    Let's fetch data from our API route and display it in a React component:
+</Paragraph>
+
+```jsx
+// pages/index.js
+
+export default function Home({ data }) {
+    return (
+        <div>
+            <h1>Welcome to the Next.js Application</h1>
+            <p>{data.message}</p>
+        </div>
+    );
+}
+
+export async function getStaticProps() {
+    const res = await fetch('http://localhost:3000/api/data');
+    const data = await res.json();
+
+    return {
+        props: {
+            data,
+        },
+    };
+}
+```
+
+<Paragraph>
+    In this example, we fetch data from the API route at build time using{' '}
+    <Code>`getStaticProps`</Code>. The fetched data is then passed to the{' '}
+    <Code>Home</Code> component as props.
+</Paragraph>
+<Heading>Conclusion</Heading>
+
+<Paragraph>
+    Integrating Next.js with React offers a powerful solution for building
+    full-stack web applications with ease. By leveraging Next.js' server-side
+    rendering capabilities and built-in API routes, developers can create
+    seamless and scalable web experiences that cater to a wide range of use
+    cases.
+</Paragraph>
+<Paragraph>
+    In this tutorial, we've covered the basics of integrating Next.js with
+    React, including creating API routes, fetching data in the `frontend`, and
+    rendering pages with pre-fetched data. Armed with this knowledge, you're
+    well-equipped to embark on your journey of building full-stack web
+    applications with Next.js and React.
+</Paragraph>
+Stay tuned for more tutorials on full-stack development and happy coding!

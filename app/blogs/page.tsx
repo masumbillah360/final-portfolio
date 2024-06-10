@@ -30,7 +30,7 @@ const BlogPage = ({ searchParams }: BlogPageProps) => {
                 </h1>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10 lg:gap-7 my-4 md:my-6 lg:my-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10 lg:gap-7 my-4 md:my-6 lg:my-10 size-full">
                 {disPlayPosts.map(
                     ({ slug, title, subTitle, thumbnail, date }) => (
                         <BlogCard

@@ -1,0 +1,124 @@
+---
+title: Understanding the `useEffect` Hook
+subTitle: Learn how to use the `useEffect` Hook in React
+description: This blog post explains how to use the `useEffect` Hook in React. We will cover the basics and provide examples to help you understand its usage.
+date: 2024-06-10
+tags: ['react', 'hooks', 'useEffect', 'code']
+published: true
+category: tutorial
+similarCategory: ['react', 'hooks', 'code']
+thumbnail: 'https://images.unsplash.com/photo-1591267990532-e5bdb1b0ceb8?q=80&w=2027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+---
+
+<Heading type="danger">Introduction</Heading>
+
+<Paragraph>
+    The `useEffect` Hook is one of the most powerful and commonly used Hooks in React. It allows functional components to perform side effects, such as data fetching, subscriptions, or manually changing the DOM, after the component has been rendered.
+</Paragraph>
+
+<Paragraph>
+    In this tutorial, we'll dive into the `useEffect` Hook and explore how it can be used to manage side effects in functional components.
+</Paragraph>
+
+<Heading>What is the `useEffect` Hook?</Heading>
+
+<Paragraph>
+    The `useEffect` Hook is a function provided by React that enables us to perform side effects in functional components. It is similar to life cycle methods in class components, such as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+</Paragraph>
+
+<Paragraph>
+    The `useEffect` Hook accepts a function as its first argument, which will be executed after the component is rendered. This function is called the "effect". Additionally, you can provide an optional second argument to specify when the effect should be executed.
+</Paragraph>
+
+<Heading>Basic Usage</Heading>
+
+<Paragraph>Let's start by looking at the basic syntax of `useEffect`:</Paragraph>
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+const MyComponent = () => {
+    useEffect(() => {
+        // Effect code here
+        console.log('Component rendered');
+    }, []); // Empty dependency array means the effect runs only once after the initial render
+
+    return (
+        <div>
+            <p>Component with useEffect Hook</p>
+        </div>
+    );
+};
+
+export default MyComponent;
+```
+<Paragraph>
+    In the example above, we have a functional component `MyComponent` that uses the `useEffect` Hook. The effect specified in `useEffect` is executed after the component is rendered. In this case, it simply logs a message to the console. Since we provided an empty dependency array as the second argument, the effect runs only once after the initial render.
+</Paragraph>
+<Heading>Dependency Array</Heading>
+
+<Paragraph>
+    The second argument of the `useEffect` Hook is an array of dependencies. By specifying dependencies, you can control when the effect should run. If the dependency array is empty, the effect runs only once after the initial render. If you provide one or more dependencies, the effect will run after every render if any of the dependencies have changed.
+</Paragraph>
+<Paragraph>
+    Here's an example of using dependencies in `useEffect`:
+</Paragraph>
+
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+const MyComponent = () => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        // Effect code here
+        console.log('Count changed:', count);
+    }, [count]); // Run the effect whenever 'count' changes
+
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+    );
+};
+
+export default MyComponent;
+```
+
+<Paragraph>
+    In this example, the effect specified in `useEffect` runs whenever the `count` state variable changes. This ensures that the effect is executed only when necessary.
+</Paragraph>
+<Heading>Cleanup</Heading>
+
+<Paragraph>
+    Sometimes, effects may require cleanup to prevent memory leaks or other issues. You can return a cleanup function from the effect to perform cleanup operations. This function will be called when the component is unmounted or before running the effect again.
+</Paragraph>
+
+
+```jsx
+useEffect(() => {
+    // Effect code here
+
+    // Cleanup function
+    return () => {
+        // Cleanup code here
+    };
+}, []);
+```
+
+<Paragraph>
+    In this example, the cleanup function returned from the effect will be called when the component is unmounted.
+</Paragraph>
+<Heading>Conclusion</Heading>
+
+<Paragraph>
+    The `useEffect` Hook is a powerful tool for managing side effects in React functional components. It allows you to perform actions after the component has been rendered, such as data fetching, subscriptions, or DOM manipulation. By understanding how to use `useEffect` and its dependencies, you can create more dynamic and interactive React applications.
+</Paragraph>
+
+<Paragraph>
+    In this tutorial, we covered the basic usage of the `useEffect` Hook and explored how to specify dependencies and cleanup functions. Experiment with `useEffect` in your own projects to unlock its full potential!
+</Paragraph>
+
+Stay tuned for more React Hooks tutorials and happy coding!

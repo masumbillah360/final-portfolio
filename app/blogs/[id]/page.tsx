@@ -1,4 +1,6 @@
-import React from 'react';
+'use client'
+
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import { Sidebar } from '@/components/projects-sidebar';
@@ -7,11 +9,19 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { blogs } from '#content';
 import { MDXContent } from '@/components/velite/mdx-components';
 
+import '@/styles/mdx.css';
+
 export function getBlogFromParams(params: string) {
     const slug = params;
     return blogs.find((result) => result.slugAsParams === slug);
 }
 const SingleBlogPage = ({ params }: { params: { id: string } }) => {
+         const [mounted, setMounted] = useState<boolean>(false);
+         useEffect(() => {
+             setMounted(true);
+         }, []);
+
+         if (!mounted) return null;
     const blog = getBlogFromParams(params.id);
     return (
         <div>
@@ -22,7 +32,8 @@ const SingleBlogPage = ({ params }: { params: { id: string } }) => {
                             <h1 className="text-slate-600 text-3xl md:text-5xl font-bold tracking-wider">
                                 {blog?.title}
                             </h1>
-                            <h1 className="text-lg mt-3">{blog?.subTitle}</h1>
+                            <h1 className="text-xl mt-3">{blog?.subTitle}</h1>
+                            <p className='my-1 text-lg'>{blog?.description}</p>
                         </div>
                         <div className="mt-3">
                             <Image
@@ -61,7 +72,11 @@ const SingleBlogPage = ({ params }: { params: { id: string } }) => {
                         </div>
                     </div>
                 </ScrollArea>
-                <Sidebar title="Related Blogs" type="blog" slug={blog?.slugAsParams!} />
+                <Sidebar
+                    title="Related Blogs"
+                    type="blog"
+                    slug={blog?.slugAsParams!}
+                />
             </div>
         </div>
     );
