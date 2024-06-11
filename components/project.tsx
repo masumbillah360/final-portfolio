@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { Button } from './ui/button';
+import { Heading } from './velite/heading';
 import { Sidebar } from './projects-sidebar';
 import { ScrollArea } from './ui/scroll-area';
 import { MDXContent } from './velite/mdx-components';
@@ -48,15 +50,54 @@ const ProjectContent = ({ project }: { project: Projects }) => {
                             ))}
                         </div>
                     </div>
-                    <div className="mt-3">
-                        <Image
-                            src={project?.thumbnail}
-                            alt="Project thumbnail"
-                            width={1024}
-                            height={768}
-                            className="size-full rounded"
-                        />
+                    <div className="mt-3 flex gap-x-4 flex-col md:flex-row">
+                        {project.coverImages.slice(0, 2).map((im) => (
+                            <Image
+                                key={im + project.slug}
+                                src={im}
+                                alt="Project thumbnail"
+                                width={1024}
+                                height={768}
+                                className="h-[400px] w-1/2 rounded"
+                            />
+                        ))}
                     </div>
+                    {project.coverImages.length === 3 && (
+                        <div className="mt-3 flex gap-x-4 flex-col md:flex-row">
+                            <Image
+                                src={
+                                    project.coverImages[
+                                        project.coverImages.length - 1
+                                    ]
+                                }
+                                alt="Project thumbnail"
+                                width={1024}
+                                height={768}
+                                className="h-full w-full rounded"
+                            />
+                        </div>
+                    )}
+
+                    <div className="flex flex-col gap-3 mt-3">
+                        <Heading type="danger">
+                            Overview of {project.name}
+                        </Heading>
+
+                        <Heading type="default" typo="h2">
+                            All Necessary Links
+                        </Heading>
+                        <div className="flex justify-center items-center gap-4">
+                            {project.urls.map((ur) => (
+                                <Link
+                                    key={ur.link + ur.label}
+                                    href={ur.link}
+                                    target="_blank">
+                                    <Button>{ur.label}</Button>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
                     <div className="my-3">
                         <MDXContent code={project?.body} />
                     </div>

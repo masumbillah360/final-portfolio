@@ -36,14 +36,21 @@ const projects = defineCollection({
             slug: s.path(),
             name: s.string().max(99),
             subDescription: s.string().max(200),
-            thumbnail: s.string(),
-            liveURL: s.string(),
-            tags: s.array(s.string()),
+            description: s.string().max(500),
             category: s.string(),
             similarCategory: s.array(s.string()),
-            startDate: s.isodate(),
-            endDate: s.isodate(),
-            description: s.string().max(500),
+            tags: s.array(s.string()),
+            url: s.string(),
+            urls: s.array(s.object({ label: s.string(), link: s.string() })),
+            date: s.object({
+                startDate: s.isodate(),
+                endDate: s.isodate(),
+            }),
+
+            thumbnail: s.string(),
+            coverImages: s
+                .array(s.string())
+                .max(3, { message: 'Maximum file url will be 3' }),
             published: s.boolean().default(true),
             body: s.mdx(),
         })

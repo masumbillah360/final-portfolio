@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { CallOut } from './callout';
 import { Heading } from './heading';
 import { Paragraph } from './paragraph';
+import { MDXButton } from './button';
 
 const useMDXComponent = (code: string) => {
     const fn = new Function(code);
@@ -17,6 +18,7 @@ const components = {
     CallOut,
     Heading,
     Paragraph,
+    MDXButton
 };
 
 interface MdxProps {

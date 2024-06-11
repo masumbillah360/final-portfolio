@@ -5,10 +5,10 @@ import { useRouter } from 'next/navigation';
 
 import Titlebar from '@/components/title-bar';
 import { Button } from '@/components/ui/button';
+import ProjectCard from '@/components/card/project';
 
 import sectionBackground from '@/public/section.svg';
 
-import ProjectCard from '@/components/card/project';
 
 import { projects } from '#content';
 
@@ -31,7 +31,7 @@ const Projects = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10 lg:gap-7 my-4 md:my-6 lg:my-10">
                 {sectionProjects.map(
-                    ({ slug, name, subDescription, thumbnail }) => (
+                    ({ slug, name, subDescription, thumbnail, url }) => (
                         <ProjectCard
                             key={slug + 'ProjectSection'}
                             slug={slug}
@@ -42,6 +42,7 @@ const Projects = () => {
                                     : subDescription
                             }
                             thumbnail={thumbnail}
+                            url={url}
                         />
                     )
                 )}

@@ -59,6 +59,7 @@ const ProjectPage = ({ searchParams }: ProjectPageProps) => {
                                         : p.subDescription
                                 }
                                 thumbnail={p.thumbnail}
+                                url={p.url}
                             />
                         ))}
                     </div>

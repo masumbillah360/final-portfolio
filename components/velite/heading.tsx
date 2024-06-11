@@ -7,9 +7,10 @@ interface Props {
     children: ReactNode;
     type?: 'default' | 'warning' | 'danger';
     typo?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+    classNames?: string;
 }
 
-export function Heading({ children, type, typo }: Readonly<Props>) {
+export function Heading({ children, type, typo, classNames }: Readonly<Props>) {
     let fontSize = 'text-4xl';
     switch (typo) {
         case 'h2':
@@ -30,10 +31,18 @@ export function Heading({ children, type, typo }: Readonly<Props>) {
     }
     return (
         <span
-            className={cn('block py-2 px-0 font-semibold', fontSize, {
-                'border-red-900 bg-red-50 dark:bg-slate-800': type === 'danger',
-                'border-yellow-900 bg-yellow-50 dark:bg-slate-800': type === 'warning',
-            })}>
+            className={cn(
+                'block py-2 px-0 font-semibold',
+                fontSize,
+                classNames,
+                {
+                    'border-red-900 bg-red-50 dark:bg-slate-800':
+                        type === 'danger',
+                    'border-yellow-900 bg-yellow-50 dark:bg-slate-800':
+                        type === 'warning',
+                    'text-center': type === 'danger' && fontSize === 'text-4xl',
+                }
+            )}>
             {children}
         </span>
     );

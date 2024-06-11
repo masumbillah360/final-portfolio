@@ -8,15 +8,17 @@ import { Button } from '../ui/button';
 import { CardSkeleton } from '../customSkeleton/card';
 import { BorderButton } from '../framer-motion/moving-border';
 import { CardBody, CardContainer, CardItem } from '../framer-motion/3d-card';
+import Link from 'next/link';
 
 interface Props {
     slug: string;
     name: string;
     subDescription: string;
-    thumbnail?: string;
+    thumbnail: string;
+    url: string;
 }
 
-const ProjectCard = ({ slug, name, subDescription, thumbnail }: Props) => {
+const ProjectCard = ({ slug, name, subDescription, thumbnail, url }: Props) => {
     const router = useRouter();
 
     const [mounted, setMounted] = useState<boolean>(false);
@@ -42,10 +44,7 @@ const ProjectCard = ({ slug, name, subDescription, thumbnail }: Props) => {
                         </CardItem>
                         <CardItem translateZ="100" className="w-full mt-4">
                             <Image
-                                src={
-                                    thumbnail ||
-                                    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                                }
+                                src={thumbnail}
                                 height="1000"
                                 width="1000"
                                 className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
@@ -55,18 +54,16 @@ const ProjectCard = ({ slug, name, subDescription, thumbnail }: Props) => {
                         <div className="flex justify-end items-center gap-3 mt-10">
                             <CardItem
                                 translateZ={20}
-                                href="https://twitter.com/mannupaaji"
-                                target="_blank"
                                 className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white flex items-center gap-1">
-                                <BorderButton
-                                    containerClassName="h-10 dark:bg-slate-300"
-                                    duration={2000}>
-                                    <div
-                                        className="h-full w-20 dark:bg-slate-300 dark:text-black font-bold uppercase flex justify-center items-center"
-                                        >
-                                        Live
-                                    </div>
-                                </BorderButton>
+                                <Link href={url} target="_blank">
+                                    <BorderButton
+                                        containerClassName="h-10 dark:bg-slate-300"
+                                        duration={2000}>
+                                        <div className="h-full w-20 dark:bg-slate-300 dark:text-black font-bold uppercase flex justify-center items-center">
+                                            Live
+                                        </div>
+                                    </BorderButton>
+                                </Link>
                             </CardItem>
                             <CardItem translateZ={20}>
                                 <Button
