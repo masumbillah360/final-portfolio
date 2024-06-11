@@ -9,6 +9,10 @@ export function cn(...inputs: ClassValue[]) {
 export function truncate(text: string | undefined) {
     return text && text.length > 20 ? text.slice(0, 20) + '...' : text;
 }
+
+export function truncateDate(text: string | undefined) {
+    return text && text.length ? text.split('T')[0] : text;
+}
 export function getSimilarCategory(
     slug: string,
     category: string,

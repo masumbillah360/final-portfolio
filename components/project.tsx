@@ -12,6 +12,7 @@ import { MDXContent } from './velite/mdx-components';
 
 // project type
 import { Projects } from '@/.velite';
+import { truncateDate } from '@/lib/utils';
 
 const ProjectContent = ({ project }: { project: Projects }) => {
     const [mounted, setMounted] = useState<boolean>(false);
@@ -101,8 +102,22 @@ const ProjectContent = ({ project }: { project: Projects }) => {
                     <div className="my-3">
                         <MDXContent code={project?.body} />
                     </div>
-                    <div className="my-3 flex justify-end items-start">
-                        <div className="flex justify-end items-center gap-4">
+                    <div className="my-3 flex justify-between items-start">
+                        <div className="flex flex-col items-center p-1 rounded border">
+                            <div className="text-sm font-semibold">
+                                Project Duration
+                            </div>
+                            <div className="flex items-center space-x-2 mt-2">
+                                <span className="text-lg font-bold">
+                                    {truncateDate(project.date.startDate)}
+                                </span>
+                                <span className="text-lg font-bold">-</span>
+                                <span className="text-lg font-bold">
+                                    {truncateDate(project.date.endDate)}
+                                </span>
+                            </div>
+                        </div>
+                        <div className="flex justify-end items-center gap-4 border px-1 py-2 rounded">
                             <div>
                                 <Image
                                     src={project?.thumbnail}

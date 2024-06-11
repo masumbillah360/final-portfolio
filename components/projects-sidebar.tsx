@@ -40,9 +40,13 @@ export function Sidebar({ title, contentType, slug }: Readonly<Props>) {
     let someOtherContent: Projects[] | Blogs[] = [];
     if (result.length === 0) {
         if (contentType === 'blog') {
-            someOtherContent = blogs.slice(0, 10);
+            someOtherContent = blogs
+                .filter((b) => b.slugAsParams === slug)
+                .slice(0, 10);
         } else {
-            someOtherContent = projects.slice(0, 10);
+            someOtherContent = projects
+                .filter((p) => p.slugAsParams !== slug)
+                .slice(0, 10);
         }
     }
     const finalResult = result.length ? result : someOtherContent;
