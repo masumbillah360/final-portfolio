@@ -120,7 +120,7 @@ const Navbar = () => {
                                     id="navbar-mobile">
                                     {routes.map((route) => (
                                         <li key={route.label}>
-                                            <SheetClose>
+                                            <SheetClose asChild>
                                                 <Link
                                                     className="block px-4 py-2 no-underline outline-none hover:no-underline"
                                                     href={`/#${
