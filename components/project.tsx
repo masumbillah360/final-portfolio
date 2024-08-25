@@ -21,6 +21,10 @@ const ProjectContent = ({ project }: { project: Projects }) => {
     }, []);
 
     if (!mounted) return null;
+    let links = project.urls;
+    if (project.protected) {
+        links = project.urls.filter((ur) => !ur.label.startsWith("Github "));
+    }
     return (
         <div className="flex">
             <ScrollArea className="h-screen flex-1 w-full">
@@ -68,7 +72,7 @@ const ProjectContent = ({ project }: { project: Projects }) => {
                             <Image
                                 src={
                                     project.coverImages[
-                                        project.coverImages.length - 1
+                                    project.coverImages.length - 1
                                     ]
                                 }
                                 alt="Project thumbnail"
@@ -84,19 +88,25 @@ const ProjectContent = ({ project }: { project: Projects }) => {
                             Overview of {project.name}
                         </Heading>
 
-                        <Heading type="default" typo="h2">
-                            All Necessary Links
-                        </Heading>
-                        <div className="flex justify-center items-center gap-4">
-                            {project.urls.map((ur) => (
-                                <Link
-                                    key={ur.link + ur.label}
-                                    href={ur.link}
-                                    target="_blank">
-                                    <Button>{ur.label}</Button>
-                                </Link>
-                            ))}
-                        </div>
+                        {
+                            project.upcoming === false ? (
+                                <>
+                                    <Heading type="default" typo="h2">
+                                        All Necessary Links
+                                    </Heading>
+                                    <div className="flex justify-center items-center gap-4">
+                                        {links.map((ur) => (
+                                            <Link
+                                                key={ur.link + ur.label}
+                                                href={ur.link}
+                                                target="_blank">
+                                                <Button>{ur.label}</Button>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </>
+                            ) : null
+                        }
                     </div>
 
                     <div className="my-3">

@@ -52,6 +52,8 @@ const projects = defineCollection({
                 .array(s.string())
                 .max(3, { message: 'Maximum file url will be 3' }),
             published: s.boolean().default(true),
+            upcoming: s.boolean().default(false).optional(),
+            protected: s.boolean().default(false).optional(),
             body: s.mdx(),
         })
         .transform(computedFields),

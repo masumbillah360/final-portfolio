@@ -27,7 +27,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className="scroll-pt-10 md:scroll-pt-24 lg:scroll-pt-30">
+            className="scroll-pt-10 md:scroll-pt-24 lg:scroll-pt-30" suppressHydrationWarning>
             <body className={font.className}>
                 <ThemeProvider
                     attribute="class"

@@ -37,6 +37,7 @@ const ProjectPage = ({ searchParams }: ProjectPageProps) => {
         BLOG_PER_PAGE * (currentPage - 1),
         BLOG_PER_PAGE * currentPage
     );
+    console.log(filteredProjects);
     return (
         <div className="min-h-screen">
             {disPlayProjects.length ? (
@@ -60,6 +61,7 @@ const ProjectPage = ({ searchParams }: ProjectPageProps) => {
                                 }
                                 thumbnail={p.thumbnail}
                                 url={p.url}
+                                upcoming={p.upcoming}
                             />
                         ))}
                     </div>

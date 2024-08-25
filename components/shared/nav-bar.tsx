@@ -86,12 +86,11 @@ const Navbar = () => {
                                 }}>
                                 <div
                                     className={`transition-colors duration-300 hover:text-violet-500 font-semibold 
-                                    ${
-                                        ''
+                                    ${''
                                         // activeSection === route.path
                                         //     ? getNavLinkClass(activeSection)
                                         //     : 'dark:text-violet-300'
-                                    }`}>
+                                        }`}>
                                     {route.label}
                                 </div>
                             </Button>
@@ -123,17 +122,15 @@ const Navbar = () => {
                                             <SheetClose asChild>
                                                 <Link
                                                     className="block px-4 py-2 no-underline outline-none hover:no-underline"
-                                                    href={`/#${
-                                                        sectionIds[route.path]
-                                                    }`}>
+                                                    href={`/#${sectionIds[route.path]
+                                                        }`}>
                                                     <div
-                                                        className={`dark:text-white transition-colors duration-300 hover:text-violet-500 font-semibold ${
-                                                            ''
+                                                        className={`dark:text-white transition-colors duration-300 hover:text-violet-500 font-semibold ${''
                                                             // activeSection ===
                                                             // route.path
                                                             //     ? 'text-primary border-b-2 border-b-primary'
                                                             // : ''
-                                                        }`}>
+                                                            }`}>
                                                         {route.label}
                                                     </div>
                                                 </Link>
