@@ -6,19 +6,19 @@ export const educations = [
     //     institution: 'Uttara University, Dhaka',
     // },
     {
-        id: 2,
+        id: 1,
         title: 'Diploma In CST/CSE',
         duration: '2017 - 2021',
         institution: 'Bogura Polytechnic Institute, Bogura',
     },
     {
-        id: 3,
+        id: 2,
         title: 'Secondary School Certificate',
         duration: '2016 - 2017',
         institution: 'Bagaharchar Islamia Sinior Alim Madrasah',
     },
     {
-        id: 4,
+        id: 3,
         title: 'Junior School Certificate',
         duration: '2015',
         institution: 'Bagaharchar Islamia Sinior Alim Madrasah',

@@ -59,7 +59,7 @@ export function Sidebar({ title, contentType, slug }: Readonly<Props>) {
     }
 
     return (
-        <ScrollArea className="hidden md:block h-screen rounded-l border">
+        <ScrollArea className="hidden md:block h-[90vh] rounded-l border">
             <div className="w-[200px]">
                 <h4 className="mb-4 text-lg font-medium border-b w-full py-2 text-center">
                     <span className="p-4 w-full whitespace-nowrap">

@@ -112,8 +112,8 @@ const ProjectContent = ({ project }: { project: Projects }) => {
                     <div className="my-3">
                         <MDXContent code={project?.body} />
                     </div>
-                    <div className="my-3 flex justify-between items-start">
-                        <div className="flex flex-col items-center p-1 rounded border">
+                    <div className="my-3 flex justify-between items-end">
+                        {/* <div className="flex flex-col items-center p-1 rounded border">
                             <div className="text-sm font-semibold">
                                 Project Duration
                             </div>
@@ -126,7 +126,7 @@ const ProjectContent = ({ project }: { project: Projects }) => {
                                     {truncateDate(project.date.endDate)}
                                 </span>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="flex justify-end items-center gap-4 border px-1 py-2 rounded">
                             <div>
                                 <Image
