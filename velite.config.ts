@@ -24,6 +24,7 @@ const blogs = defineCollection({
             similarCategory: s.array(s.string()),
             thumbnail: s.string(),
             body: s.mdx(),
+            featured: s.boolean().default(false)
         })
         .transform(computedFields),
 });

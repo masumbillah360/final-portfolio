@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { BorderButton } from './framer-motion/moving-border';
-import { Button } from './ui/button';
 
 const Titlebar = ({ title }: { title: string }) => {
     const [mounted, setMounted] = useState(false);

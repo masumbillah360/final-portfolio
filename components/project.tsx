@@ -12,7 +12,6 @@ import { MDXContent } from './velite/mdx-components';
 
 // project type
 import { Projects } from '@/.velite';
-import { truncateDate } from '@/lib/utils';
 
 const ProjectContent = ({ project }: { project: Projects }) => {
     const [mounted, setMounted] = useState<boolean>(false);
