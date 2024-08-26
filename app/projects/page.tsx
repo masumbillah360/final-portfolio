@@ -20,7 +20,7 @@ const ProjectPage = ({ searchParams }: ProjectPageProps) => {
     const currentPage = Number(searchParams.page) || 1;
     const BLOG_PER_PAGE = 6;
     
-    let filteredProjects = projects.filter((p) => p.published);
+    let filteredProjects = projects.filter((p) => p.published).sort((a, b) => b.id - a.id);
 
     if (searchParams?.tags) {
         filteredProjects = filteredProjects.filter((b) =>

@@ -34,6 +34,7 @@ const projects = defineCollection({
     pattern: 'projects/**/*.mdx',
     schema: s
         .object({
+            id: s.number(),
             slug: s.path(),
             name: s.string().max(99),
             subDescription: s.string().max(200),
