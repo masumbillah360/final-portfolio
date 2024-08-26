@@ -19,7 +19,9 @@ interface BlogPageProps {
 const BlogPage = ({ searchParams }: BlogPageProps) => {
     const currentPage = Number(searchParams.page) || 1;
     const BLOG_PER_PAGE = 6;
-    let filteredBlogs = blogs.filter((b) => b.published && b.featured).slice(0, 6);
+    let filteredBlogs = blogs.filter((b) => b.published)
+        // @ts-expect-error
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
     if (searchParams?.tags) {
         filteredBlogs = filteredBlogs.filter((b) =>
             b.tags.some((tag) => tag === searchParams.tags)

@@ -18,7 +18,7 @@ interface ProjectPageProps {
 
 const ProjectPage = ({ searchParams }: ProjectPageProps) => {
     const currentPage = Number(searchParams.page) || 1;
-    const BLOG_PER_PAGE = 9;
+    const BLOG_PER_PAGE = 6;
     
     let filteredProjects = projects.filter((p) => p.published);
 

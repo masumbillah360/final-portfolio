@@ -11,8 +11,14 @@ import sectionBackground from '@/public/section.svg';
 import { blogs } from '#content';
 
 function getLatestBlogs() {
-    return blogs.slice(0, 6);
+    return blogs
+        .filter((blog) => blog.published && !isNaN(new Date(blog.date).getTime()))
+        // @ts-expect-error
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 6);
 }
+
+
 
 const Blog = () => {
     const router = useRouter();
