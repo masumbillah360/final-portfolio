@@ -13,7 +13,7 @@ import sectionBackground from '@/public/section.svg';
 import { projects } from '#content';
 
 function getLatestProjects() {
-    return projects.slice(0, 6);
+    return projects.filter((p) => p.featured).slice(0, 6);
 }
 
 const Projects = () => {

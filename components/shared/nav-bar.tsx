@@ -32,7 +32,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="rounded-lg border-b transition-all duration-300 hover:border-b-primary">
+        <nav className="rounded-lg border-b transition-all duration-300 hover:border-b-primary backdrop-blur">
             <div className="flex items-center justify-between py-2">
                 <div className="flex flex-shrink-0 items-center ml-2">
                     {mount ? (

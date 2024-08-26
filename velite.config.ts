@@ -54,6 +54,7 @@ const projects = defineCollection({
             published: s.boolean().default(true),
             upcoming: s.boolean().default(false).optional(),
             protected: s.boolean().default(false).optional(),
+            featured: s.boolean().default(false),
             body: s.mdx(),
         })
         .transform(computedFields),
