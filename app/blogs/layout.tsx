@@ -1,5 +1,3 @@
-// This is blog layout
-
 import React from 'react';
 import { Metadata } from 'next';
 
