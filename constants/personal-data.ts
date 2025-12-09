@@ -1,4 +1,4 @@
-import profileImage from '@/public/image/profile.jpg';
+import profileImage from '@/public/image/profile.jpeg';
 export const personalData = {
     name: 'Masum Billah',
     profile: profileImage,
