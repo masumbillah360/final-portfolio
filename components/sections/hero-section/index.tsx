@@ -32,7 +32,7 @@ const HeroSection = () => {
                     <div className="flex flex-col justify-center items-center md:items-start gap-10 w-full">
                         <div>
                             <div className="text-4xl md:text-6xl font-bold flex flex-col gap-5 items-center md:items-start">
-                                <h1 className="mb-3 md:mb-4 lg:mb-7 text-primary dark:text-primary-foreground">
+                                <h1 className="mb-3 md:mb-4 lg:mb-7 text-primary">
                                     Hi there,
                                 </h1>
                                 <h1 className="">This is </h1>
