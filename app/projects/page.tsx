@@ -1,12 +1,9 @@
-'use client';
-
-import React from 'react';
-
 import NotFound from '@/components/not-found';
 import ProjectCard from '@/components/card/project';
 import QueryPagination from '@/components/pagination';
 
 import { projects } from '#content';
+import { Suspense } from 'react';
 
 interface ProjectPageProps {
     searchParams: {
@@ -38,6 +35,7 @@ const ProjectPage = ({ searchParams }: ProjectPageProps) => {
         BLOG_PER_PAGE * currentPage
     );
     return (
+        <Suspense fallback={<div>Loading...</div>}>
         <div className="min-h-screen">
             {disPlayProjects.length ? (
                 <>
@@ -79,6 +77,7 @@ const ProjectPage = ({ searchParams }: ProjectPageProps) => {
                 />
             )}
         </div>
+        </Suspense>
     );
 };
 
