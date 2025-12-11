@@ -1,6 +1,6 @@
-'use client';
+// 'use client';
 
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -14,12 +14,12 @@ import { MDXContent } from './velite/mdx-components';
 import { Projects } from '@/.velite';
 
 const ProjectContent = ({ project }: { project: Projects }) => {
-    const [mounted, setMounted] = useState<boolean>(false);
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+    // const [mounted, setMounted] = useState<boolean>(false);
+    // useEffect(() => {
+    //     setMounted(true);
+    // }, []);
 
-    if (!mounted) return null;
+    // if (!mounted) return null;
     let links = project.urls;
     if (project.protected) {
         links = project.urls.filter((ur) => !ur.label.startsWith("Github "));
