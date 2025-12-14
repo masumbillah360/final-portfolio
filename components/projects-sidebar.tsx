@@ -12,7 +12,7 @@ import {
     getProjectFromParams,
     getSimilarCategory,
     truncate,
-} from '@/lib/utils';
+} from '../lib/utils';
 
 interface Props {
     title: string;

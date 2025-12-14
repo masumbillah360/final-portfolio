@@ -1,7 +1,7 @@
 import NotFound from '@/components/not-found';
 import ProjectContent from '@/components/project';
 
-import { getProjectFromParams } from '@/lib/utils';
+import { getProjectFromParams } from '../../../lib/utils';
 import '@/styles/mdx.css';
 
 

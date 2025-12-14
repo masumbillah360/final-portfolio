@@ -2,7 +2,7 @@ import BlogContent from '@/components/blog';
 import NotFound from '@/components/not-found';
 
 import '@/styles/mdx.css';
-import { getBlogFromParams } from '@/lib/utils';
+import { getBlogFromParams } from '../../../lib/utils';
 
 
 const SingleBlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
