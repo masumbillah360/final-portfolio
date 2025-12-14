@@ -1,4 +1,4 @@
-import profileImage from '@/public/image/profile.jpg';
+import profileImage from '@/public/image/profile.jpeg';
 export const personalData = {
     name: 'Masum Billah',
     profile: profileImage,
@@ -7,7 +7,7 @@ export const personalData = {
         'My name is Masum Billah. I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude. I love to learn and explore new technologies and am passionate about problem-solving. I love almost all the stacks of web application development and love to make the web more open to the world. My core skill is based on JavaScript and I love to do most of the things using JavaScript. I am available for any kind of job opportunity that suits my skills and interests.',
     email: 'masumbillah6584@gmail.com',
     phone: '+8801783980102',
-    address: 'Jamalpur, Mymensingh, Dhaka, Bangladesh',
+    address: 'Gulshan-2, Dhaka, Bangladesh',
     github: 'https://github.com/masumbillah360',
     facebook: 'https://www.facebook.com/abusaid.riyaz/',
     linkedIn: 'https://www.linkedin.com/in/abu-said-bd/',

@@ -3,14 +3,14 @@ export const experienceData = [
         id: 1,
         title: 'Jr MERN Developer',
         company: 'Peacock India, INDIA',
-        duration: '(Jan 2023 - Apr 2024)',
-        isEx: true,
+        duration: '(Jan 2023 - Present)',
+        isEx: false,
     },
     {
         id: 2,
         title: 'FullStack Developer',
-        company: 'Fiverr/Upwork (freelance)',
-        duration: '(Apr 2024 - Present)',
+        company: 'Local Freelance Projects',
+        duration: '(Apr 2020 - 2023)',
         isEx: false,
     },
     {

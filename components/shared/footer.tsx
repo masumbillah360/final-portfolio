@@ -2,8 +2,6 @@
 
 import { linkData } from '@/constants';
 import Link from 'next/link';
-import React from 'react';
-
 const Footer = () => {
     return (
         <footer className="border rounded-lg rounded-b-none p-4 md:p-8 lg:p-16">

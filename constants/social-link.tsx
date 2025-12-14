@@ -1,6 +1,7 @@
 'use client';
 
 import { MdOutlineMailOutline } from 'react-icons/md';
+// This file exports icon React nodes and can be server-rendered.
 import { AiOutlineGithub } from 'react-icons/ai';
 import { FaFacebook, FaHackerrank, FaLinkedinIn } from 'react-icons/fa';
 import { SiCodeforces } from 'react-icons/si';

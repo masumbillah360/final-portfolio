@@ -31,7 +31,7 @@ export default function RootLayout({
             <body className={font.className}>
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="system"
+                    defaultTheme="dark"
                     enableSystem
                     disableTransitionOnChange>
                     <main className="px-1 md:px-0 md:container mx-auto">

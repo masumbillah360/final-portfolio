@@ -6,7 +6,7 @@ import {
     useMotionTemplate,
     useMotionValue,
     useTransform,
-} from 'framer-motion';
+} from 'motion/react';
 
 import { cn } from '@/lib/utils';
 
@@ -22,17 +22,18 @@ export function BorderButton({
 }: Readonly<{
     borderRadius?: string;
     children: React.ReactNode;
-    as?: any;
+    as?: React.ElementType;
     containerClassName?: string;
     borderClassName?: string;
     duration?: number;
     className?: string;
-    [key: string]: any;
+    [key: string]: unknown;
 }>) {
     return (
         <Component
             className={cn(
-                'bg-white dark:bg-slate-900 relative text-xl  h-16 w-full p-[1px] overflow-hidden ',
+                // ✅ FIX 1: Use bg-transparent instead of bg-white
+                'bg-transparent relative text-xl h-16 w-full p-px overflow-hidden',
                 containerClassName
             )}
             style={{
@@ -45,7 +46,8 @@ export function BorderButton({
                 <MovingBorder duration={duration} rx="30%" ry="30%">
                     <div
                         className={cn(
-                            'h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--violet-500)_40%,transparent_60%)]',
+                            // ✅ FIX 2: Use hardcoded color or ensure CSS variable exists
+                            'h-20 w-20 opacity-[0.8] bg-[radial-gradient(#8b5cf6_40%,transparent_60%)]',
                             borderClassName
                         )}
                     />
@@ -54,7 +56,7 @@ export function BorderButton({
 
             <div
                 className={cn(
-                    'relative bg-white dark:bg-slate-900/[0.8] border border-primary dark:border-slate-800 backdrop-blur-xl text-primary flex items-center justify-center w-full h-full text-sm antialiased',
+                    'relative bg-white dark:bg-slate-900/80 border border-primary dark:border-slate-800 backdrop-blur-xl text-primary flex items-center justify-center w-full h-full text-sm antialiased',
                     className
                 )}
                 style={{
@@ -77,9 +79,9 @@ export const MovingBorder = ({
     duration?: number;
     rx?: string;
     ry?: string;
-    [key: string]: any;
+    [key: string]: unknown;
 }) => {
-    const pathRef = useRef<any>();
+    const pathRef = useRef<SVGRectElement | null>(null);
     const progress = useMotionValue<number>(0);
 
     useAnimationFrame((time) => {
@@ -90,13 +92,12 @@ export const MovingBorder = ({
         }
     });
 
-    const x = useTransform(
-        progress,
-        (val) => pathRef.current?.getPointAtLength(val).x
+    const x = useTransform(progress, (val) =>
+        pathRef.current?.getPointAtLength(val).x ?? 0
     );
-    const y = useTransform(
-        progress,
-        (val) => pathRef.current?.getPointAtLength(val).y
+
+    const y = useTransform(progress, (val) =>
+        pathRef.current?.getPointAtLength(val).y ?? 0
     );
 
     const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;

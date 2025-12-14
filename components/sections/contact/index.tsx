@@ -58,7 +58,6 @@ const ContactSection = () => {
 
     // Form Spree state and submit function
     const [state, handleSubmit] = spreeForm('xpznvovg');
-    console.log(['FORM SUBMITTING STATUS ', state.succeeded]);
 
     let isSubmitting = false;
     function onSubmit(values: z.infer<typeof formSchema>) {
@@ -66,7 +65,7 @@ const ContactSection = () => {
         try {
             handleSubmit(values);
         } catch (error: any) {
-            console.log(['Submission Error', error.message]);
+            // Error handled silently
         }
         form.reset();
         toast({

@@ -63,44 +63,78 @@ function Skills() {
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">Tailwind</span>
                                 <span className="text-gray-400">{"', '"}</span>
-                                <span className="text-amber-300">Node</span>
+                                <span className="text-amber-300">JavaScript</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">TypeScript</span>
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">React</span>
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">NextJS</span>
                                 <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">React Native</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Expo Go</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Shadcn UI</span>
+                                <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">Redux</span>
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">Express</span>
                                 <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Hono</span>
+                                <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">Prisma</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Zustand</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">React Query</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">SWR</span>
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">
                                     Drizzle ORM
                                 </span>
                                 <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Oauth</span>
+                                <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">Turso</span>
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">MongoDB</span>
                                 <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">SQLite</span>
+                                <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">mySQL</span>
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">
-                                    postgreSQL
+                                    PostgreSQL
                                 </span>
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">REST API</span>
                                 <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">GraphQL</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">tRPC</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Redis</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Firebase</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Supabase</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">NestJS</span>
+                                <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">
                                     Web Socket
                                 </span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Kafka</span>
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">Swagger</span>
                                 <span className="text-gray-400">{"'],"}</span>
                             </div>
                             <div className="ml-4 lg:ml-8 mr-2">
                                 <span className="text-slate-400">
-                                    &#47;&#47; Tools List
+                                    &#47;&#47; Tools & Productivity
                                 </span>
                             </div>
                             <div className="ml-4 lg:ml-8 mr-2 mb-1">
@@ -109,7 +143,19 @@ function Skills() {
                                 </span>{' '}
                                 <span className="text-white">:</span>{' '}
                                 <span className="text-gray-400">{`['`}</span>
+                                <span className="text-amber-300">Jest</span>
+                                <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">VS Code</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Android Studio</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">AWS</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Cloudflare</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Vercel</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Digital Ocean</span>
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">Postman</span>
                                 <span className="text-gray-400">{"', '"}</span>
@@ -119,13 +165,12 @@ function Skills() {
                                 <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">Figma</span>
                                 <span className="text-gray-400">{"', '"}</span>
-                                <span className="text-amber-300">
-                                    Photoshop
-                                </span>
+                                <span className="text-amber-300">Notion</span>
                                 <span className="text-gray-400">{"', '"}</span>
-                                <span className="text-amber-300">
-                                    Illustrator
-                                </span>
+                                <span className="text-amber-300">Jira</span>
+                                <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">ClickUP</span>
+                                <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-gray-400">{"'],"}</span>
                             </div>
                             <div className="ml-4 lg:ml-8 mr-2">

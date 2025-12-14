@@ -1,5 +1,3 @@
-import React from 'react';
-
 import BlogContent from '@/components/blog';
 import NotFound from '@/components/not-found';
 
@@ -7,13 +5,14 @@ import '@/styles/mdx.css';
 import { getBlogFromParams } from '@/lib/utils';
 
 
-const SingleBlogPage = ({ params }: { params: { id: string } }) => {
-    const blog = getBlogFromParams(params.id);
+const SingleBlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+    const { id } = await params;
+    const blog = getBlogFromParams(id);
     if (!blog) {
         return (
             <NotFound
                 message="BLOGS NOT FOUND"
-                keyWord={params.id || 'Some'}
+                keyWord={id || 'Some'}
                 path="/blogs"
                 pathLabel="Back To Blogs"
             />
