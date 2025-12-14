@@ -1,0 +1,750 @@
+[
+  {
+    "id": 14,
+    "slug": "projects/ai_saas_landing_page",
+    "name": "AI SAAS Dark Landing Page",
+    "subDescription": "Test Coding Quizes",
+    "description": "It's a React app.It's basically a quize app. There has some options and user can select an option. If answer is correct or wrong this app will notify you. You can choose option and app will be notify you this answer is correct or wrong. You can see correct answer also.",
+    "category": "landing-page",
+    "similarCategory": [
+      "landing-page",
+      "next-js",
+      "tailwindcss",
+      "react",
+      "framer-motion"
+    ],
+    "tags": [
+      "landing-page",
+      "next-js",
+      "tailwindcss",
+      "react",
+      "framer-motion"
+    ],
+    "url": "https://ai-landing-page-kappa.vercel.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://ai-landing-page-kappa.vercel.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/ai-landing-page"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-29T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/ai_dark.png",
+    "coverImages": [
+      "/content-image/ai_dark.png",
+      "/content-image/ai_dark_2.png",
+      "/content-image/ai_dark_3.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": true,
+    "featured": true,
+    "body": "const{Fragment:e,jsx:n,jsxs:i}=arguments[0];function _createMdxContent(r){const o={p:\"p\",...r.components},{Heading:t,Paragraph:a}=o;return t||_missingMdxReference(\"Heading\",!0),a||_missingMdxReference(\"Paragraph\",!0),i(e,{children:[n(t,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(a,{children:n(o.p,{children:\"It's a React app. It's basically a quiz app. There are some options, and users can select an option. If the answer is correct or wrong, this app will notify you. You can choose an option, and the app will notify you if the answer is correct or wrong. You can also see the correct answer.\"})}),\"\\n\",i(\"ul\",{children:[\" \",n(\"li\",{children:\"Beautiful UI\"}),\" \",n(\"li\",{children:\"Eye-Catching Animations\"}),\" \",n(\"li\",{children:\"Real-time Answer Feedback\"}),\" \",n(\"li\",{children:\"Correct Answer Display\"}),\" \"]}),\"\\n\",n(t,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(a,{children:n(o.p,{children:\"Ai Dark Landing page leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",i(\"ol\",{children:[\" \",n(\"li\",{children:\"Next.js\"}),\" \",n(\"li\",{children:\"TypeScript\"}),\" \",n(\"li\",{children:\"Framer Motion\"}),\" \",n(\"li\",{children:\"Tailwind CSS\"}),\" \",n(\"li\",{children:\"React\"}),\" \"]}),\"\\n\",n(a,{children:\" In summary, AI SAAS Dark Landing Page is an ideal solution for individuals looking to test their coding knowledge through interactive quizzes. It combines ease of use, robust functionality, and a modern technology stack to ensure a seamless and engaging experience for all users. \"})]})}return{default:function(e={}){const{wrapper:i}=e.components||{};return i?n(i,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "ai_saas_landing_page"
+  },
+  {
+    "id": 13,
+    "slug": "projects/apple_clone",
+    "name": "Apple clone",
+    "subDescription": "Three Js and animation practice with apple site.",
+    "description": "It’s a React app. It’s a clone of the Apple website, focusing on Three.js and animation practice. The app showcases various animations and interactive elements similar to the Apple site.",
+    "category": "landing-page",
+    "similarCategory": [
+      "landing-page",
+      "next-js",
+      "tailwindcss",
+      "react",
+      "three-js"
+    ],
+    "tags": [
+      "landing-page",
+      "next-js",
+      "tailwindcss",
+      "react",
+      "three-js"
+    ],
+    "url": "https://apple-clone-th.vercel.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://apple-clone-th.vercel.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/apple-clone.git"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/apple_1.png",
+    "coverImages": [
+      "/content-image/apple_1.png",
+      "/content-image/apple_2.png",
+      "/content-image/apple_3.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": true,
+    "featured": true,
+    "body": "const{Fragment:e,jsx:n,jsxs:i}=arguments[0];function _createMdxContent(r){const t={p:\"p\",...r.components},{Heading:l,Paragraph:o}=t;return l||_missingMdxReference(\"Heading\",!0),o||_missingMdxReference(\"Paragraph\",!0),i(e,{children:[n(l,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(o,{children:n(t.p,{children:\"Apple Clone is a comprehensive platform designed to replicate the Apple website's look and feel. It offers a robust set of features aimed at providing a seamless user experience. Key features include:\"})}),\"\\n\",i(\"ul\",{children:[\" \",n(\"li\",{children:\"Beautiful UI\"}),\" \",n(\"li\",{children:\"Eye-Catching Animations\"}),\" \",n(\"li\",{children:\"Interactive Elements\"}),\" \",n(\"li\",{children:\"Three.js Integration\"}),\" \"]}),\"\\n\",n(l,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(o,{children:n(t.p,{children:\"Apple Clone leverages a modern technology stack to deliver a powerful and scalable application. The technologies used include:\"})}),\"\\n\",i(\"ol\",{children:[\" \",n(\"li\",{children:\"React.js\"}),\" \",n(\"li\",{children:\"Next.js\"}),\" \",n(\"li\",{children:\"Three.js\"}),\" \",n(\"li\",{children:\"Tailwind CSS\"}),\" \",n(\"li\",{children:\"GSAP\"}),\" \"]}),\"\\n\",n(o,{children:n(t.p,{children:\"In summary, Apple Clone is an ideal solution for individuals looking to practice Three.js and animation techniques. It combines ease of use, robust functionality, and a modern technology stack to ensure a seamless and engaging experience for all users.\"})})]})}return{default:function(e={}){const{wrapper:i}=e.components||{};return i?n(i,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "apple_clone"
+  },
+  {
+    "id": 5,
+    "slug": "projects/coders_quiz",
+    "name": "Coders Quiz",
+    "subDescription": "Test Coding Quizes",
+    "description": "It's a React app.It's basically a quize app. There has some options and user can select an option. If answer is correct or wrong this app will notify you. You can choose option and app will be notify you this answer is correct or wrong. You can see correct answer also.",
+    "category": "tutorial",
+    "similarCategory": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "tags": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "url": "https://web-coders-quiz.netlify.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://web-coders-quiz.netlify.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/coders-quiz-app"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/coders_quiz_home.png",
+    "coverImages": [
+      "/content-image/coders_quiz_home.png",
+      "/content-image/coders_quiz_quiz.png",
+      "/content-image/coders_quiz_chart.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": false,
+    "featured": false,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const o={p:\"p\",...i.components},{Heading:t,Paragraph:l}=o;return t||_missingMdxReference(\"Heading\",!0),l||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(t,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:\"Play quiz some topics.\"}),n(\"li\",{children:\"Correct and wrong answer notifier\"}),n(\"li\",{children:\"It will show correct answer\"})]}),\"\\n\",n(t,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",r(\"ol\",{children:[n(\"li\",{children:\"ReactJs\"}),n(\"li\",{children:\"show active/current route on navbar\"}),n(\"li\",{children:\"react-router-dom\"}),n(\"li\",{children:\"Context Api\"}),n(\"li\",{children:\"Tailwind CSS\"}),n(\"li\",{children:\"daisy ui css component library\"}),n(\"li\",{children:\"react-icons\"}),n(\"li\",{children:\"Recharts\"}),n(\"li\",{children:\"react toastify\"})]}),\"\\n\",n(l,{children:n(o.p,{children:\"In summary, Coders Quiz is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "coders_quiz"
+  },
+  {
+    "id": 12,
+    "slug": "projects/dark_landing_page",
+    "name": "Dark Landing Page",
+    "subDescription": "Test Coding Quizes",
+    "description": "It's a React app.It's basically a quize app. There has some options and user can select an option. If answer is correct or wrong this app will notify you. You can choose option and app will be notify you this answer is correct or wrong. You can see correct answer also.",
+    "category": "landing-page",
+    "similarCategory": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "landing-page",
+      "next-js",
+      "framer-motion"
+    ],
+    "tags": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "landing-page",
+      "next-js",
+      "framer-motion"
+    ],
+    "url": "https://dark-landing-page-masum.vercel.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://dark-landing-page-masum.vercel.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/coders-quiz-app"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/dark_landing_1.png",
+    "coverImages": [
+      "/content-image/dark_landing_1.png",
+      "/content-image/dark_landing_2.png",
+      "/content-image/dark_landing_3.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": true,
+    "featured": true,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const o={p:\"p\",...i.components},{Heading:t,Paragraph:l}=o;return t||_missingMdxReference(\"Heading\",!0),l||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(t,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:\"Play quiz some topics.\"}),n(\"li\",{children:\"Correct and wrong answer notifier\"}),n(\"li\",{children:\"It will show correct answer\"})]}),\"\\n\",n(t,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",r(\"ol\",{children:[n(\"li\",{children:\"ReactJs\"}),n(\"li\",{children:\"show active/current route on navbar\"}),n(\"li\",{children:\"react-router-dom\"}),n(\"li\",{children:\"Context Api\"}),n(\"li\",{children:\"Tailwind CSS\"}),n(\"li\",{children:\"daisy ui css component library\"}),n(\"li\",{children:\"react-icons\"}),n(\"li\",{children:\"Recharts\"}),n(\"li\",{children:\"react toastify\"})]}),\"\\n\",n(l,{children:n(o.p,{children:\"In summary, Coders Quiz is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "dark_landing_page"
+  },
+  {
+    "id": 11,
+    "slug": "projects/dev_portfolio",
+    "name": "Developer Portfolio",
+    "subDescription": "A minimalist & full featured developer Portfolio",
+    "description": "It's a React app.It's basically a quize app. There has some options and user can select an option. If answer is correct or wrong this app will notify you. You can choose option and app will be notify you this answer is correct or wrong. You can see correct answer also.",
+    "category": "portfolio",
+    "similarCategory": [
+      "portfolio",
+      "react",
+      "tailwindcss",
+      "next-js",
+      "next",
+      "shadcn"
+    ],
+    "tags": [
+      "portfolio",
+      "react",
+      "tailwindcss",
+      "next-js",
+      "next",
+      "shadcn"
+    ],
+    "url": "https://masum-billah.vercel.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://masum-billah.vercel.app/"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/developer_portfolio_home.png",
+    "coverImages": [
+      "/content-image/developer_portfolio_home.png",
+      "/content-image/developer_portfolio_contact.png",
+      "/content-image/developer_portfolio_blogs.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": true,
+    "featured": true,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const o={p:\"p\",...i.components},{Heading:t,Paragraph:l}=o;return t||_missingMdxReference(\"Heading\",!0),l||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(t,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:\"Play quiz some topics.\"}),n(\"li\",{children:\"Correct and wrong answer notifier\"}),n(\"li\",{children:\"It will show correct answer\"})]}),\"\\n\",n(t,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",r(\"ol\",{children:[n(\"li\",{children:\"ReactJs\"}),n(\"li\",{children:\"show active/current route on navbar\"}),n(\"li\",{children:\"react-router-dom\"}),n(\"li\",{children:\"Context Api\"}),n(\"li\",{children:\"Tailwind CSS\"}),n(\"li\",{children:\"daisy ui css component library\"}),n(\"li\",{children:\"react-icons\"}),n(\"li\",{children:\"Recharts\"}),n(\"li\",{children:\"react toastify\"})]}),\"\\n\",n(l,{children:n(o.p,{children:\"In summary, Coders Quiz is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "dev_portfolio"
+  },
+  {
+    "id": 15,
+    "slug": "projects/e-commerce",
+    "name": "E-commerce",
+    "subDescription": "A fullstack E-commerce web application",
+    "description": "It's a React app.It's basically a quize app. There has some options and user can select an option. If answer is correct or wrong this app will notify you. You can choose option and app will be notify you this answer is correct or wrong. You can see correct answer also.",
+    "category": "e-commerce",
+    "similarCategory": [
+      "e-commerce",
+      "react",
+      "tailwindcss",
+      "next-js",
+      "mongodb",
+      "prisma",
+      "express"
+    ],
+    "tags": [
+      "e-commerce",
+      "react",
+      "tailwindcss",
+      "next-js",
+      "mongodb",
+      "prisma",
+      "express"
+    ],
+    "url": "https://web-coders-quiz.netlify.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://web-coders-quiz.netlify.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/coders-quiz-app"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/upcoming.jpg",
+    "coverImages": [
+      "/content-image/upcoming.jpg",
+      "/content-image/upcoming.jpg",
+      "/content-image/upcoming.jpg"
+    ],
+    "published": true,
+    "upcoming": true,
+    "protected": true,
+    "featured": false,
+    "body": "const{Fragment:e,jsx:r,jsxs:n}=arguments[0];function _createMdxContent(s){const i={p:\"p\",...s.components},{Heading:o,Paragraph:a}=i;return o||_missingMdxReference(\"Heading\",!0),a||_missingMdxReference(\"Paragraph\",!0),n(e,{children:[r(o,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",r(a,{children:r(i.p,{children:\"Coders Quiz is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"})}),\"\\n\",n(\"ul\",{children:[r(\"li\",{children:\"Play quiz some topics.\"}),r(\"li\",{children:\"Correct and wrong answer notifier\"}),r(\"li\",{children:\"It will show correct answer\"})]}),\"\\n\",r(o,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",r(a,{children:r(i.p,{children:\"Coders Quiz leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",n(\"ol\",{className:\"flex justify-start items-center flex-wrap gap-2 rounded-lg font-semibold\",children:[r(\"li\",{className:\"border px-2 py-2\",children:\"ReactJs\"}),r(\"li\",{className:\"border px-2 py-2\",children:\"Nextjs\"}),r(\"li\",{className:\"border px-2 py-2\",children:\"Express\"}),r(\"li\",{className:\"border px-2 py-2\",children:\"Prisma ORM\"}),r(\"li\",{className:\"border px-2 py-2\",children:\"Tailwind CSS\"}),r(\"li\",{className:\"border px-2 py-2\",children:\"Shadcn UI Libraray\"}),r(\"li\",{className:\"border px-2 py-2\",children:\"Recharts\"})]}),\"\\n\",r(a,{children:r(i.p,{children:\"In summary, Coders Quiz is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"})})]})}return{default:function(e={}){const{wrapper:n}=e.components||{};return n?r(n,{...e,children:r(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,r){throw new Error(\"Expected \"+(r?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "e-commerce"
+  },
+  {
+    "id": 6,
+    "slug": "projects/figma_clone",
+    "name": "Figma Clone",
+    "subDescription": "Testing live collaboration with live blocks.",
+    "description": "It's a React app.It's basically a quize app. There has some options and user can select an option. If answer is correct or wrong this app will notify you. You can choose option and app will be notify you this answer is correct or wrong. You can see correct answer also.",
+    "category": "live-collaboration",
+    "similarCategory": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "live-collaboration",
+      "next-js",
+      "live-blocks"
+    ],
+    "tags": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "live-collaboration",
+      "next-js",
+      "live-blocks"
+    ],
+    "url": "https://figma-clone-masum.vercel.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://figma-clone-masum.vercel.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/coders-quiz-app"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/figma_1.png",
+    "coverImages": [
+      "/content-image/figma_1.png",
+      "/content-image/figma_2.png",
+      "/content-image/figma_3.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": true,
+    "featured": true,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const o={p:\"p\",...i.components},{Heading:t,Paragraph:l}=o;return t||_missingMdxReference(\"Heading\",!0),l||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(t,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:\"Play quiz some topics.\"}),n(\"li\",{children:\"Correct and wrong answer notifier\"}),n(\"li\",{children:\"It will show correct answer\"})]}),\"\\n\",n(t,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",r(\"ol\",{children:[n(\"li\",{children:\"ReactJs\"}),n(\"li\",{children:\"show active/current route on navbar\"}),n(\"li\",{children:\"react-router-dom\"}),n(\"li\",{children:\"Context Api\"}),n(\"li\",{children:\"Tailwind CSS\"}),n(\"li\",{children:\"daisy ui css component library\"}),n(\"li\",{children:\"react-icons\"}),n(\"li\",{children:\"Recharts\"}),n(\"li\",{children:\"react toastify\"})]}),\"\\n\",n(l,{children:n(o.p,{children:\"In summary, Coders Quiz is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "figma_clone"
+  },
+  {
+    "id": 10,
+    "slug": "projects/health_app",
+    "name": "A Inventory Health App.",
+    "subDescription": "Test Coding Quizes",
+    "description": "It's a React app.It's basically a quize app. There has some options and user can select an option. If answer is correct or wrong this app will notify you. You can choose option and app will be notify you this answer is correct or wrong. You can see correct answer also.",
+    "category": "tutorial",
+    "similarCategory": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "tags": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "url": "https://web-coders-quiz.netlify.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://web-coders-quiz.netlify.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/coders-quiz-app"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/upcoming.jpg",
+    "coverImages": [
+      "/content-image/upcoming.jpg",
+      "/content-image/upcoming.jpg",
+      "/content-image/upcoming.jpg"
+    ],
+    "published": true,
+    "upcoming": true,
+    "protected": true,
+    "featured": false,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const o={p:\"p\",...i.components},{Heading:t,Paragraph:l}=o;return t||_missingMdxReference(\"Heading\",!0),l||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(t,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:\"Play quiz some topics.\"}),n(\"li\",{children:\"Correct and wrong answer notifier\"}),n(\"li\",{children:\"It will show correct answer\"})]}),\"\\n\",n(t,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",r(\"ol\",{children:[n(\"li\",{children:\"ReactJs\"}),n(\"li\",{children:\"show active/current route on navbar\"}),n(\"li\",{children:\"react-router-dom\"}),n(\"li\",{children:\"Context Api\"}),n(\"li\",{children:\"Tailwind CSS\"}),n(\"li\",{children:\"daisy ui css component library\"}),n(\"li\",{children:\"react-icons\"}),n(\"li\",{children:\"Recharts\"}),n(\"li\",{children:\"react toastify\"})]}),\"\\n\",n(l,{children:n(o.p,{children:\"In summary, Coders Quiz is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "health_app"
+  },
+  {
+    "id": 1,
+    "slug": "projects/learn_code",
+    "name": "Learn Code",
+    "subDescription": "Coding Tutorials WEB",
+    "description": "This apps inside you get some tutorials for web design & development. Tutorials are looks like a blog. Viewrs can download tutorials on pdf format. This app build by ReactJs.",
+    "category": "tutorial",
+    "similarCategory": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "tags": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "url": "https://coding-with-fun-ae9b1.web.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://coding-with-fun-ae9b1.web.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/coding-with-fun-client"
+      },
+      {
+        "label": "Github Server",
+        "link": "https://github.com/masumbillah360/coding-with-fun-server"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/coding_with_fun_home.png",
+    "coverImages": [
+      "/content-image/coding_with_fun_home.png",
+      "/content-image/coding_with_fun_courses.png",
+      "/content-image/coding_with_fun_course.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": false,
+    "featured": false,
+    "body": "const{Fragment:e,jsx:n,jsxs:i}=arguments[0];function _createMdxContent(r){const o={code:\"code\",p:\"p\",...r.components},{Heading:l,Paragraph:t}=o;return l||_missingMdxReference(\"Heading\",!0),t||_missingMdxReference(\"Paragraph\",!0),i(e,{children:[n(l,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(t,{children:i(o.p,{children:[n(o.code,{children:\"Learn Code\"}),\" is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"]})}),\"\\n\",i(\"ul\",{children:[n(\"li\",{children:\"Authentication System\"}),n(\"li\",{children:\"User can login with email, google and github\"}),n(\"li\",{children:\"Learn some coding by this site\"}),n(\"li\",{children:\"user can show his data for profile section\"}),n(\"li\",{children:\"Download tutorial pdf\"})]}),\"\\n\",n(l,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(t,{children:n(o.p,{children:\"Learn Code leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",i(\"ol\",{children:[n(\"li\",{children:\"ReactJs\"}),n(\"li\",{children:\"ExpressJs\"}),n(\"li\",{children:\"Firebase\"}),n(\"li\",{children:\"react-router-dom\"}),n(\"li\",{children:\"Sweet Alert v2\"}),n(\"li\",{children:\"Tailwind CSS\"}),n(\"li\",{children:\"daisy ui css component library\"}),n(\"li\",{children:\"react-to-print for generating pdf.\"})]}),\"\\n\",n(t,{children:i(o.p,{children:[\"In summary, \",n(o.code,{children:\"Learn Code\"}),\" is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"]})})]})}return{default:function(e={}){const{wrapper:i}=e.components||{};return i?n(i,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "learn_code"
+  },
+  {
+    "id": 9,
+    "slug": "projects/merchantry",
+    "name": "Merchantry",
+    "subDescription": "Used Products Buy & Sells App",
+    "description": "This app has some features including Firebase Authentication system, user login, and user creation by category (seller or buyer). It also allows booking products, adding to a wishlist, and includes a payment method for paying product prices.",
+    "category": "e-commerce",
+    "similarCategory": [
+      "e-commerce",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "tags": [
+      "e-commerce",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "url": "https://merchentry.web.app",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://merchentry.web.app"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/merchantry-client"
+      },
+      {
+        "label": "Github Server",
+        "link": "https://github.com/masumbillah360/merchantry-server"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/merchantry_home.png",
+    "coverImages": [
+      "/content-image/merchantry_signup.png",
+      "/content-image/merchantry_home.png",
+      "/content-image/merchantry_order.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": false,
+    "featured": true,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const o={code:\"code\",p:\"p\",...i.components},{Heading:t,Paragraph:a}=o;return t||_missingMdxReference(\"Heading\",!0),a||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(t,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(a,{children:r(o.p,{children:[n(o.code,{children:\"Merchantry\"}),\" is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"]})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:n(o.p,{children:\"Easy user/seller account creation, enabling quick and straightforward\\nregistration.\"})}),n(\"li\",{children:\"Ability to add, buy, and manage products efficiently.\"}),r(\"li\",{children:[\"An intuitive \",n(o.code,{children:\"admin\"}),\" dashboard for better management and oversight.\"]}),n(\"li\",{children:\"Multiple payment options to ensure smooth transactions.\"}),n(\"li\",{children:\"Strong authentication options to secure user accounts.\"})]}),\"\\n\",n(t,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(a,{children:r(o.p,{children:[n(o.code,{children:\"Merchantry\"}),\" leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"]})}),\"\\n\",r(\"ol\",{children:[r(\"li\",{children:[n(o.code,{children:\"ReactJS\"}),\" and react-router for a dynamic and responsive front-end.\"]}),n(\"li\",{children:r(o.p,{children:[n(o.code,{children:\"MongoDB\"}),\" and \",n(o.code,{children:\"Firebase\"}),\" for robust data storage and real-time\\ncapabilities.\"]})}),r(\"li\",{children:[n(o.code,{children:\"TailwindCSS\"}),\" & Daisy UI for sleek and customizable styling.\"]}),r(\"li\",{children:[n(o.code,{children:\"ExpressJS\"}),\" for a reliable and efficient \",n(o.code,{children:\"backend\"}),\".\"]})]}),\"\\n\",n(a,{children:r(o.p,{children:[\"In summary, \",n(o.code,{children:\"Merchantry\"}),\" is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"]})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "merchantry"
+  },
+  {
+    "id": 8,
+    "slug": "projects/photo_graph",
+    "name": "Photograph",
+    "subDescription": "Photography Showcase App",
+    "description": "Can add some photos and there others users can leave their feedback. It's aslo has firebase authentication system, Login, Users Create by category for users verification. Users can manage his own data like his post, review etc.",
+    "category": "photography",
+    "similarCategory": [
+      "e-commerce",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "tags": [
+      "e-commerce",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "url": "https://photo-graph-client.web.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://photo-graph-client.web.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/photograph-client"
+      },
+      {
+        "label": "Github Server",
+        "link": "https://github.com/masumbillah360/photograph-server"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/photograph_home.png",
+    "coverImages": [
+      "/content-image/photograph_login.png",
+      "/content-image/photograph_review.png",
+      "/content-image/photograph_review_list.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": false,
+    "featured": false,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const o={code:\"code\",p:\"p\",...i.components},{Heading:s,Paragraph:t}=o;return s||_missingMdxReference(\"Heading\",!0),t||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(s,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(t,{children:r(o.p,{children:[n(o.code,{children:\"Photograph\"}),\" is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"]})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:\"Email and google login/authentication\"}),n(\"li\",{children:\"User can gives reviews\"}),n(\"li\",{children:\"User can add a service\"}),n(\"li\",{children:\"User can read/write/update/delete his own services\"}),n(\"li\",{children:\"User will be show other's users reivew etc\"})]}),\"\\n\",n(s,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(t,{children:n(o.p,{children:\"Photograph leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",r(\"ol\",{children:[n(\"li\",{children:\"ReactJs\"}),n(\"li\",{children:\"ExpressJs\"}),n(\"li\",{children:\"Firebase\"}),n(\"li\",{children:\"Bootstrap\"}),n(\"li\",{children:\"react-router-dom\"}),n(\"li\",{children:\"Sweet Alert v2\"})]}),\"\\n\",n(t,{children:r(o.p,{children:[\"In summary, \",n(o.code,{children:\"Photograph\"}),\" is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"]})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "photo_graph"
+  },
+  {
+    "id": 2,
+    "slug": "projects/simple_landing_page",
+    "name": "Simple Landing Page",
+    "subDescription": "Test Coding Quizes",
+    "description": "It's a React app.It's basically a quize app. There has some options and user can select an option. If answer is correct or wrong this app will notify you. You can choose option and app will be notify you this answer is correct or wrong. You can see correct answer also.",
+    "category": "landing-page",
+    "similarCategory": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "landing-page"
+    ],
+    "tags": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "landing-page"
+    ],
+    "url": "https://simple-landing-page-masum.vercel.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://simple-landing-page-masum.vercel.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/coders-quiz-app"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/simple_landing_1.png",
+    "coverImages": [
+      "/content-image/simple_landing_1.png",
+      "/content-image/simple_landing_2.png",
+      "/content-image/simple_landing_3.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": true,
+    "featured": false,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const o={p:\"p\",...i.components},{Heading:t,Paragraph:l}=o;return t||_missingMdxReference(\"Heading\",!0),l||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(t,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:\"Play quiz some topics.\"}),n(\"li\",{children:\"Correct and wrong answer notifier\"}),n(\"li\",{children:\"It will show correct answer\"})]}),\"\\n\",n(t,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",r(\"ol\",{children:[n(\"li\",{children:\"ReactJs\"}),n(\"li\",{children:\"show active/current route on navbar\"}),n(\"li\",{children:\"react-router-dom\"}),n(\"li\",{children:\"Context Api\"}),n(\"li\",{children:\"Tailwind CSS\"}),n(\"li\",{children:\"daisy ui css component library\"}),n(\"li\",{children:\"react-icons\"}),n(\"li\",{children:\"Recharts\"}),n(\"li\",{children:\"react toastify\"})]}),\"\\n\",n(l,{children:n(o.p,{children:\"In summary, Coders Quiz is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "simple_landing_page"
+  },
+  {
+    "id": 3,
+    "slug": "projects/sr_graphic_studio",
+    "name": "SR Graphic Studio",
+    "subDescription": "A designer agencey portfolio.",
+    "description": "Can add some photos and there others users can leave their feedback. It's aslo has firebase authentication system, Login, Users Create by category for users verification. Users can manage his own data like his post, review etc.",
+    "category": "freelance",
+    "similarCategory": [
+      "freelance",
+      "react",
+      "tailwindcss",
+      "next-js",
+      "rich-editor",
+      "uploadthing",
+      "drizzle-orm",
+      "next-auth",
+      "portfolio"
+    ],
+    "tags": [
+      "freelance",
+      "react",
+      "tailwindcss",
+      "next-js",
+      "rich-editor",
+      "uploadthing",
+      "drizzle-orm",
+      "next-auth",
+      "portfolio"
+    ],
+    "url": "https://srgraphicstudio.vercel.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://srgraphicstudio.vercel.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/photograph-client"
+      },
+      {
+        "label": "Github Server",
+        "link": "https://github.com/masumbillah360/photograph-server"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/sr-graphic_1.png",
+    "coverImages": [
+      "/content-image/sr-graphic_1.png",
+      "/content-image/sr-graphic_2.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": true,
+    "featured": false,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const o={code:\"code\",p:\"p\",...i.components},{Heading:d,Paragraph:l}=o;return d||_missingMdxReference(\"Heading\",!0),l||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(d,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(l,{children:r(o.p,{children:[n(o.code,{children:\"SR Graphic Studio\"}),\" is a designer agencey portfolio that I have get from local client. Here I've used latest technologies.\"]})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:\"Admin can maintain all the contents\"}),n(\"li\",{children:\"Email authentication for admins\"}),n(\"li\",{children:\"All content reflect on client side\"}),n(\"li\",{children:\"Used rich editor to add content details and description\"}),n(\"li\",{children:\"A minimalist design\"})]}),\"\\n\",n(d,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(l,{children:r(o.p,{children:[n(o.code,{children:\"SR Graphic Studio\"}),\" leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"]})}),\"\\n\",r(\"ol\",{className:\"flex flex-wrap gap-2 items-center justify-start\",children:[n(\"li\",{className:\"border rounded px-2 py-1\",children:\"Reactjs\"}),n(\"li\",{className:\"border rounded px-2 py-1\",children:\"Nextjs\"}),n(\"li\",{className:\"border rounded px-2 py-1\",children:\"Next Auth\"}),n(\"li\",{className:\"border rounded px-2 py-1\",children:\"Tailwindcss\"}),n(\"li\",{className:\"border rounded px-2 py-1\",children:\"Drizzle ORM\"}),n(\"li\",{className:\"border rounded px-2 py-1\",children:\"Turso DB\"})]}),\"\\n\",n(l,{children:r(o.p,{children:[\"In summary, \",n(o.code,{children:\"Photograph\"}),\" is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"]})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "sr_graphic_studio"
+  },
+  {
+    "id": 4,
+    "slug": "projects/the_holy_quran",
+    "name": "The Holy Quran",
+    "subDescription": "The Holy Book for Muslim",
+    "description": "This app is made by Javascript and REST Api. Used Bootstrap 5 for design. Full responsive, clean UI that's why users get comfort on reading. It has no functionality just fetched data from api and show on UI.",
+    "category": "the_holy_book",
+    "similarCategory": [
+      "the_holy_book",
+      "javascript",
+      "bootstrap",
+      "api"
+    ],
+    "tags": [
+      "the_holy_book",
+      "javascript",
+      "bootstrap",
+      "api"
+    ],
+    "url": "https://free-holy-quran.netlify.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://free-holy-quran.netlify.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/The-Holy-Quran"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/the_holy_quran_home.png",
+    "coverImages": [
+      "/content-image/the_holy_quran_home.png",
+      "/content-image/the_holy_quran_surah.png",
+      "/content-image/the_holy_quran_surah.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": false,
+    "featured": false,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(o){const i={code:\"code\",p:\"p\",...o.components},{Heading:l,Paragraph:t}=i;return l||_missingMdxReference(\"Heading\",!0),t||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(l,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(t,{children:r(i.p,{children:[n(i.code,{children:\"Learn Code\"}),\" is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"]})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:\"Full Quran\"}),n(\"li\",{children:\"All Surah Available\"})]}),\"\\n\",n(l,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(t,{children:n(i.p,{children:\"Learn Code leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",r(\"ol\",{children:[n(\"li\",{children:\"Javascript\"}),n(\"li\",{children:\"REST API\"}),n(\"li\",{children:\"Bootstrap\"})]}),\"\\n\",n(t,{children:r(i.p,{children:[\"In summary, \",n(i.code,{children:\"Learn Code\"}),\" is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"]})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "the_holy_quran"
+  },
+  {
+    "id": 7,
+    "slug": "projects/traveler",
+    "name": "Traveler",
+    "subDescription": "Test Coding Quizes",
+    "description": "It's a React app.It's basically a quize app. There has some options and user can select an option. If answer is correct or wrong this app will notify you. You can choose option and app will be notify you this answer is correct or wrong. You can see correct answer also.",
+    "category": "tutorial",
+    "similarCategory": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "tags": [
+      "tutorial",
+      "react",
+      "tailwindcss",
+      "react-router"
+    ],
+    "url": "https://web-coders-quiz.netlify.app/",
+    "urls": [
+      {
+        "label": "Live URL",
+        "link": "https://web-coders-quiz.netlify.app/"
+      },
+      {
+        "label": "Github Client",
+        "link": "https://github.com/masumbillah360/coders-quiz-app"
+      }
+    ],
+    "date": {
+      "startDate": "2024-03-06T00:00:00.000Z",
+      "endDate": "2024-03-06T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/coders_quiz_home.png",
+    "coverImages": [
+      "/content-image/coders_quiz_home.png",
+      "/content-image/coders_quiz_quiz.png",
+      "/content-image/coders_quiz_chart.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": true,
+    "featured": true,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const o={p:\"p\",...i.components},{Heading:t,Paragraph:l}=o;return t||_missingMdxReference(\"Heading\",!0),l||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(t,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz is a comprehensive platform designed to facilitate the buying\\nand selling of used products. It offers a robust set of features aimed at\\nproviding a seamless user experience for both buyers and sellers. Key\\nfeatures include:\"})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:\"Play quiz some topics.\"}),n(\"li\",{children:\"Correct and wrong answer notifier\"}),n(\"li\",{children:\"It will show correct answer\"})]}),\"\\n\",n(t,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(l,{children:n(o.p,{children:\"Coders Quiz leverages a modern technology stack to deliver a powerful and\\nscalable application. The technologies used include:\"})}),\"\\n\",r(\"ol\",{children:[n(\"li\",{children:\"ReactJs\"}),n(\"li\",{children:\"show active/current route on navbar\"}),n(\"li\",{children:\"react-router-dom\"}),n(\"li\",{children:\"Context Api\"}),n(\"li\",{children:\"Tailwind CSS\"}),n(\"li\",{children:\"daisy ui css component library\"}),n(\"li\",{children:\"react-icons\"}),n(\"li\",{children:\"Recharts\"}),n(\"li\",{children:\"react toastify\"})]}),\"\\n\",n(l,{children:n(o.p,{children:\"In summary, Coders Quiz is an ideal solution for individuals looking to buy\\nor sell used products. It combines ease of use, robust functionality, and a\\nmodern technology stack to ensure a seamless and secure experience for all\\nusers.\"})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "traveler"
+  }
+]
