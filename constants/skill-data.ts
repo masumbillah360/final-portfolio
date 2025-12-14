@@ -236,6 +236,9 @@ export const skillsData = [
   'Typescript',
   'React',
   'Next JS',
+  'Vue',
+  'GraphQl',
+  'Fastify',
   'Tailwind',
   'MongoDB',
   'MySQL',
@@ -249,5 +252,6 @@ export const skillsData = [
   'Firebase',
   'MaterialUI',
   'Nginx',
+//   'Kafka',
   'Strapi'
 ]

@@ -127,6 +127,8 @@ function Skills() {
                                     Web Socket
                                 </span>
                                 <span className="text-gray-400">{"', '"}</span>
+                                <span className="text-amber-300">Kafka</span>
+                                <span className="text-gray-400">{"', '"}</span>
                                 <span className="text-amber-300">Swagger</span>
                                 <span className="text-gray-400">{"'],"}</span>
                             </div>
