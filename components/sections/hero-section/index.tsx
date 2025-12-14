@@ -2,9 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
-import { Contact } from 'lucide-react';
+// import { Contact } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import CustomToolTip from '@/components/tool-tip';
 
@@ -15,10 +14,7 @@ import { linkData } from '@/constants';
 import backgroundImage from '@/public/hero.svg';
 
 const HeroSection = () => {
-    const [mounted, setMounted] = useState<boolean>(false);
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+
 
     return (
         <section>
@@ -71,19 +67,17 @@ const HeroSection = () => {
                             <Link href={'#contact'}>
                                 <Button className="text-lg">Contact Me</Button>
                             </Link>
-                            {mounted ? (
-                                <BorderButton
-                                    containerClassName="size-auto p-1"
-                                    duration={4000}>
-                                    <div className="h-9 w-24 flex justify-center items-center">
-                                        <h4 className="text-lg font-semibold dark:text-white">
-                                            Resume
-                                        </h4>
-                                    </div>
-                                </BorderButton>
-                            ) : (
-                                <Button variant={'outline'}>Resume</Button>
-                            )}
+
+                            <BorderButton
+                                containerClassName="size-auto p-1"
+                                duration={4000}>
+                                <div className="h-9 w-24 flex justify-center items-center">
+                                    <h4 className="text-lg font-semibold dark:text-white">
+                                        Resume
+                                    </h4>
+                                </div>
+                            </BorderButton>
+
                         </div>
                     </div>
                     <div className="hidden md:block md:w-full lg:w-1/2">
