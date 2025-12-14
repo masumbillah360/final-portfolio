@@ -57,7 +57,7 @@ const ProjectCard = ({ slug, name, subDescription, thumbnail, url, upcoming }: P
                             className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white flex items-center gap-1">
                             <Link href={url} target="_blank">
                                 <BorderButton
-                                    containerClassName="h-10 dark:bg-slate-300"
+                                    containerClassName="h-10 dark:bg-slate-300 cursor-pointer"
                                     duration={2000}>
                                     <div className="h-full w-20 dark:bg-slate-300 dark:text-black font-bold uppercase flex justify-center items-center">
                                         Live
@@ -70,7 +70,9 @@ const ProjectCard = ({ slug, name, subDescription, thumbnail, url, upcoming }: P
                                 onClick={() => {
                                     router.push(`/${slug}`);
                                 }}
-                                variant={'default'}>
+                                variant={'default'}
+                                className='cursor-pointer'
+                                >
                                 Details
                             </Button>
                         </CardItem>
