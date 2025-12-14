@@ -1,4 +1,4 @@
-import { Blogs, Projects, blogs, projects } from '@/.velite';
+import { Blogs, Projects, blogs, projects } from '../.velite';
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -43,7 +43,7 @@ export function getBlogFromParams(params: string) {
     return blogs.find((result) => result.slugAsParams === slug);
 }
 
-export function getProjectFromParams(params: any) {
+export function getProjectFromParams(params: string) {
     const slug = params;
     return projects.find((result) => result.slugAsParams === slug);
 }
