@@ -347,6 +347,56 @@
     "slugAsParams": "figma_clone"
   },
   {
+    "id": 14,
+    "slug": "projects/function-trace",
+    "name": "Function-Tracer",
+    "subDescription": "Lightweight universal function profiler",
+    "description": "A tiny zero-dependency TypeScript utility that wraps any sync/async function to automatically track performance, call counts, error rates, and provide real-time statistics for production monitoring and alerting. Works everywhere - Node.js, browsers, serverless, edge functions.",
+    "category": "dev-tool",
+    "similarCategory": [
+      "dev-tool",
+      "typescript",
+      "performance",
+      "monitoring",
+      "open-source"
+    ],
+    "tags": [
+      "typescript",
+      "performance",
+      "monitoring",
+      "open-source",
+      "function-tracing",
+      "profiling"
+    ],
+    "url": "https://github.com/masumbillah360/function-trace",
+    "urls": [
+      {
+        "label": "Github Repository",
+        "link": "https://github.com/masumbillah360/function-trace"
+      },
+      {
+        "label": "NPM",
+        "link": "https://www.npmjs.com/package/function-trace"
+      }
+    ],
+    "date": {
+      "startDate": "2025-12-25T00:00:00.000Z",
+      "endDate": "2025-12-26T00:00:00.000Z"
+    },
+    "thumbnail": "/content-image/function-trace.png",
+    "coverImages": [
+      "/content-image/function-trace.png",
+      "/content-image/function-trace-2.png",
+      "/content-image/function-trace.png"
+    ],
+    "published": true,
+    "upcoming": false,
+    "protected": false,
+    "featured": true,
+    "body": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const t={br:\"br\",p:\"p\",...i.components},{Heading:o,Paragraph:c}=t;return o||_missingMdxReference(\"Heading\",!0),c||_missingMdxReference(\"Paragraph\",!0),r(e,{children:[n(o,{typo:\"h2\",children:\"Available Features\"}),\"\\n\",n(c,{children:n(t.p,{children:\"function-trace is a minimal, zero-dependency TypeScript utility that gives you deep visibility into your application's real performance behavior with almost zero effort.\"})}),\"\\n\",r(\"ul\",{children:[n(\"li\",{children:\"One-line instrumentation for any sync or async function\"}),n(\"li\",{children:\"Automatic tracking of execution time, call count & error rate\"}),n(\"li\",{children:\"Configurable thresholds with warning/error logging\"}),n(\"li\",{children:\"Real-time statistics ready for monitoring & alerting\"}),n(\"li\",{children:\"Works seamlessly across Node.js, browsers, serverless & edge\"})]}),\"\\n\",n(o,{typo:\"h2\",children:\"Technology Used\"}),\"\\n\",n(c,{children:n(t.p,{children:\"function-trace is intentionally kept extremely lightweight and uses only modern JavaScript/TypeScript features:\"})}),\"\\n\",r(\"ol\",{children:[n(\"li\",{children:\"TypeScript\"}),n(\"li\",{children:\"Native JavaScript (Performance API)\"}),n(\"li\",{children:\"No external dependencies\"})]}),\"\\n\",n(c,{children:r(t.p,{children:[\"In summary, function-trace is the perfect lightweight companion for any TypeScript/JavaScript developer who wants better production performance visibility without introducing heavy observability tools or complex setup.\",n(t.br,{}),\"\\n\",\"Open source and ready to use today.\"]})})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "slugAsParams": "function-trace"
+  },
+  {
     "id": 10,
     "slug": "projects/health_app",
     "name": "A Inventory Health App.",
@@ -431,11 +481,11 @@
       "startDate": "2024-03-06T00:00:00.000Z",
       "endDate": "2024-03-06T00:00:00.000Z"
     },
-    "thumbnail": "/content-image/coding_with_fun_home.png",
+    "thumbnail": "/content-image/function-trace.png",
     "coverImages": [
-      "/content-image/coding_with_fun_home.png",
-      "/content-image/coding_with_fun_courses.png",
-      "/content-image/coding_with_fun_course.png"
+      "/content-image/function-trace.png",
+      "/content-image/function-trace-2.png",
+      "/content-image/function-trace-2.png"
     ],
     "published": true,
     "upcoming": false,

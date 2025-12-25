@@ -6,7 +6,7 @@ import CustomToolTip from './tool-tip';
 import { Separator } from '@/components/ui/separator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
-import { Blogs, blogs, projects, Projects } from '@/.velite';
+import { Blogs, blogs, projects, Projects } from '../.velite';
 import {
     getBlogFromParams,
     getProjectFromParams,
@@ -20,20 +20,22 @@ interface Props {
     slug: string;
 }
 
+type ProjectType = typeof projects[0] | typeof blogs[0];
+
 export function Sidebar({ title, contentType, slug }: Readonly<Props>) {
     let result;
     if (contentType === 'blog') {
         const blog = getBlogFromParams(slug);
         result = getSimilarCategory(
-            blog?.slugAsParams!,
-            blog?.category!,
+            blog?.slugAsParams as string,
+            blog?.category as string,
             'blog'
         );
     } else {
         const project = getProjectFromParams(slug);
         result = getSimilarCategory(
-            project?.slugAsParams!,
-            project?.category!,
+            project?.slugAsParams as string,
+            project?.category as string,
             'project'
         );
     }
@@ -69,15 +71,15 @@ export function Sidebar({ title, contentType, slug }: Readonly<Props>) {
                     </span>
                 </h4>
                 <div className="px-2">
-                    {finalResult?.map((content: any) => (
+                    {finalResult?.map((content: ProjectType) => (
                         <div key={content.slug + content.category}>
                             <Link href={`/${content.slug}`} className="text-sm">
                                 <CustomToolTip
-                                    label={content?.title || content?.name}>
+                                    label={contentType === 'blog' ? (content as typeof blogs[0]).title : (content as typeof projects[0]).name}>
                                     <Button variant="link">
                                         {contentType === 'blog'
-                                            ? truncate(content?.title)
-                                            : truncate(content?.name)}
+                                            ? truncate((content as typeof blogs[0]).title)
+                                            : truncate((content as typeof projects[0]).name)}
                                     </Button>
                                 </CustomToolTip>
                             </Link>

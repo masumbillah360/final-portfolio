@@ -2,10 +2,9 @@
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
 
 import { Button } from '../ui/button';
-import { CardSkeleton } from '../customSkeleton/card';
+
 import { BorderButton } from '../framer-motion/moving-border';
 import { CardBody, CardContainer, CardItem } from '../framer-motion/3d-card';
 import Link from 'next/link';
@@ -21,16 +20,11 @@ interface Props {
 
 const ProjectCard = ({ slug, name, subDescription, thumbnail, url, upcoming }: Props) => {
     const router = useRouter();
-    const [mounted, setMounted] = useState<boolean>(false);
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-    if (!mounted) return <CardSkeleton />
     return (
         <div className="size-full">
             <CardContainer className="inter-var size-full relative">
                 {upcoming && <div className='absolute top-0 right-1 z-50  rounded-tr-lg p-1'>Upcoming</div>}
-                <CardBody className="bg-gray-50 dark:text-slate-200 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-slate-900 dark:border-white/[0.2] border-black/[0.1] size-full rounded-xl p-6 border">
+                <CardBody className="bg-gray-50 dark:text-slate-200 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/10 dark:bg-slate-900 dark:border-white/20 border-black/10 size-full rounded-xl p-6 border">
                     <CardItem
                         translateZ="50"
                         className="text-xl font-bold text-neutral-600 dark:text-white">

@@ -1,7 +1,7 @@
 export const experienceData = [
     {
         id: 1,
-        title: 'Jr MERN Developer',
+        title: 'Fullstack Developer',
         company: 'Peacock India, INDIA',
         duration: '(Jan 2023 - Present)',
         isEx: false,
@@ -11,7 +11,7 @@ export const experienceData = [
         title: 'FullStack Developer',
         company: 'Local Freelance Projects',
         duration: '(Apr 2020 - 2023)',
-        isEx: false,
+        isEx: true,
     },
     {
         id: 3,

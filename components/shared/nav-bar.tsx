@@ -2,8 +2,6 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
-
 import { Menu } from 'lucide-react';
 
 import { Button } from '../ui/button';
@@ -26,46 +24,25 @@ import { routes, sectionIds } from '@/constants';
 const Navbar = () => {
     const router = useRouter();
 
-    const [mount, setMount] = useState<boolean>(false);
-    useEffect(() => {
-        setMount(true);
-    }, []);
 
     return (
         <nav className="rounded-lg border-b transition-all duration-300 hover:border-b-primary backdrop-blur">
             <div className="flex items-center justify-between py-2">
-                <div className="flex flex-shrink-0 items-center ml-2">
-                    {mount ? (
-                        <BorderButton
-                            onClick={() => {
-                                router.replace('/');
-                            }}
-                            duration={5000}>
-                            <span className="hidden sm:block text-primary text-3xl font-bold uppercase px-3 py-2">
-                                Masum Billah
-                            </span>
-                            <span className="block sm:hidden text-primary text-2xl font-bold uppercase px-3 py-1">
-                                MB
-                            </span>
-                        </BorderButton>
-                    ) : (
-                        <>
-                            <button
-                                type="button"
-                                onClick={() => {
-                                    router.replace('/');
-                                }}
-                                className="hidden sm:block text-primary text-3xl font-bold uppercase px-3 py-2">
-                                Masum Billah
-                            </button>
-                            <button
-                                type="button"
-                                onClick={() => router.replace('/')}
-                                className="block sm:hidden text-primary text-2xl font-bold uppercase px-3 py-1">
-                                MB
-                            </button>
-                        </>
-                    )}
+                <div className="flex shrink-0 items-center ml-2">
+
+                    <BorderButton
+                        onClick={() => {
+                            router.replace('/');
+                        }}
+                        duration={5000}>
+                        <span className="hidden sm:block text-primary text-3xl font-bold uppercase px-3 py-2">
+                            Masum Billah
+                        </span>
+                        <span className="block sm:hidden text-primary text-2xl font-bold uppercase px-3 py-1">
+                            MB
+                        </span>
+                    </BorderButton>
+
                 </div>
 
                 <ul

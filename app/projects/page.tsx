@@ -6,27 +6,28 @@ import { projects } from '#content';
 import { Suspense } from 'react';
 
 interface ProjectPageProps {
-    searchParams: {
+    searchParams: Promise<{
         page?: string;
         tags?: string;
         category?: string;
-    };
+    }>;
 }
 
-const ProjectPage = ({ searchParams }: ProjectPageProps) => {
-    const currentPage = Number(searchParams.page) || 1;
+const ProjectPage = async ({ searchParams }: ProjectPageProps) => {
+    const params = await searchParams;
+    const currentPage = Number(params.page) || 1;
     const BLOG_PER_PAGE = 6;
     
     let filteredProjects = projects.filter((p) => p.published).sort((a, b) => b.id - a.id);
 
-    if (searchParams?.tags) {
+    if (params?.tags) {
         filteredProjects = filteredProjects.filter((b) =>
-            b.tags.some((tag) => tag === searchParams.tags)
+            b.tags.some((tag) => tag === params.tags)
         );
     }
-    if (searchParams?.category) {
+    if (params?.category) {
         filteredProjects = filteredProjects.filter((b) =>
-            b.similarCategory.some((cat) => cat === searchParams.category)
+            b.similarCategory.some((cat) => cat === params.category)
         );
     }
     const totalCount = Math.ceil(filteredProjects.length / BLOG_PER_PAGE);
@@ -70,7 +71,7 @@ const ProjectPage = ({ searchParams }: ProjectPageProps) => {
                 <NotFound
                     message="PROJECTS NOT FOUND"
                     keyWord={
-                        searchParams.tags ?? searchParams.category ?? 'Some'
+                        params.tags ?? params.category ?? 'Some'
                     }
                     path="/projects"
                     pathLabel="Back To Projects"

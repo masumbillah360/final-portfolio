@@ -15,6 +15,6 @@ export const educations = [
         id: 3,
         title: 'Secondary School Certificate',
         duration: '2016 - 2017',
-        institution: 'Bagaharchar Islamia Sinior Alim Madrasah',
+        institution: 'Bagaharchar Islamia Senior Alim Madrasah',
     }
 ];

@@ -16,7 +16,7 @@ const font = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '
 export const metadata: Metadata = {
     title: 'Masum Billah',
     description:
-        'A web developer from Bangladesh. MERN stack developer & I am growing as a fullstack developer. Thank you',
+        'A fullstack web developer from Bangladesh',
 };
 
 export default function RootLayout({
