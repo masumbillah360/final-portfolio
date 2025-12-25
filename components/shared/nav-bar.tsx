@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Menu } from 'lucide-react';
 
 import { Button } from '../ui/button';
-import { ModeToggle } from '../theme/mode-toggle';
+// import { ModeToggle } from '../theme/mode-toggle';
 import { BorderButton } from '../framer-motion/moving-border';
 
 // for mobile nav
@@ -48,9 +48,9 @@ const Navbar = () => {
                 <ul
                     className="mt-4 h-screen max-h-0 w-full flex-col items-start text-sm hidden md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 lg:flex"
                     id="navbar-default">
-                    <li className="mr-2">
+                    {/* <li className="mr-2">
                         <ModeToggle />
-                    </li>
+                    </li> */}
                     {routes.map((route) => (
                         <li key={route.label}>
                             <Button
@@ -62,7 +62,7 @@ const Navbar = () => {
                                     });
                                 }}>
                                 <div
-                                    className={`transition-colors duration-300 hover:text-violet-500 font-semibold 
+                                    className={`text-gray-900! dark:text-violet-300! transition-colors duration-300 hover:text-violet-500 font-semibold
                                     ${''
                                         // activeSection === route.path
                                         //     ? getNavLinkClass(activeSection)
@@ -75,7 +75,7 @@ const Navbar = () => {
                     ))}
                 </ul>
                 <div className="lg:hidden flex justify-center items-center gap-2">
-                    <ModeToggle />
+                    {/* <ModeToggle /> */}
                     <Sheet>
                         <SheetTrigger>
                             <Menu className="h-10 w-10 mr-2 border rounded-md text-primary border-primary" />
@@ -102,7 +102,7 @@ const Navbar = () => {
                                                     href={`/#${sectionIds[route.path]
                                                         }`}>
                                                     <div
-                                                        className={`dark:text-white transition-colors duration-300 hover:text-violet-500 font-semibold ${''
+                                                        className={`text-gray-900! dark:text-white! transition-colors duration-300 hover:text-violet-500 font-semibold ${''
                                                             // activeSection ===
                                                             // route.path
                                                             //     ? 'text-primary border-b-2 border-b-primary'
