@@ -18,10 +18,10 @@ function Skills() {
                     alt="Section Image"
                     className="absolute top-0 -z-10 w-full"
                 />
-                <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
+                <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-linear-to-r to-[#0a0d37]">
                     <div className="flex flex-row">
-                        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-                        <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
+                        <div className="h-px w-full bg-linear-to-r from-transparent via-pink-500 to-violet-600"></div>
+                        <div className="h-px w-full bg-linear-to-r from-violet-600 to-transparent"></div>
                     </div>
                     <div className="px-4 lg:px-8 py-5">
                         <div className="flex flex-row space-x-2">
@@ -30,7 +30,7 @@ function Skills() {
                             <div className="h-3 w-3 rounded-full bg-green-200"></div>
                         </div>
                     </div>
-                    <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
+                    <div className="overflow-hidden border-t-2 border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
                         <code className="font-mono text-xs md:text-sm lg:text-lg">
                             <div className="blink">
                                 <span className="mr-2 text-pink-500">
@@ -275,9 +275,9 @@ function Skills() {
                             className="w-36 min-w-fit h-fit flex flex-col items-center justify-center transition-all duration-500 m-3 sm:m-5 rounded-lg group relative hover:scale-[1.15] cursor-pointer"
                             key={'skill' + i}>
                             <div className="h-full w-full rounded-lg border border-primary bg-[#11152c] shadow-none shadow-gray-50 group-hover:border-violet-500 transition-all duration-500">
-                                <div className="flex -translate-y-[1px] justify-center">
+                                <div className="flex -translate-y-px justify-center">
                                     <div className="w-3/4">
-                                        <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-white to-transparent" />
+                                        <div className="h-0.5 w-full bg-linear-to-r from-transparent via-white to-transparent" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center justify-center gap-3 p-6">

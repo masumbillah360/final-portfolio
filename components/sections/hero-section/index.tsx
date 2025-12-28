@@ -9,7 +9,7 @@ import CustomToolTip from '@/components/tool-tip';
 
 import AnimationLottieClient from '@/components/lottie/client';
 import { BorderButton } from '@/components/framer-motion/moving-border';
-import { linkData } from '@/constants';
+import { linkData, personalData } from '@/constants';
 
 import backgroundImage from '@/public/hero.svg';
 
@@ -71,10 +71,12 @@ const HeroSection = () => {
                             <BorderButton
                                 containerClassName="size-auto p-1"
                                 duration={4000}>
-                                <div className="h-9 w-24 flex justify-center items-center">
-                                    <h4 className="text-lg font-semibold dark:text-white">
-                                        Resume
-                                    </h4>
+                                <div className="h-9 w-24 flex justify-center items-center cursor-pointer">
+                                    <Link href={personalData.resume}target='_blank' rel="noopener noreferrer" download={true}>
+                                        <h4 className="text-lg font-semibold dark:text-white">
+                                            Resume
+                                        </h4>
+                                    </Link>
                                 </div>
                             </BorderButton>
 
