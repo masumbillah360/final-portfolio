@@ -72,7 +72,7 @@ const HeroSection = () => {
                                 containerClassName="size-auto p-1"
                                 duration={4000}>
                                 <div className="h-9 w-24 flex justify-center items-center cursor-pointer">
-                                    <Link href={personalData.resume} rel="noopener noreferrer" download={true}>
+                                    <Link href={personalData.resume}target='_blank' rel="noopener noreferrer" download={true}>
                                         <h4 className="text-lg font-semibold dark:text-white">
                                             Resume
                                         </h4>
